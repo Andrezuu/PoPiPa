@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogIn">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="2.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/darkblue"></View>
+
+            <ImageView
+                android:id="@+id/imagenalimentacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="65dp"
+                android:src="@drawable/modaalimenticiaarticulo"></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lilita"
+                android:gravity="center"
+                android:text="Bienvenido"
+                android:textColor="@color/white"
+                android:textSize="50dp"
+                app:layout_constraintTop_toBottomOf="@id/imagenalimentacion"
+                tools:layout_editor_absoluteX="16dp"></TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:padding="40dp">
+
+            <View
+                android:id="@+id/fondodelogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_shadow_start_color"></View>
+
+            <EditText
+                android:id="@+id/edit_gmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:hint="email"
+                android:inputType="text"
+                android:maxLength="15"
+                android:maxLines="5"
+                app:layout_constraintTop_toBottomOf="@+id/SignIn" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:hint="password"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:maxLines="5"
+                app:layout_constraintTop_toBottomOf="@id/edit_gmail" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:fontFamily="@font/lilita"
+                android:text="Log In"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="@id/fondodelogin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_password"
+                android:backgroundTint="@color/orange"></Button>
+
+            <Button
+                android:id="@+id/SignIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:fontFamily="@font/lilita"
+                android:text="Sign In"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toTopOf="@id/edit_gmail"
+                app:layout_constraintLeft_toLeftOf="@id/fondodelogin"
+                app:layout_constraintRight_toRightOf="@id/fondodelogin"
+                app:layout_constraintTop_toTopOf="@id/fondodelogin"
+                android:backgroundTint="@color/orange"></Button>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
