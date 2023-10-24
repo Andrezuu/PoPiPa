@@ -7,6 +7,10 @@ android {
     namespace = "com.example.popipa"
     compileSdk = 33
 
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.popipa"
         minSdk = 28
@@ -33,6 +37,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
 }
 
 dependencies {

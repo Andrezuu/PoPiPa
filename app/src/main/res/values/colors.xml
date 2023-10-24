@@ -4,10 +4,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#F8981D</color>
     <color name="blue">#4B5781</color>
-    <color name="darkblue">#2F4858</color>
     <color name="pink">#CF5A89</color>
     <color name="purple">#8B5C96</color>
     <color name="salmon">#F96A5E</color>
-
+    <color name="darkOrange">#AB5415</color>
+    <color name="darkBlue">#0C2A4E</color>
+    <color name="darkPink">#820026</color>
+    <color name="darkPurple">#4B004D</color>
+    <color name="darkSalmon">#8B0000</color>
 
 </resources>
