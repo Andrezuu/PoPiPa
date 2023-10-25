@@ -1,4 +1,4 @@
-package com.example.popipa.dataClasses
+package com.example.popipa.dataClases
 
 data class RecetaMenu(
     val nombre: String,

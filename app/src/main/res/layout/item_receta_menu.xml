@@ -46,7 +46,7 @@
             android:id="@+id/image_view_receta_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/cocteles">
+            android:src="@drawable/desayunos">
 
         </ImageView>
     </androidx.cardview.widget.CardView>

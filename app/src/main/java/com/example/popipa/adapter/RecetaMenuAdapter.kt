@@ -5,7 +5,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.popipa.dataClasses.RecetaMenu
+import com.example.popipa.dataClases.RecetaMenu
 import com.example.popipa.databinding.ItemRecetaMenuBinding
 
 class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapterViewHolder>() {

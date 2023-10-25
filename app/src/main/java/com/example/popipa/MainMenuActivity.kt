@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.adapter.CategoriaMenuAdapter
 import com.example.popipa.adapter.RecetaMenuAdapter
-import com.example.popipa.dataClasses.CategoriaMenu
-import com.example.popipa.dataClasses.RecetaMenu
+import com.example.popipa.dataClases.CategoriaMenu
+import com.example.popipa.dataClases.RecetaMenu
 import com.example.popipa.databinding.ActivityMainMenuBinding
 
 class MainMenuActivity : AppCompatActivity() {

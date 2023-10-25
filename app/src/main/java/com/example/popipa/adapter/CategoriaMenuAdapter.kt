@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.popipa.dataClasses.CategoriaMenu
+import com.example.popipa.dataClases.CategoriaMenu
 import com.example.popipa.databinding.ItemCategoriaMenuBinding
 
 class CategoriaMenuAdapter :
