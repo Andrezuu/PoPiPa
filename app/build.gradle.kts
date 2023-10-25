@@ -12,6 +12,10 @@ android {
         enable = true
     }
 
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.popipa"
         minSdk = 28
@@ -38,6 +42,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
 }
 
 dependencies {

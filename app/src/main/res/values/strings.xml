@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Popipa</string>
+    <string name="menu_titulo_categorias">Categorias</string>
+    <string name="menu_bienvenido">Bienvenido</string>
+    <string name="menu_para_ti">Para Ti</string>
 
 </resources>
