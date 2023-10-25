@@ -7,21 +7,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.adapter.CategoriaMenuAdapter
+import com.example.popipa.adapter.RecetaMenuAdapter
 import com.example.popipa.dataClasses.CategoriaMenu
-import com.example.popipa.databinding.ActivityCategoriaRecyclerViewBinding
+import com.example.popipa.dataClasses.RecetaMenu
+import com.example.popipa.databinding.ActivityMainMenuBinding
 
 class MainMenuActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityCategoriaRecyclerViewBinding
+    private lateinit var binding: ActivityMainMenuBinding
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
+    private val recetaMenuAdapter by lazy { RecetaMenuAdapter() }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCategoriaRecyclerViewBinding.inflate(layoutInflater)
+        binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        iniciarCategoriaRecyclerView()
+        iniciarCategoriaMenuRecyclerView()
+        iniciarRecetaMenuRecyclerView()
     }
 
-    fun iniciarCategoriaRecyclerView() {
+    fun iniciarCategoriaMenuRecyclerView() {
         val categoriaMenus = mutableListOf<CategoriaMenu>()
         val categoriaMenu = CategoriaMenu(R.drawable.cocteles, "Cocteles")
         val categoriaMenu1 = CategoriaMenu(R.drawable.estudiante, "Estudiante")
@@ -34,9 +38,9 @@ class MainMenuActivity : AppCompatActivity() {
         categoriaMenus.add(categoriaMenu2)
         categoriaMenus.add(categoriaMenu3)
         categoriaMenus.add(categoriaMenu4)
-        categoriaMenuAdapter.addCategorias(categoriaMenus)
+        categoriaMenuAdapter.addCategoriaMenus(categoriaMenus)
 
-        binding.recycler.apply {
+        binding.recyclerCategoriaMenu.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
             //funcion anonima que separe los items del categoriaRecyclerview
@@ -52,6 +56,71 @@ class MainMenuActivity : AppCompatActivity() {
             })
             adapter = categoriaMenuAdapter
         }
+    }
+
+    fun iniciarRecetaMenuRecyclerView() {
+        val recetaMenus = mutableListOf<RecetaMenu>()
+        val recetaMenu = RecetaMenu(
+            "Pasta a la Carbonara",
+            "Es un plato muy popular en la cocina italiana y ha ganado adeptos en todo el mundo debido a su simplicidad y sabor reconfortante.",
+            "25min",
+            1,
+            R.drawable.pizza
+        )
+        val recetaMenu1 = RecetaMenu(
+            "Ensalada César",
+            "Una deliciosa ensalada con lechuga romana, aderezo especial, crutones y queso parmesano.",
+            "15min",
+            2,
+            R.drawable.pizza
+        )
+
+        val recetaMenu2 = RecetaMenu(
+            "Sushi Variado",
+            "Un surtido de sushi fresco que incluye nigiri, makis y sashimi con salsa de soja y jengibre.",
+            "30min",
+            3,
+            R.drawable.pizza
+        )
+
+        val recetaMenu3 = RecetaMenu(
+            "Tacos al Pastor",
+            "Tacos de cerdo marinado con achiote, piña y cebolla, servidos en tortillas de maíz.",
+            "20min",
+            4,
+            R.drawable.pizza
+        )
+
+        val recetaMenu4 = RecetaMenu(
+            "Hamburguesa Clásica",
+            "Una jugosa hamburguesa con lechuga, tomate, cebolla, queso y salsa especial en un pan suave.",
+            "25min",
+            5,
+            R.drawable.pizza
+        )
+        recetaMenus.add(recetaMenu)
+        recetaMenus.add(recetaMenu1)
+        recetaMenus.add(recetaMenu2)
+        recetaMenus.add(recetaMenu3)
+        recetaMenus.add(recetaMenu4)
+        recetaMenuAdapter.addRecetaMenus(recetaMenus)
+        binding.recyclerRecetaMenu.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+            addItemDecoration(object : RecyclerView.ItemDecoration() {
+                override fun getItemOffsets(
+                    outRect: Rect,
+                    view: View,
+                    parent: RecyclerView,
+                    state: RecyclerView.State
+                ) {
+                    outRect.bottom = 50
+                }
+            })
+
+            adapter = recetaMenuAdapter
+        }
+
 
     }
 }

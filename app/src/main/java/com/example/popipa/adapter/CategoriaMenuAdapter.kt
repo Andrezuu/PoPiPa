@@ -7,18 +7,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.dataClasses.CategoriaMenu
 import com.example.popipa.databinding.ItemCategoriaMenuBinding
 
-
 class CategoriaMenuAdapter :
-    RecyclerView.Adapter<CategoriaMenuAdapter.CategoriaAdapterViewHolder>() {
+    RecyclerView.Adapter<CategoriaMenuAdapter.CategoriaMenuAdapterViewHolder>() {
 
     private var context: Context? = null
     private val listaCategoriaMenus = mutableListOf<CategoriaMenu>()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CategoriaMenuAdapter.CategoriaAdapterViewHolder {
+    ): CategoriaMenuAdapter.CategoriaMenuAdapterViewHolder {
         context = parent.context
-        return CategoriaAdapterViewHolder(
+        return CategoriaMenuAdapterViewHolder(
             ItemCategoriaMenuBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -28,7 +27,7 @@ class CategoriaMenuAdapter :
     }
 
     override fun onBindViewHolder(
-        holder: CategoriaMenuAdapter.CategoriaAdapterViewHolder,
+        holder: CategoriaMenuAdapter.CategoriaMenuAdapterViewHolder,
         position: Int
     ) {
         holder.binding(listaCategoriaMenus[position])
@@ -36,16 +35,16 @@ class CategoriaMenuAdapter :
 
     override fun getItemCount(): Int = listaCategoriaMenus.size
 
-    inner class CategoriaAdapterViewHolder(private val binding: ItemCategoriaMenuBinding) :
+    inner class CategoriaMenuAdapterViewHolder(private val binding: ItemCategoriaMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun binding(data: CategoriaMenu) {
-            binding.imageViewCategoria.setImageResource(data.image)
-            binding.textViewCategoriaNombre.text = data.nombre
+            binding.imageViewCategoriaMenu.setImageResource(data.image)
+            binding.textViewCategoriaMenuNombre.text = data.nombre
         }
     }
 
-    fun addCategorias(newCategoriaMenus: List<CategoriaMenu>) {
+    fun addCategoriaMenus(newCategoriaMenus: List<CategoriaMenu>) {
         listaCategoriaMenus.clear()
         listaCategoriaMenus.addAll(newCategoriaMenus)
     }
