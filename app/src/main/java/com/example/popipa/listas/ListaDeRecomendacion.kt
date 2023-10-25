@@ -1,6 +1,16 @@
 package com.example.popipa.listas
 
 import com.example.popipa.dataClases.TipoDePlato
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesAcaiBowl
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesBatidoDeProteinas
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesDesayunoContinental
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesHuevosBenedictinos
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesMuesliconNueces
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesOmletteDeChampiñones
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesPanquequesArandanos
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesTostadasConAguacate
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesTostadasFrancesas
+import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesYogurConFrutas
 
 class ListaDeRecomendacion {
     companion object {
@@ -8,72 +18,93 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Tostadas con Aguacate",
             "Tostadas con aguacate fresco y huevos pochados.",
-            R.drawable.desayuno_tostadas_aguacate,
+            "tostadasconaguacate",
             "15 min",
-            Dificultad.FACIL
+            1,
+            Megusta = false,
+            IngredientesTostadasConAguacate.listTostadasConAguacate
         ),
         TipoDePlato(
             "Omelette de Champiñones",
             "Omelette relleno de champiñones y queso.",
-            R.drawable.desayuno_omelette_champinones,
+            "omelettedechampiñones",
             "20 min",
-            Dificultad.MEDIO
+            2,
+            Megusta = false,
+            IngredientesOmletteDeChampiñones.listaOmeletteChampiñones
         ),
         TipoDePlato(
             "Panqueques de Arándanos",
             "Panqueques esponjosos con arándanos frescos.",
-            R.drawable.desayuno_panqueques_arandanos,
+            "",
             "25 min",
-            Dificultad.FACIL
+            1,
+            Megusta = false,
+            IngredientesPanquequesArandanos.listaPanquequesArandanos
         ),
         TipoDePlato(
             "Yogur con Frutas",
             "Yogur con mezcla de frutas frescas y granola.",
-            R.drawable.desayuno_yogur_frutas,
+            "yogurconfrutas",
             "10 min",
-            Dificultad.FACIL
+            1,
+            Megusta = false,
+            IngredientesYogurConFrutas.listaYogurConFrutas
         ),
         TipoDePlato(
             "Desayuno Continental",
             "Desayuno continental con croissants, jamón y queso.",
-            R.drawable.desayuno_continental,
+            "desayunocontinental",
             "15 min",
-            Dificultad.MEDIO
+            2,
+            Megusta = false,
+            IngredientesDesayunoContinental.listaDesayunoContinental
         ),
         TipoDePlato(
             "Tostadas Francesas",
             "Tostadas francesas con sirope de arce y frutas.",
-            R.drawable.desayuno_tostadas_francesas,
+            "tostadasfrancesas",
             "20 min",
-            Dificultad.MEDIO
+            2,
+            Megusta = false,
+            IngredientesTostadasFrancesas.listaTostadasFrancesas
+
         ),
         TipoDePlato(
             "Batido de Proteínas",
             "Batido de proteínas con plátano y espinacas.",
-            R.drawable.desayuno_batido_proteinas,
+            "batidodeproteinas",
             "10 min",
-            Dificultad.FACIL
+            2,
+            Megusta = false,
+            IngredientesBatidoDeProteinas.listaBatidosProteina
         ),
         TipoDePlato(
             "Muesli con Nueces",
             "Muesli con nueces, miel y yogur.",
-            R.drawable.desayuno_muesli_nueces,
+            "muesliconnueces",
             "15 min",
-            Dificultad.MEDIO
+            2,
+            Megusta = false,
+            IngredientesMuesliconNueces.listaMuesliNueces
         ),
         TipoDePlato(
             "Huevos Benedictinos",
             "Huevos benedictinos con salsa holandesa.",
-            R.drawable.desayuno_huevos_benedictinos,
+            "huevosbenedivtinos",
             "20 min",
-            Dificultad.MEDIO
+            2,
+            Megusta = false,
+            IngredientesHuevosBenedictinos.listaHuevosBenedictinos
         ),
         TipoDePlato(
             "Acai Bowl",
             "Bol de acai con granola y frutas tropicales.",
-            R.drawable.desayuno_acai_bowl,
+            "acaibowl",
             "10 min",
-            Dificultad.FACIL
+            1,
+            Megusta = false,
+            IngredientesAcaiBowl.listaAcaiBowl
         )
     )
     }

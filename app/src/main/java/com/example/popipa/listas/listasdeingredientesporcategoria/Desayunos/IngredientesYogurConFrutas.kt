@@ -2,7 +2,7 @@ package com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos
 
 import com.example.popipa.dataClases.Ingrediente
 
-class IngredienesYogurConFrutas {
+class IngredientesYogurConFrutas {
     companion object {
         val listaYogurConFrutas = listOf<Ingrediente>(
             Ingrediente(
