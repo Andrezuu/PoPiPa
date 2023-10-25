@@ -27,11 +27,11 @@ class MainMenuActivity : AppCompatActivity() {
 
     fun iniciarCategoriaMenuRecyclerView() {
         val categoriaMenus = mutableListOf<CategoriaMenu>()
-        val categoriaMenu = CategoriaMenu(R.drawable.cocteles, "Cocteles")
-        val categoriaMenu1 = CategoriaMenu(R.drawable.estudiante, "Estudiante")
-        val categoriaMenu2 = CategoriaMenu(R.drawable.helado, "Helado")
-        val categoriaMenu3 = CategoriaMenu(R.drawable.pizza, "Pizza")
-        val categoriaMenu4 = CategoriaMenu(R.drawable.te, "Te")
+        val categoriaMenu = CategoriaMenu(R.drawable.desayunos, "Cocteles")
+        val categoriaMenu1 = CategoriaMenu(R.drawable.desayunos, "Estudiante")
+        val categoriaMenu2 = CategoriaMenu(R.drawable.pasteles, "Helado")
+        val categoriaMenu3 = CategoriaMenu(R.drawable.pasteles, "Pizza")
+        val categoriaMenu4 = CategoriaMenu(R.drawable.pasteles, "Te")
 
         categoriaMenus.add(categoriaMenu)
         categoriaMenus.add(categoriaMenu1)
