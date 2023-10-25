@@ -65,14 +65,14 @@ class MainMenuActivity : AppCompatActivity() {
             "Es un plato muy popular en la cocina italiana y ha ganado adeptos en todo el mundo debido a su simplicidad y sabor reconfortante.",
             "25min",
             1,
-            R.drawable.pizza
+            R.drawable.desayunos
         )
         val recetaMenu1 = RecetaMenu(
             "Ensalada César",
             "Una deliciosa ensalada con lechuga romana, aderezo especial, crutones y queso parmesano.",
             "15min",
             2,
-            R.drawable.pizza
+            R.drawable.desayunos
         )
 
         val recetaMenu2 = RecetaMenu(
@@ -80,7 +80,7 @@ class MainMenuActivity : AppCompatActivity() {
             "Un surtido de sushi fresco que incluye nigiri, makis y sashimi con salsa de soja y jengibre.",
             "30min",
             3,
-            R.drawable.pizza
+            R.drawable.desayunos
         )
 
         val recetaMenu3 = RecetaMenu(
@@ -88,7 +88,7 @@ class MainMenuActivity : AppCompatActivity() {
             "Tacos de cerdo marinado con achiote, piña y cebolla, servidos en tortillas de maíz.",
             "20min",
             4,
-            R.drawable.pizza
+            R.drawable.desayunos
         )
 
         val recetaMenu4 = RecetaMenu(
@@ -96,7 +96,7 @@ class MainMenuActivity : AppCompatActivity() {
             "Una jugosa hamburguesa con lechuga, tomate, cebolla, queso y salsa especial en un pan suave.",
             "25min",
             5,
-            R.drawable.pizza
+            R.drawable.desayunos
         )
         recetaMenus.add(recetaMenu)
         recetaMenus.add(recetaMenu1)
