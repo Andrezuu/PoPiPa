@@ -98,14 +98,13 @@
 
             <Button
                 android:id="@+id/SignIn"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="40dp"
                 android:fontFamily="@font/lilita"
                 android:text="Sign In"
                 android:textSize="25dp"
                 app:layout_constraintBottom_toTopOf="@id/edit_gmail"
-                app:layout_constraintLeft_toLeftOf="@id/fondodelogin"
                 app:layout_constraintRight_toRightOf="@id/fondodelogin"
                 app:layout_constraintTop_toTopOf="@id/fondodelogin"
                 android:backgroundTint="@color/orange"></Button>

@@ -2,6 +2,6 @@ package com.example.popipa.dataClases
 
 data class CategoriaTipoDePlato(
     val titulo: String,
-    val imagen: Int,
+    val imagen: String,
     val listPlato: List<TipoDePlato>
 )

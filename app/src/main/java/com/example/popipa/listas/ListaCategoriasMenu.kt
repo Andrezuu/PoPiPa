@@ -1,49 +1,69 @@
 package com.example.popipa.listas
 
 import com.example.popipa.dataClases.CategoriaTipoDePlato
+import com.example.popipa.listas.listasdecategorias.ListaAlmuerzos
+import com.example.popipa.listas.listasdecategorias.ListaCenas
+import com.example.popipa.listas.listasdecategorias.ListaCocteles
+import com.example.popipa.listas.listasdecategorias.ListaDesayunos
+import com.example.popipa.listas.listasdecategorias.ListaHallowen
+import com.example.popipa.listas.listasdecategorias.ListaNavidad
+import com.example.popipa.listas.listasdecategorias.ListaPasteles
+import com.example.popipa.listas.listasdecategorias.ListaUniversitario
+import com.example.popipa.listas.listasdecategorias.ListasGalletas
+import com.example.popipa.listas.listasdecategorias.ListasPan
 
 class ListaCategoriasMenu {
     companion object {
         val listCategory = listOf<CategoriaTipoDePlato>(
             CategoriaTipoDePlato(
                 "Desayunos",
-                R.drawable.estudianteimagen
+                "desayunos",
+                ListaDesayunos.listaTiposDeDesayuno
             ),
             CategoriaTipoDePlato(
                 "Almuerzos",
-                R.drawable.estudianteimagen
+                "almuerzos",
+                ListaAlmuerzos.listaAlmuerzos
             ),
             CategoriaTipoDePlato(
                 "Cenas",
-                R.drawable.estudianteimagen
+                "cenas",
+                ListaCenas.listaCenas
             ),
             CategoriaTipoDePlato(
-                "Estudiante",
-                R.drawable.estudianteimagen
+                "Universitaria",
+                "universitaria",
+                ListaUniversitario.listaComidaUniversitarios
             ),
             CategoriaTipoDePlato(
                 "Pasteles",
-                R.drawable.estudianteimagen
+                "pasteles",
+                ListaPasteles.listaPasteles
             ),
             CategoriaTipoDePlato(
                 "Galletas",
-                R.drawable.estudianteimagen
+                "galletas",
+                ListasGalletas.listaGalletas
             ),
             CategoriaTipoDePlato(
                 "Cocteles",
-                R.drawable.estudianteimagen
+                "cocteles",
+                ListaCocteles.listaCocteles
             ),
             CategoriaTipoDePlato(
                 "Halloween",
-                R.drawable.estudianteimagen
+                "halloween",
+                ListaHallowen.listaHalloween
             ),
             CategoriaTipoDePlato(
                 "Navidad",
-                R.drawable.estudianteimagen
+                "navidad",
+                ListaNavidad.listaNavidad
             ),
             CategoriaTipoDePlato(
                 "Pan",
-                R.drawable.estudianteimagen
+                "pan",
+                ListasPan.listaPan
             )
         )
     }
