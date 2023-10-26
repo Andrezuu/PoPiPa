@@ -51,16 +51,7 @@ class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapt
             binding.textViewRecetaMenuNombre.text = data.nombre
             binding.textViewRecetaMenuDescripcion.text = data.descripcion
             binding.textViewRecetaTiempoMenu.text = data.tiempo
-            context?.let {
-                binding.dificultad.setBackgroundColor(
-                    ContextCompat.getColor(
-                        it,
-                        color
-                    )
-                )
-            }
-
-
+            binding.dificultad.setBackgroundColor(Color.parseColor("#F8981D"))
         }
     }
 

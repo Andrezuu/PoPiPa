@@ -8,6 +8,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
+
 class LogInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLogInBinding

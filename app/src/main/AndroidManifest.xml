@@ -18,7 +18,7 @@
             android:name=".MainMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".InicioActivity"
+            android:name=".PerfilUsuarioActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
@@ -30,7 +30,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilUsuarioActivity"
+            android:name=".InicioActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
