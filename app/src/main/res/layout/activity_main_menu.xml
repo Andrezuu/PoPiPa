@@ -44,7 +44,7 @@
     </TextView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/recycler_categoriaMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -63,7 +63,7 @@
         app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler">
+        app:layout_constraintTop_toBottomOf="@id/recycler_categoriaMenu">
 
         <TextView
             android:layout_width="match_parent"
@@ -78,64 +78,14 @@
         </TextView>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_receta1"
-        android:layout_width="340dp"
-        android:layout_height="170dp"
-        android:layout_margin="20dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/para_ti">
-
-
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/text_view_receta_titulo"
-        android:fontFamily="@font/lilita"
-        android:layout_width="180dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_recetaMenu"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:text="Titulo"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:elevation="2dp"
-        app:layout_constraintTop_toTopOf="@id/card_view_receta1"
-        app:layout_constraintLeft_toLeftOf="@id/card_view_receta1">
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/text_view_receta_subtitulo"
-        android:fontFamily="@font/roboto"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="Descripcion"
-        android:elevation="2dp"
-        android:layout_margin="12dp"
-        app:layout_constraintTop_toBottomOf="@id/text_view_receta_titulo"
-        app:layout_constraintLeft_toLeftOf="@id/card_view_receta1">
-
-    </TextView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_receta2"
-        android:layout_width="340dp"
-        android:layout_height="170dp"
-        android:layout_margin="20dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/para_ti"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_view_receta1">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:layout_width="170dp"
-            android:layout_height="wrap_content">
-
-        </TextView>
-    </androidx.cardview.widget.CardView>
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

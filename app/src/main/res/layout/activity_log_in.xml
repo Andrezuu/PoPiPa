@@ -25,7 +25,9 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/blue"></View>
+                android:background="@color/blue">
+
+            </View>
 
             <ImageView
                 android:id="@+id/imagenalimentacion"
@@ -35,18 +37,22 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="65dp"
-                android:src="@drawable/modaalimenticiaarticulo"></ImageView>
+                android:src="@drawable/modaalimenticiaarticulo">
+
+            </ImageView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lilita"
                 android:gravity="center"
-                android:text="Bienvenido"
+                android:text="@string/menu_bienvenido"
                 android:textColor="@color/white"
-                android:textSize="50dp"
+                android:textSize="50sp"
                 app:layout_constraintTop_toBottomOf="@id/imagenalimentacion"
-                tools:layout_editor_absoluteX="16dp"></TextView>
+                tools:layout_editor_absoluteX="16dp">
+
+            </TextView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,16 +65,19 @@
                 android:id="@+id/fondodelogin"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/cardview_shadow_start_color"></View>
+                android:background="@drawable/background_esquinas_redondeadas"
+                android:backgroundTint="@color/gray">
+
+            </View>
 
             <EditText
                 android:id="@+id/edit_gmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="40dp"
-                android:hint="email"
+                android:hint="@string/email"
                 android:inputType="text"
-                android:maxLength="15"
+                android:maxLength="40"
                 android:maxLines="5"
                 app:layout_constraintTop_toBottomOf="@id/crearCuenta"/>
 
@@ -77,25 +86,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="40dp"
-                android:hint="password"
+                android:hint="@string/contrase_a"
                 android:inputType="textPassword"
-                android:maxLength="15"
+                android:maxLength="40"
                 android:maxLines="5"
                 app:layout_constraintTop_toBottomOf="@id/edit_gmail" />
 
             <Button
-                android:id="@+id/iniciarsesion"
+                android:id="@+id/iniciar_sesion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="40dp"
                 android:fontFamily="@font/lilita"
-                android:text="Log In"
-                android:textSize="25dp"
+                android:text="@string/ingresar"
+                android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="@id/fondodelogin"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_password"
-                android:backgroundTint="@color/orange"></Button>
+                android:backgroundTint="@color/orange">
+
+            </Button>
 
             <Button
                 android:id="@+id/crearCuenta"
@@ -103,12 +114,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="40dp"
                 android:fontFamily="@font/lilita"
-                android:text="Sign In"
-                android:textSize="25dp"
+                android:text="@string/crear_cuenta"
+                android:textSize="25sp"
                 app:layout_constraintBottom_toTopOf="@id/edit_gmail"
                 app:layout_constraintRight_toRightOf="@id/fondodelogin"
+                app:layout_constraintLeft_toLeftOf="@id/fondodelogin"
                 app:layout_constraintTop_toTopOf="@id/fondodelogin"
-                android:backgroundTint="@color/orange"></Button>
+                android:backgroundTint="@color/orange">
+
+            </Button>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
