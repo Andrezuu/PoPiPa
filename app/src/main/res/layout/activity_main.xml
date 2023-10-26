@@ -7,12 +7,36 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
+
+    <Button
+        android:id="@+id/imagenSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="selecciona imagen"
+        app:layout_constraintTop_toBottomOf="@id/texto"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+    </Button>
+
+    <ImageView
+        android:id="@+id/imagenGale"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        app:layout_constraintBottom_toTopOf="@id/texto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </ImageView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
