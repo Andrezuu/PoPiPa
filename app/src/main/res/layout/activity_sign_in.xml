@@ -85,36 +85,49 @@
 
             </Button>
 
-            <EditText
-                android:id="@+id/edit_gmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="40dp"
-                android:layout_marginVertical="20dp"
-                android:hint="@string/email"
-                android:inputType="text"
-                android:maxLength="40"
-                android:maxLines="5"
-                app:layout_constraintTop_toBottomOf="@id/nombre" />
 
             <EditText
-                android:id="@+id/nombre"
+                android:id="@+id/edit_nombres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_marginVertical="0dp"
                 android:layout_marginHorizontal="40dp"
-                android:hint="@string/nombre_y_apellido"
+                android:hint="@string/nombres"
                 android:inputType="text"
                 android:maxLength="40"
                 android:maxLines="5"
                 app:layout_constraintTop_toBottomOf="@id/volver_login" />
 
             <EditText
+                android:id="@+id/edit_apellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="40dp"
+                android:hint="@string/apellidos"
+                android:inputType="text"
+                android:maxLength="40"
+                android:maxLines="5"
+                app:layout_constraintTop_toBottomOf="@id/edit_nombres" />
+
+            <EditText
+                android:id="@+id/edit_gmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="10dp"
+                android:hint="@string/email"
+                android:inputType="text"
+                android:maxLength="40"
+                android:maxLines="5"
+                app:layout_constraintTop_toBottomOf="@id/edit_apellidos" />
+
+            <EditText
                 android:id="@+id/edit_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginVertical="10dp"
                 android:hint="@string/contrase_a"
                 android:inputType="textPassword"
                 android:maxLength="40"

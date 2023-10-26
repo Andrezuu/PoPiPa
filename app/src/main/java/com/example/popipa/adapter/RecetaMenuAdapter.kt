@@ -1,10 +1,11 @@
 package com.example.popipa.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.popipa.R
 import com.example.popipa.dataClases.RecetaMenu
 import com.example.popipa.databinding.ItemRecetaMenuBinding
 
@@ -37,19 +38,25 @@ class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapt
 
     inner class RecetaMenuAdapterViewHolder(private val binding: ItemRecetaMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        @SuppressLint("ResourceAsColor")
         fun binding(data: RecetaMenu) {
-            val color: String = when {
-                data.dificultad == 1 -> "@color/green"
-                data.dificultad == 2 -> "@color/yellow"
-                data.dificultad == 3 -> "@color/red"
-                else -> "@color/green"
+            var color = R.color.red
+            if (data.dificultad == 1) {
+                color = R.color.green
+            } else if (data.dificultad == 2) {
+                color = R.color.yellow
+            } else if (data.dificultad == 3) {
+                color = R.color.red
             }
 
             binding.imageViewRecetaMenu.setImageResource(data.image)
             binding.textViewRecetaMenuNombre.text = data.nombre
             binding.textViewRecetaMenuDescripcion.text = data.descripcion
             binding.textViewRecetaTiempoMenu.text = data.tiempo
-            binding.dificultad.setBackgroundColor(Color.parseColor("#F8981D"))
+            binding.dificultad.setBackgroundColor(color)
+
+
         }
     }
 

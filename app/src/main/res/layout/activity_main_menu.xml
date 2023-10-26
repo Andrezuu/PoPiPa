@@ -34,8 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="@string/menu_titulo_categorias"
         android:fontFamily="@font/lilita"
+        android:text="@string/menu_titulo_categorias"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="@id/card_bienvenido"
@@ -48,9 +48,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        tools:listitem="@layout/item_categoria_menu"
+        app:layout_constraintStart_toStartOf="@id/text_view_titulo_categoria"
         app:layout_constraintTop_toBottomOf="@id/text_view_titulo_categoria"
-        app:layout_constraintStart_toStartOf="@id/text_view_titulo_categoria">
+        tools:listitem="@layout/item_categoria_menu">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -88,4 +88,81 @@
         app:layout_constraintEnd_toEndOf="parent">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_gravity="center"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/purple"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/button_hogar"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/hogar">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/button_me_gusta"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/corazon">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/button_agregar"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/agregar">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/button_buscar"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/busqueda">
+
+        </ImageButton>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_perfil"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/desayunos">
+
+            </ImageButton>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

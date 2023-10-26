@@ -1,5 +1,6 @@
 package com.example.popipa
 
+import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
@@ -10,10 +11,16 @@ import com.example.popipa.adapter.CategoriaMenuAdapter
 import com.example.popipa.adapter.RecetaMenuAdapter
 import com.example.popipa.dataClases.CategoriaMenu
 import com.example.popipa.dataClases.RecetaMenu
+import com.example.popipa.dataClases.Usuario
 import com.example.popipa.databinding.ActivityMainMenuBinding
 
 class MainMenuActivity : AppCompatActivity() {
+    companion object {
+        val CLAVE_USUARIO = "clave_objeto"
+    }
+
     private lateinit var binding: ActivityMainMenuBinding
+    private val currUser = intent.getSerializableExtra(CLAVE_USUARIO) as Usuario
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
     private val recetaMenuAdapter by lazy { RecetaMenuAdapter() }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +28,18 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.buttonPerfil.setOnClickListener {
+            val intent: Intent = Intent(this, PerfilUsuarioActivity::class.java)
+            intent.putExtra(CLAVE_USUARIO, currUser)
+            startActivity(intent)
+        }
+
         iniciarCategoriaMenuRecyclerView()
         iniciarRecetaMenuRecyclerView()
+
     }
+
 
     fun iniciarCategoriaMenuRecyclerView() {
         val categoriaMenus = mutableListOf<CategoriaMenu>()
@@ -56,6 +72,8 @@ class MainMenuActivity : AppCompatActivity() {
             })
             adapter = categoriaMenuAdapter
         }
+
+
     }
 
     fun iniciarRecetaMenuRecyclerView() {
@@ -106,7 +124,6 @@ class MainMenuActivity : AppCompatActivity() {
         recetaMenuAdapter.addRecetaMenus(recetaMenus)
         binding.recyclerRecetaMenu.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
             addItemDecoration(object : RecyclerView.ItemDecoration() {
                 override fun getItemOffsets(
                     outRect: Rect,
@@ -124,3 +141,4 @@ class MainMenuActivity : AppCompatActivity() {
 
     }
 }
+
