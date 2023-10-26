@@ -12,17 +12,16 @@
         app:cardCornerRadius="30dp">
 
         <ImageView
-            android:id="@+id/image_view_categoria"
+            android:id="@+id/image_view_categoria_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/helado">
-
+            android:src="@drawable/pasteles">
         </ImageView>
 
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/text_view_categoria_nombre"
+        android:id="@+id/text_view_categoria_menu_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
