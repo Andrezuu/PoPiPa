@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.widget.Button
 import android.widget.ImageView
-import com.bumptech.glide.Glide
+//import com.bumptech.glide.Glide
 
 
 
