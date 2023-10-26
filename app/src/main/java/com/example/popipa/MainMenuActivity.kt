@@ -12,7 +12,6 @@ import com.example.popipa.adapter.CategoriaMenuAdapter
 import com.example.popipa.adapter.RecetaMenuAdapter
 import com.example.popipa.dataClases.CategoriaTipoDePlato
 import com.example.popipa.dataClases.RecetaMenu
-import com.example.popipa.dataClases.Usuario
 import com.example.popipa.databinding.ActivityMainMenuBinding
 import com.example.popipa.listas.ListaCategoriasMenu
 import com.example.popipa.listas.ListaDeRecomendacion
@@ -29,6 +28,7 @@ class MainMenuActivity : AppCompatActivity() {
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //ir a la pantalla del perfil de usuario
         binding.buttonPerfil.setOnClickListener {
             onPerfilButtonClicked(binding.buttonPerfil)
         }

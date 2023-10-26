@@ -43,16 +43,23 @@
 
     </TextView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_categoriaMenu"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_categoria_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@id/text_view_titulo_categoria"
-        app:layout_constraintTop_toBottomOf="@id/text_view_titulo_categoria"
-        tools:listitem="@layout/item_categoria_menu">
+        app:layout_constraintTop_toBottomOf="@id/text_view_titulo_categoria">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_categoriaMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/item_categoria_menu">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.core.widget.NestedScrollView>
 
 
     <androidx.cardview.widget.CardView
@@ -63,7 +70,7 @@
         app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler_categoriaMenu">
+        app:layout_constraintTop_toBottomOf="@id/scroll_categoria_menu">
 
         <TextView
             android:layout_width="match_parent"
@@ -78,16 +85,24 @@
         </TextView>
     </androidx.cardview.widget.CardView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_recetaMenu"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="440dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/para_ti">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_recetaMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            tools:listitem="@layout/item_receta_menu">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 
     <LinearLayout
@@ -98,17 +113,16 @@
         android:backgroundTint="@color/purple"
         android:orientation="horizontal"
         android:weightSum="5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
-            android:id="@+id/button_hogar"
+            android:id="@+id/button_mis_recetas"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/hogar">
+            android:background="@drawable/refrigerador">
 
         </ImageButton>
 

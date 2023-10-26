@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Popipa"
         tools:targetApi="31">
         <activity
-            android:name=".PerfilUsuarioActivity"
+            android:name=".MainMenuActivity"
             android:exported="false" />
         <activity
             android:name=".InicioActivity"
@@ -24,13 +24,13 @@
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".MainMenuActivity"
+            android:name=".LogInActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".PerfilUsuarioActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,9 +11,10 @@
         android:id="@+id/boton_volver"
         android:layout_width="64dp"
         android:layout_height="64dp"
+        android:layout_margin="10dp"
         android:background="@drawable/deshacer"
         android:backgroundTint="@color/black"
-        android:layout_margin="10dp"
+        android:onClick="onVolverButtonClicked"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -28,16 +29,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_volver">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/foto_perfil"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/desayunos"
+            android:onClick="onImagenPerfilButtonClicked"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/boton_volver">
 
-        </ImageView>
+        </ImageButton>
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
