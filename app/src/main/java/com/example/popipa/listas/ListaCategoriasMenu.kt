@@ -2,16 +2,16 @@ package com.example.popipa.listas
 
 import com.example.popipa.R
 import com.example.popipa.dataClases.CategoriaTipoDePlato
-import com.example.popipa.listas.listasdecategorias.ListaAlmuerzos
-import com.example.popipa.listas.listasdecategorias.ListaCenas
-import com.example.popipa.listas.listasdecategorias.ListaCocteles
-import com.example.popipa.listas.listasdecategorias.ListaDesayunos
-import com.example.popipa.listas.listasdecategorias.ListaHallowen
-import com.example.popipa.listas.listasdecategorias.ListaNavidad
-import com.example.popipa.listas.listasdecategorias.ListaPasteles
-import com.example.popipa.listas.listasdecategorias.ListaUniversitario
-import com.example.popipa.listas.listasdecategorias.ListasGalletas
-import com.example.popipa.listas.listasdecategorias.ListasPan
+import com.example.popipa.listas.ListasDeCategorias.ListaAlmuerzos
+import com.example.popipa.listas.ListasDeCategorias.ListaCenas
+import com.example.popipa.listas.ListasDeCategorias.ListaCocteles
+import com.example.popipa.listas.ListasDeCategorias.ListaDesayunos
+import com.example.popipa.listas.ListasDeCategorias.ListaHallowen
+import com.example.popipa.listas.ListasDeCategorias.ListaNavidad
+import com.example.popipa.listas.ListasDeCategorias.ListaPasteles
+import com.example.popipa.listas.ListasDeCategorias.ListaUniversitario
+import com.example.popipa.listas.ListasDeCategorias.ListasGalletas
+import com.example.popipa.listas.ListasDeCategorias.ListasPan
 
 class ListaCategoriasMenu {
     companion object {
