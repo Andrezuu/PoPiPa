@@ -25,7 +25,9 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/blue"></View>
+                android:background="@color/blue">
+
+            </View>
 
             <ImageView
                 android:id="@+id/imagenalimentacion"
@@ -35,18 +37,22 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="65dp"
-                android:src="@drawable/modaalimenticiaarticulo"></ImageView>
+                android:src="@drawable/modaalimenticiaarticulo">
+
+            </ImageView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lilita"
                 android:gravity="center"
-                android:text="Bienvenido"
+                android:text="@string/menu_bienvenido"
                 android:textColor="@color/white"
-                android:textSize="50dp"
+                android:textSize="50sp"
                 app:layout_constraintTop_toBottomOf="@id/imagenalimentacion"
-                tools:layout_editor_absoluteX="16dp"></TextView>
+                tools:layout_editor_absoluteX="16dp">
+
+            </TextView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,16 +65,35 @@
                 android:id="@+id/fondodelogin"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/cardview_shadow_start_color"></View>
+                android:background="@drawable/background_esquinas_redondeadas"
+                android:backgroundTint="@color/gray">
+
+            </View>
+
+            <Button
+                android:id="@+id/volver_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lilita"
+                android:text="@string/ingresar"
+                android:textSize="25sp"
+                android:layout_marginVertical="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fondodelogin"
+                android:backgroundTint="@color/orange">
+
+            </Button>
 
             <EditText
                 android:id="@+id/edit_gmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:hint="Email"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="20dp"
+                android:hint="@string/email"
                 android:inputType="text"
-                android:maxLength="15"
+                android:maxLength="40"
                 android:maxLines="5"
                 app:layout_constraintTop_toBottomOf="@id/nombre" />
 
@@ -76,21 +101,23 @@
                 android:id="@+id/nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:hint="Nombre y Apellido"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="40dp"
+                android:hint="@string/nombre_y_apellido"
                 android:inputType="text"
-                android:maxLength="15"
+                android:maxLength="40"
                 android:maxLines="5"
-                app:layout_constraintTop_toTopOf="@id/fondodelogin" />
+                app:layout_constraintTop_toBottomOf="@id/volver_login" />
 
             <EditText
                 android:id="@+id/edit_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
-                android:hint="Contraseña"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="20dp"
+                android:hint="@string/contrase_a"
                 android:inputType="textPassword"
-                android:maxLength="15"
+                android:maxLength="40"
                 android:maxLines="5"
                 app:layout_constraintTop_toBottomOf="@id/edit_gmail" />
 
@@ -100,13 +127,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="40dp"
                 android:fontFamily="@font/lilita"
-                android:text="Crear"
-                android:textSize="25dp"
+                android:text="@string/crear_cuenta"
+                android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="@id/fondodelogin"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_password"
-                android:backgroundTint="@color/orange"></Button>
+                android:backgroundTint="@color/orange">
+
+            </Button>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

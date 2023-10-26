@@ -1,12 +1,12 @@
 package com.example.popipa
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.popipa.databinding.ActivityLogInBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.example.popipa.databinding.ActivityLogInBinding
 
 class LogInActivity : AppCompatActivity() {
 
@@ -21,8 +21,8 @@ class LogInActivity : AppCompatActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
-        binding.iniciarsesion.setOnClickListener {
-            loginUser(binding.editGmail.text.toString(),binding.editPassword.text.toString())
+        binding.iniciarSesion.setOnClickListener {
+            loginUser(binding.editGmail.text.toString(), binding.editPassword.text.toString())
         }
     }
 
@@ -32,8 +32,6 @@ class LogInActivity : AppCompatActivity() {
                 if(task.isSuccessful){
                     val intent = Intent(this, MainMenuActivity::class.java)
                     startActivity(intent)
-                } else{
-
                 }
             }
     }
