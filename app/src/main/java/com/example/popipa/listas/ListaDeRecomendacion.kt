@@ -1,16 +1,17 @@
 package com.example.popipa.listas
 
 import com.example.popipa.dataClases.TipoDePlato
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesAcaiBowl
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesBatidoDeProteinas
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesDesayunoContinental
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesHuevosBenedictinos
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesMuesliconNueces
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesOmletteDeChampiñones
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesPanquequesArandanos
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesTostadasConAguacate
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesTostadasFrancesas
-import com.example.popipa.listas.listasdeingredientesporcategoria.Desayunos.IngredientesYogurConFrutas
+import com.example.popipa.R
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesAcaiBowl
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesBatidoDeProteinas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesDesayunoContinental
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesHuevosBenedictinos
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesMuesliconNueces
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesOmletteDeChampiñones
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesPanquequesArandanos
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesTostadasConAguacate
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesTostadasFrancesas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesYogurConFrutas
 
 class ListaDeRecomendacion {
     companion object {
@@ -18,7 +19,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Tostadas con Aguacate",
             "Tostadas con aguacate fresco y huevos pochados.",
-            "tostadasconaguacate",
+            R.drawable.pasteles,
             "15 min",
             1,
             Megusta = false,
@@ -27,7 +28,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Omelette de Champiñones",
             "Omelette relleno de champiñones y queso.",
-            "omelettedechampiñones",
+            R.drawable.pasteles,
             "20 min",
             2,
             Megusta = false,
@@ -36,7 +37,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Panqueques de Arándanos",
             "Panqueques esponjosos con arándanos frescos.",
-            "",
+            R.drawable.pasteles,
             "25 min",
             1,
             Megusta = false,
@@ -45,7 +46,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Yogur con Frutas",
             "Yogur con mezcla de frutas frescas y granola.",
-            "yogurconfrutas",
+            R.drawable.pasteles,
             "10 min",
             1,
             Megusta = false,
@@ -54,7 +55,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Desayuno Continental",
             "Desayuno continental con croissants, jamón y queso.",
-            "desayunocontinental",
+            R.drawable.pasteles,
             "15 min",
             2,
             Megusta = false,
@@ -63,7 +64,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Tostadas Francesas",
             "Tostadas francesas con sirope de arce y frutas.",
-            "tostadasfrancesas",
+            R.drawable.pasteles,
             "20 min",
             2,
             Megusta = false,
@@ -73,7 +74,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Batido de Proteínas",
             "Batido de proteínas con plátano y espinacas.",
-            "batidodeproteinas",
+            R.drawable.pasteles,
             "10 min",
             2,
             Megusta = false,
@@ -82,7 +83,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Muesli con Nueces",
             "Muesli con nueces, miel y yogur.",
-            "muesliconnueces",
+            R.drawable.pasteles,
             "15 min",
             2,
             Megusta = false,
@@ -91,7 +92,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Huevos Benedictinos",
             "Huevos benedictinos con salsa holandesa.",
-            "huevosbenedivtinos",
+            R.drawable.pasteles,
             "20 min",
             2,
             Megusta = false,
@@ -100,7 +101,7 @@ class ListaDeRecomendacion {
         TipoDePlato(
             "Acai Bowl",
             "Bol de acai con granola y frutas tropicales.",
-            "acaibowl",
+            R.drawable.pasteles,
             "10 min",
             1,
             Megusta = false,

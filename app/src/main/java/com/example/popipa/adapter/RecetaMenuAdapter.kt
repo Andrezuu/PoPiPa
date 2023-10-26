@@ -1,7 +1,7 @@
 package com.example.popipa.adapter
 
-import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -39,8 +39,6 @@ class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapt
 
     inner class RecetaMenuAdapterViewHolder(private val binding: ItemRecetaMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
-        @SuppressLint("ResourceAsColor")
         fun binding(data: RecetaMenu) {
             val color = when (data.dificultad) {
                 1 -> R.color.green
