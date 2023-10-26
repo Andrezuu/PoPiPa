@@ -11,14 +11,14 @@ import com.example.popipa.listas.listasdeingredientesporcategoria.Cenas.Ingredie
 import com.example.popipa.listas.listasdeingredientesporcategoria.Cenas.IngredientesSopaDeTomate
 import com.example.popipa.listas.listasdeingredientesporcategoria.Cenas.IngredientesTacosDePescado
 import com.example.popipa.listas.listasdeingredientesporcategoria.Cenas.IngredientesWrapDePollo
-
+import com.example.popipa.R
 class ListaCenas {
     companion object {
         val listaCenas = listOf<TipoDePlato>(
             TipoDePlato(
                 "Salmón a la Parrilla",
                 "Filete de salmón a la parrilla con limón y eneldo. Acompañado de espárragos asados, una cena saludable y deliciosa.",
-                "salmonalaparrilla",
+                R.drawable.pasteles,
                 "25 min",
                 1,
                 false,
@@ -27,7 +27,7 @@ class ListaCenas {
             TipoDePlato(
                 "Ensalada Caprese",
                 "Ensalada Caprese con tomate, mozzarella y albahaca fresca. Aderezada con aceite de oliva y vinagre balsámico, una opción ligera y refrescante para la cena.",
-                "ensaladacaprese",
+                R.drawable.pasteles,
                 "15 min",
                 1,
                 false,
@@ -36,7 +36,7 @@ class ListaCenas {
             TipoDePlato(
                 "Wrap de Pollo",
                 "Wrap relleno de pollo a la parrilla, lechuga, tomate y salsa de yogur. Ideal para una cena rápida y sabrosa.",
-                "wrapdepollo",
+                R.drawable.pasteles,
                 "20 min",
                 1,
                 false,
@@ -45,7 +45,7 @@ class ListaCenas {
             TipoDePlato(
                 "Pasta con Pesto",
                 "Pasta con salsa de pesto de albahaca, piñones y queso parmesano. Una opción fácil y deliciosa para una cena reconfortante.",
-                "pastaconpesto",
+                R.drawable.pasteles,
                 "20 min",
                 2,
                 false,
@@ -54,7 +54,7 @@ class ListaCenas {
             TipoDePlato(
                 "Sopa de Tomate",
                 "Sopa de tomate casera con tomates maduros, cebolla y albahaca. Una elección cálida y reconfortante para la cena.",
-                "sopadetomate",
+                R.drawable.pasteles,
                 "30 min",
                 2,
                 false,
@@ -63,7 +63,7 @@ class ListaCenas {
             TipoDePlato(
                 "Tofu Salteado",
                 "Tofu salteado con vegetales y salsa de soja. Una cena vegetariana llena de sabor y proteínas.",
-                "tofusalteado",
+                R.drawable.pasteles,
                 "25 min",
                 2,
                 false,
@@ -72,7 +72,7 @@ class ListaCenas {
             TipoDePlato(
                 "Pizza Margarita",
                 "Pizza Margarita con tomate, mozzarella y albahaca fresca. Una cena clásica y deliciosa para compartir.",
-                "pizzamargarita",
+                R.drawable.pasteles,
                 "20 min",
                 2,
                 false,
@@ -81,7 +81,7 @@ class ListaCenas {
             TipoDePlato(
                 "Hamburguesa de Pavo",
                 "Hamburguesa de pavo con aguacate, lechuga y tomate. Una opción más saludable para disfrutar de una cena estilo hamburguesa.",
-                "hamburguesadepavo",
+                R.drawable.pasteles,
                 "25 min",
                 2,
                 false,
@@ -90,7 +90,7 @@ class ListaCenas {
             TipoDePlato(
                 "Curry de Garbanzos",
                 "Curry de garbanzos con arroz basmati. Una cena vegetariana llena de sabor y especias.",
-                "currydegarbanzos",
+                R.drawable.pasteles,
                 "30 min",
                 2,
                 false,
@@ -99,7 +99,7 @@ class ListaCenas {
             TipoDePlato(
                 "Tacos de Pescado",
                 "Tacos de pescado a la parrilla con tortillas de maíz y salsa fresca. Una opción sabrosa para una cena al estilo mexicano.",
-                "tacosdepercado",
+                R.drawable.pasteles,
                 "25 min",
                 2,
                 false,

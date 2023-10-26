@@ -11,14 +11,14 @@ import com.example.popipa.listas.listasdeingredientesporcategoria.Cocteles.Ingre
 import com.example.popipa.listas.listasdeingredientesporcategoria.Cocteles.IngredientesNegroni
 import com.example.popipa.listas.listasdeingredientesporcategoria.Cocteles.IngredientesPiscoSour
 import com.example.popipa.listas.listasdeingredientesporcategoria.Cocteles.IngredientesPiñaColada
-
+import com.example.popipa.R
 class ListaCocteles {
     companion object {
         val listaCocteles = listOf<TipoDePlato>(
             TipoDePlato(
                 "Margarita",
                 "Cóctel Margarita con tequila, licor de naranja y jugo de limón. El equilibrio perfecto entre dulce y ácido.",
-                "margarita",
+                R.drawable.cocteles,
                 "10 min",
                 1,
                 Megusta = false,
@@ -27,7 +27,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Mojito",
                 "Refrescante Mojito con ron, lima, menta y soda. Ideal para disfrutar en un día soleado.",
-                "mojito",
+                R.drawable.cocteles,
                 "5 min",
                 1,
                 Megusta = false,
@@ -36,7 +36,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Piña Colada",
                 "Piña Colada cremosa con ron, piña y crema de coco. Un cóctel tropical y delicioso para relajarte.",
-                "piñacolada",
+                R.drawable.cocteles,
                 "10 min",
                 1,
                 Megusta = false,
@@ -45,7 +45,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Daiquiri de Fresa",
                 "Daiquiri de fresa con ron, fresas frescas y jugo de limón. Un cóctel afrutado y dulce.",
-                "daiquiridefresa",
+                R.drawable.cocteles,
                 "5 min",
                 1,
                 Megusta = false,
@@ -54,7 +54,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Negroni",
                 "Cóctel Negroni con ginebra, vermut y Campari. Una bebida intensa y ligeramente amarga.",
-                "negroni",
+                R.drawable.cocteles,
                 "5 min",
                 1,
                 Megusta = false,
@@ -63,7 +63,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Caipirinha",
                 "Caipirinha brasileña con cachaça, lima y azúcar. Un cóctel cítrico y refrescante.",
-                "caipirinha",
+                R.drawable.cocteles,
                 "5 min",
                 1,
                 Megusta = false,
@@ -72,7 +72,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Mint Julep",
                 "Mint Julep con bourbon, azúcar y hojas de menta. Un cóctel clásico y refrescante.",
-                "mintjulep",
+                R.drawable.cocteles,
                 "10 min",
                 1,
                 Megusta = false,
@@ -81,7 +81,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Cuba Libre",
                 "Cuba Libre con ron, cola y limón. Un cóctel simple y delicioso para los amantes del ron.",
-                "cubalibre",
+                R.drawable.cocteles,
                 "5 min",
                 1,
                 Megusta = false,
@@ -90,7 +90,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Cosmopolitan",
                 "Cóctel Cosmopolitan con vodka, licor de naranja y jugo de arándano. Una bebida sofisticada y llena de sabor.",
-                "cosmopolitan",
+                R.drawable.cocteles,
                 "5 min",
                 1,
                 Megusta = false,
@@ -99,7 +99,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Pisco Sour",
                 "Pisco Sour peruano con pisco, limón, azúcar y clara de huevo. Una bebida única y refrescante.",
-                "piscosour",
+                R.drawable.cocteles,
                 "5 min",
                 1,
                 Megusta = false,

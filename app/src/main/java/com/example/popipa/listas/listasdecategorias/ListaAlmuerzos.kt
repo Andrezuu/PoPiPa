@@ -11,6 +11,7 @@ import com.example.popipa.listas.listasdeingredientesporcategoria.Almuerzos.Ingr
 import com.example.popipa.listas.listasdeingredientesporcategoria.Almuerzos.IngredientesSandwichDePavo
 import com.example.popipa.listas.listasdeingredientesporcategoria.Almuerzos.IngredientesSopaDeLentejas
 import com.example.popipa.listas.listasdeingredientesporcategoria.Almuerzos.IngredientesTacosDeCarne
+import com.example.popipa.R
 
 class ListaAlmuerzos {
     companion object {
@@ -18,7 +19,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Pollo a la Parrilla",
                 "Delicioso pollo a la parrilla con marinada de hierbas y limón. Acompañado de verduras asadas, una comida ligera y sabrosa para el almuerzo.",
-                "almuerzopolloparrilla",
+                R.drawable.pasteles,
                 "30 min",
                 1,
                 false,
@@ -27,7 +28,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Ensalada César",
                 "Ensalada clásica César con lechuga romana, aderezo especial, crutones y queso parmesano. Una opción fresca y satisfactoria para el almuerzo.",
-                "ensaladacesar",
+                R.drawable.pasteles,
                 "20 min",
                 1,
                 false,
@@ -36,7 +37,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Sándwich de Pavo",
                 "Sándwich relleno de pavo, aguacate, tocino y condimentos. Ideal para un almuerzo rápido y delicioso.",
-                "sandwichdepavo",
+                R.drawable.pasteles,
                 "15 min",
                 1,
                 false,
@@ -45,7 +46,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Pasta Primavera",
                 "Pasta con una mezcla de verduras de temporada y salsa de ajo y aceite de oliva. Un plato de pasta ligero y repleto de sabor.",
-                "pastaprimavere",
+                R.drawable.pasteles,
                 "25 min",
                 2,
                 false,
@@ -54,7 +55,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Sopa de Lentejas",
                 "Sopa de lentejas con verduras, tomates y especias. Una opción reconfortante y saludable para el almuerzo.",
-                "sopadelentejas",
+                R.drawable.pasteles,
                 "30 min",
                 2,
                 false,
@@ -63,7 +64,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Burritos de Pollo",
                 "Burritos rellenos de pollo marinado, arroz, frijoles y guarniciones. Una comida rápida y deliciosa para el almuerzo.",
-                "burritosdepollo",
+                R.drawable.pasteles,
                 "20 min",
                 2,
                 false,
@@ -72,7 +73,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Poke Bowl",
                 "Poke Bowl con pescado crudo, arroz, aguacate y verduras frescas. Una opción saludable y exquisita para el almuerzo.",
-                "pokebowl",
+                R.drawable.pasteles,
                 "20 min",
                 2,
                 false,
@@ -81,7 +82,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Hamburguesa Vegetariana",
                 "Hamburguesa vegetariana a base de garbanzos, espinacas y condimentos. Ideal para un almuerzo sin carne pero lleno de sabor.",
-                "hamburguesavegetariana",
+                R.drawable.pasteles,
                 "25 min",
                 2,
                 false,
@@ -90,7 +91,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Pollo al Curry",
                 "Pollo al curry con arroz basmati y verduras. Una comida con un toque exótico para el almuerzo.",
-                "polloalcurry",
+                R.drawable.pasteles,
                 "30 min",
                 2,
                 false,
@@ -99,7 +100,7 @@ class ListaAlmuerzos {
             TipoDePlato(
                 "Tacos de Carne",
                 "Tacos de carne asada con tortillas de maíz y guarniciones. Una opción sabrosa para disfrutar del almuerzo al estilo mexicano.",
-                "tacosdecarne",
+                R.drawable.pasteles,
                 "25 min",
                 2,
                 false,

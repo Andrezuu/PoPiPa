@@ -1,5 +1,6 @@
 package com.example.popipa.listas.listasdecategorias
 
+import com.example.popipa.R
 import com.example.popipa.dataClases.Ingrediente
 import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.listas.listasdeingredientesporcategoria.Navidad.IngredientesCoctelFetsivo
@@ -19,7 +20,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Pavo Relleno",
                 "Pavo asado relleno de hierbas y especias, servido con una variedad de guarniciones. Un plato tradicional para la cena de Navidad.",
-                "pavorelleno",
+                R.drawable.navidad,
                 "180 min",
                 2,
                 false,
@@ -29,7 +30,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Sopa de Pavo",
                 "Sopa de pavo casera con verduras y fideos. Una forma deliciosa de aprovechar los restos de pavo de la cena de Navidad.",
-                "sopadepavo",
+                R.drawable.navidad,
                 "45 min",
                 1,
                 false,
@@ -38,7 +39,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Ensalada Festiva",
                 "Ensalada festiva con manzanas, nueces y aderezo de arándanos. El complemento perfecto para la cena de Navidad.",
-                "ensaladafestiva",
+                R.drawable.navidad,
                 "20 min",
                 1,
                 false,
@@ -47,7 +48,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Jamón Glaseado",
                 "Jamón glaseado con piña y clavos de olor. Una opción clásica y sabrosa para la cena navideña.",
-                "jamonglaseado",
+                R.drawable.navidad,
                 "120 min",
                 1,
                 false,
@@ -56,7 +57,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Galletas de Jengibre",
                 "Galletas de jengibre decoradas con glaseado. Un postre tradicional de Navidad para compartir con familiares y amigos.",
-                "galletasdejengibre",
+                R.drawable.navidad,
                 "45 min",
                 1,
                 false,
@@ -65,7 +66,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Salsa de Arándanos",
                 "Salsa casera de arándanos con un toque de naranja. Acompañamiento esencial para el pavo y otros platos de Navidad.",
-                "salsadearandanos",
+                R.drawable.navidad,
                 "20 min",
                 1,
                 false,
@@ -74,7 +75,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Pastel de Frutas",
                 "Pastel de frutas navideño con una mezcla de frutas secas y nueces. Un postre clásico que no puede faltar en la mesa de Navidad.",
-                "pasteldefrutas",
+                R.drawable.navidad,
                 "180 min",
                 2,
                 false,
@@ -83,7 +84,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Coctel Festivo",
                 "Coctel festivo de champán con frutas. Una bebida burbujeante para brindar en la celebración de Navidad.",
-                "coctelfestivo",
+                R.drawable.navidad,
                 "10 min",
                 1,
                 false,
@@ -92,7 +93,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Trufas de Chocolate",
                 "Trufas de chocolate caseras con coberturas variadas. Un regalo dulce y elegante para la temporada navideña.",
-                "trufasdechocolate",
+                R.drawable.navidad,
                 "60 min",
                 2,
                 false,
@@ -101,7 +102,7 @@ class ListaNavidad {
             TipoDePlato(
                 "Guisantes de la Suerte",
                 "Un plato de guisantes tiernos y sabrosos, una deliciosa tradición de la suerte.",
-                "guisantesdelasuerte",
+                R.drawable.navidad,
                 "20 min",
                 1,
                 false,

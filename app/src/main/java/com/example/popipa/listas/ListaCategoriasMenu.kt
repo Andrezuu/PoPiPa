@@ -1,5 +1,6 @@
 package com.example.popipa.listas
 
+import com.example.popipa.R
 import com.example.popipa.dataClases.CategoriaTipoDePlato
 import com.example.popipa.listas.listasdecategorias.ListaAlmuerzos
 import com.example.popipa.listas.listasdecategorias.ListaCenas
@@ -17,52 +18,52 @@ class ListaCategoriasMenu {
         val listCategory = listOf<CategoriaTipoDePlato>(
             CategoriaTipoDePlato(
                 "Desayunos",
-                "desayunos",
+                R.drawable.pasteles,
                 ListaDesayunos.listaTiposDeDesayuno
             ),
             CategoriaTipoDePlato(
                 "Almuerzos",
-                "almuerzos",
+                R.drawable.almuerzo,
                 ListaAlmuerzos.listaAlmuerzos
             ),
             CategoriaTipoDePlato(
                 "Cenas",
-                "cenas",
+                R.drawable.cenas,
                 ListaCenas.listaCenas
             ),
             CategoriaTipoDePlato(
                 "Universitaria",
-                "universitaria",
+                R.drawable.universitaria,
                 ListaUniversitario.listaComidaUniversitarios
             ),
             CategoriaTipoDePlato(
                 "Pasteles",
-                "pasteles",
+                R.drawable.pasteles,
                 ListaPasteles.listaPasteles
             ),
             CategoriaTipoDePlato(
                 "Galletas",
-                "galletas",
+                R.drawable.galletas,
                 ListasGalletas.listaGalletas
             ),
             CategoriaTipoDePlato(
                 "Cocteles",
-                "cocteles",
+                R.drawable.cocteles,
                 ListaCocteles.listaCocteles
             ),
             CategoriaTipoDePlato(
                 "Halloween",
-                "halloween",
+                R.drawable.halloween,
                 ListaHallowen.listaHalloween
             ),
             CategoriaTipoDePlato(
                 "Navidad",
-                "navidad",
+                R.drawable.navidad,
                 ListaNavidad.listaNavidad
             ),
             CategoriaTipoDePlato(
                 "Pan",
-                "pan",
+                R.drawable.pan,
                 ListasPan.listaPan
             )
         )

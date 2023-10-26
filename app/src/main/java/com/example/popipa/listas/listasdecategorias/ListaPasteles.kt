@@ -1,5 +1,6 @@
 package com.example.popipa.listas.listasdecategorias
 
+import com.example.popipa.R
 import com.example.popipa.dataClases.Ingrediente
 import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.listas.listasdeingredientesporcategoria.Pasteles.IngredientesBrowniesDeChocolates
@@ -19,7 +20,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Pastel de Chocolate",
                 "Delicioso pastel de chocolate esponjoso con ganache de chocolate. Perfecto para satisfacer tu antojo de chocolate.",
-                "pasteldechocolate",
+                R.drawable.navidad,
                 "45 min",
                 1,
                 false,
@@ -28,7 +29,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Pastel de Vainilla",
                 "Pastel de vainilla con capas de crema de vainilla y fresas frescas. Un postre clásico que agrada a todos los paladares.",
-                "pasteldevainilla",
+                R.drawable.navidad,
                 "60 min",
                 2,
                 false,
@@ -37,7 +38,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Tarta de Manzana",
                 "Tarta de manzana con una base de hojaldre crujiente y relleno de manzanas caramelizadas. Un postre reconfortante y delicioso.",
-                "tartademanzana",
+                R.drawable.navidad,
                 "50 min",
                 2,
                 false,
@@ -47,7 +48,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Cheesecake de Fresa",
                 "Cheesecake de fresa con una base de galletas y una capa de puré de fresas frescas. Un postre suave y frutal que encanta a todos.",
-                "cheessecakedefresa",
+                R.drawable.navidad,
                 "35 min",
                 2,
                 false,
@@ -56,7 +57,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Tiramisú",
                 "Tiramisú clásico con capas de bizcochos empapados en café y crema de mascarpone. Un postre italiano que deleita a los amantes del café.",
-                "tiramisu",
+                R.drawable.navidad,
                 "40 min",
                 2,
                 false,
@@ -65,7 +66,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Cupcakes de Limón",
                 "Cupcakes esponjosos con sabor a limón y glaseado de crema de limón. Un postre individual refrescante y delicioso.",
-                "cupcakesdelimon",
+                R.drawable.navidad,
                 "30 min",
                 2,
                 false,
@@ -74,7 +75,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Mousse de Chocolate",
                 "Mousse de chocolate sedoso y decadente. Un postre ligero y elegante para los amantes del chocolate.",
-                "moussedechocolate",
+                R.drawable.navidad,
                 "25 min",
                 2,
                 false,
@@ -83,7 +84,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Pastel de Zanahoria",
                 "Pastel de zanahoria con nueces y crema de queso. Un postre clásico con un toque saludable.",
-                "pasteldezanahoria",
+                R.drawable.navidad,
                 "50 min",
                 2,
                 false,
@@ -92,7 +93,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Tarta de Queso Clásica",
                 "Tarta de queso clásica con una base de galletas y un relleno suave y cremoso. Un postre que nunca pasa de moda.",
-                "tartadequesoclasica",
+                R.drawable.navidad,
                 "40 min",
                 2,
                 false,
@@ -101,7 +102,7 @@ class ListaPasteles {
             TipoDePlato(
                 "Brownies de Nuez",
                 "Brownies de chocolate con nueces crujientes. Un postre indulgente y reconfortante para los amantes del chocolate.",
-                "browniesdenuez",
+                R.drawable.navidad,
                 "30 min",
                 2,
                 false,
