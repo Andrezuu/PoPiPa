@@ -1,5 +1,6 @@
 package com.example.popipa
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
@@ -15,12 +16,9 @@ import com.example.popipa.dataClases.Usuario
 import com.example.popipa.databinding.ActivityMainMenuBinding
 
 class MainMenuActivity : AppCompatActivity() {
-    companion object {
-        val CLAVE_USUARIO = "clave_objeto"
-    }
+    val context: Context = this
 
     private lateinit var binding: ActivityMainMenuBinding
-    private val currUser = intent.getSerializableExtra(CLAVE_USUARIO) as Usuario
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
     private val recetaMenuAdapter by lazy { RecetaMenuAdapter() }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +28,7 @@ class MainMenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonPerfil.setOnClickListener {
-            val intent: Intent = Intent(this, PerfilUsuarioActivity::class.java)
-            intent.putExtra(CLAVE_USUARIO, currUser)
-            startActivity(intent)
+            onPerfilButtonClicked(binding.buttonPerfil)
         }
 
         iniciarCategoriaMenuRecyclerView()
@@ -40,6 +36,10 @@ class MainMenuActivity : AppCompatActivity() {
 
     }
 
+    fun onPerfilButtonClicked(view: View) {
+        val intent: Intent = Intent(context, PerfilUsuarioActivity::class.java)
+        startActivity(intent)
+    }
 
     fun iniciarCategoriaMenuRecyclerView() {
         val categoriaMenus = mutableListOf<CategoriaMenu>()
@@ -72,8 +72,6 @@ class MainMenuActivity : AppCompatActivity() {
             })
             adapter = categoriaMenuAdapter
         }
-
-
     }
 
     fun iniciarRecetaMenuRecyclerView() {

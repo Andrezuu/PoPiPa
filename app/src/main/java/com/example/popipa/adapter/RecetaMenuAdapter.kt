@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.R
 import com.example.popipa.dataClases.RecetaMenu
@@ -41,20 +42,25 @@ class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapt
 
         @SuppressLint("ResourceAsColor")
         fun binding(data: RecetaMenu) {
-            var color = R.color.red
-            if (data.dificultad == 1) {
-                color = R.color.green
-            } else if (data.dificultad == 2) {
-                color = R.color.yellow
-            } else if (data.dificultad == 3) {
-                color = R.color.red
+            val color = when (data.dificultad) {
+                1 -> R.color.green
+                2 -> R.color.yellow
+                3 -> R.color.red
+                else -> R.color.red
             }
 
             binding.imageViewRecetaMenu.setImageResource(data.image)
             binding.textViewRecetaMenuNombre.text = data.nombre
             binding.textViewRecetaMenuDescripcion.text = data.descripcion
             binding.textViewRecetaTiempoMenu.text = data.tiempo
-            binding.dificultad.setBackgroundColor(color)
+            context?.let {
+                binding.dificultad.setBackgroundColor(
+                    ContextCompat.getColor(
+                        it,
+                        color
+                    )
+                )
+            }
 
 
         }

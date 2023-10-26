@@ -9,5 +9,6 @@
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="apellidos">Apellidos</string>
     <string name="nombres">Nombres</string>
+    <string name="pocket_nchef">Pocket\nChef</string>
 
 </resources>

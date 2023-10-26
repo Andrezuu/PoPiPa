@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.popipa.MainMenuActivity.Companion.CLAVE_USUARIO
 import com.example.popipa.dataClases.Usuario
 import com.example.popipa.databinding.ActivitySignInBinding
 import com.google.firebase.Firebase
@@ -23,10 +22,10 @@ class SignUpActivity : AppCompatActivity() {
         auth = Firebase.auth
         binding.crearCuenta.setOnClickListener {
             clickCrearCuenta(
-                binding.editNombres.text.toString(),
-                binding.editApellidos.text.toString(),
                 binding.editGmail.text.toString(),
-                binding.editPassword.text.toString()
+                binding.editPassword.text.toString(),
+                binding.editNombres.text.toString(),
+                binding.editApellidos.text.toString()
 
             )
         }
@@ -44,8 +43,8 @@ class SignUpActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
                     val newUser: Usuario = Usuario(nombres, apellidos, email, contrasena)
+                    //TODO mandar usuario para guardar info
                     val intent = Intent(context, LogInActivity::class.java)
-                    intent.putExtra(CLAVE_USUARIO, newUser)
                     startActivity(intent)
                 }
             }
