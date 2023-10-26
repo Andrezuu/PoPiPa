@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.popipa.R
 import com.example.popipa.dataClases.RecetaMenu
 import com.example.popipa.databinding.ItemRecetaMenuBinding
 
@@ -38,11 +39,11 @@ class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapt
     inner class RecetaMenuAdapterViewHolder(private val binding: ItemRecetaMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun binding(data: RecetaMenu) {
-            val color: String = when {
-                data.dificultad == 1 -> "@color/green"
-                data.dificultad == 2 -> "@color/yellow"
-                data.dificultad == 3 -> "@color/red"
-                else -> "@color/green"
+            val color: Int = when {
+                data.dificultad == 1 -> R.color.green
+                data.dificultad == 2 -> R.color.yellow
+                data.dificultad == 3 -> R.color.red
+                else -> R.color.green
             }
 
             binding.imageViewRecetaMenu.setImageResource(data.image)
