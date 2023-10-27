@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.Ingre
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.IngredientesTartaDeManzana
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.IngredientesTartaDeQuesoClasica
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.IngredientesTiramisu
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosBrowniesDeChocolates
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosCheesecakeDeFresa
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosCupcakesDeLimon
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosMousseDeChocolate
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosPastelDeChocolate
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosPastelDeVainilla
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosPastelDeZanahoria
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosTartaDeManzana
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosTartaDeQuesoClasica
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles.PasosTiramisu
 
 class ListaPasteles {
     companion object {
@@ -23,7 +33,8 @@ class ListaPasteles {
                 "45 min",
                 1,
                 false,
-                IngredientesPastelDeChocolate.listaPastelChocolate
+                IngredientesPastelDeChocolate.listaPastelChocolate,
+                PasosPastelDeChocolate.pasosDePreparacionPastelDeChocolate
             ),
             TipoDePlato(
                 "Pastel de Vainilla",
@@ -32,7 +43,8 @@ class ListaPasteles {
                 "60 min",
                 2,
                 false,
-                IngredientesPastelDeVainilla.listaPastelVainilla
+                IngredientesPastelDeVainilla.listaPastelVainilla,
+                PasosPastelDeVainilla.pasosDePreparacionPastelDeVainilla
             ),
             TipoDePlato(
                 "Tarta de Manzana",
@@ -41,7 +53,8 @@ class ListaPasteles {
                 "50 min",
                 2,
                 false,
-                IngredientesTartaDeManzana.listaTartaManzana
+                IngredientesTartaDeManzana.listaTartaManzana,
+                PasosTartaDeManzana.pasosDePreparacionTartaDeManzana
 
             ),
             TipoDePlato(
@@ -51,7 +64,8 @@ class ListaPasteles {
                 "35 min",
                 2,
                 false,
-                IngredientesCheesecakeDeFresa.listaCheesecakeFresa
+                IngredientesCheesecakeDeFresa.listaCheesecakeFresa,
+                PasosCheesecakeDeFresa.pasosDePreparacionCheesecakeDeFresa
             ),
             TipoDePlato(
                 "Tiramisú",
@@ -60,7 +74,8 @@ class ListaPasteles {
                 "40 min",
                 2,
                 false,
-                IngredientesTiramisu.listaTiramisu
+                IngredientesTiramisu.listaTiramisu,
+                PasosTiramisu.pasosDePreparacionTiramisu
             ),
             TipoDePlato(
                 "Cupcakes de Limón",
@@ -69,7 +84,8 @@ class ListaPasteles {
                 "30 min",
                 2,
                 false,
-                IngredientesCupcakesDeLimon.listaCupcakesDelimon
+                IngredientesCupcakesDeLimon.listaCupcakesDelimon,
+                PasosCupcakesDeLimon.pasosDePreparacionCupcakesDeLimonyArándanos
             ),
             TipoDePlato(
                 "Mousse de Chocolate",
@@ -78,7 +94,8 @@ class ListaPasteles {
                 "25 min",
                 2,
                 false,
-                IngredientesMousseDeChocolate.listaMousseChocolate
+                IngredientesMousseDeChocolate.listaMousseChocolate,
+                PasosMousseDeChocolate.pasosDePreparacionMousseDeChocolate
             ),
             TipoDePlato(
                 "Pastel de Zanahoria",
@@ -87,7 +104,8 @@ class ListaPasteles {
                 "50 min",
                 2,
                 false,
-                IngredientesPastelDeZanahoria.listaPastelZanahoria
+                IngredientesPastelDeZanahoria.listaPastelZanahoria,
+                PasosPastelDeZanahoria.pasosDePreparacionPastelDeZanahoria
             ),
             TipoDePlato(
                 "Tarta de Queso Clásica",
@@ -96,7 +114,8 @@ class ListaPasteles {
                 "40 min",
                 2,
                 false,
-                IngredientesTartaDeQuesoClasica.listaTartaQuesoClasica
+                IngredientesTartaDeQuesoClasica.listaTartaQuesoClasica,
+                PasosTartaDeQuesoClasica.pasosDePreparacionTartaDeQuesoClasica
             ),
             TipoDePlato(
                 "Brownies de Nuez",
@@ -105,7 +124,8 @@ class ListaPasteles {
                 "30 min",
                 2,
                 false,
-                IngredientesBrowniesDeChocolates.listaBrowniesChocolate
+                IngredientesBrowniesDeChocolates.listaBrowniesChocolate,
+                PasosBrowniesDeChocolates.pasosDePreparacionBrowniesDeChocolate
             )
         )
     }

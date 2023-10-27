@@ -32,7 +32,7 @@ class ListaCategoriasMenu {
                 ListaCenas.listaCenas
             ),
             CategoriaTipoDePlato(
-                "Universitaria",
+                "Estudiante",
                 R.drawable.universitaria,
                 ListaUniversitario.listaComidaUniversitarios
             ),

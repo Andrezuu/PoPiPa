@@ -11,6 +11,15 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.Ingre
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.IngredientesPizzaSDeMomias
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.IngredientesSangriaDeHalloween
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.IngredientesSopaDeCalabazas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosCerebrosDeGelatina
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosCupcakesDeCalabazas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosDedosDeBruja
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosEscobasDeBrujas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosGalletasDeMurcielago
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosOjosSangrantes
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosPizzaSDeMomias
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosSangriaDeHalloween
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Hallowen.PasosSopaDeCalabazas
 
 class ListaHallowen {
     companion object {
@@ -22,7 +31,8 @@ class ListaHallowen {
                 "30 min",
                 1,
                 false,
-                IngredientesGalletasDeMurcielago.listaGalletasMurcielago
+                IngredientesGalletasDeMurcielago.listaGalletasMurcielago,
+                PasosGalletasDeMurcielago.pasosDePreparaciónGalletasMurcielago
             ),
             TipoDePlato(
                 "Cupcakes de Calabaza",
@@ -31,7 +41,8 @@ class ListaHallowen {
                 "20 min",
                 2,
                 false,
-                IngredientesCupcakesDeCalabazas.listaCupcakesDeCalabaza
+                IngredientesCupcakesDeCalabazas.listaCupcakesDeCalabaza,
+                PasosCupcakesDeCalabazas.pasosDePreparaciónCupcakesDeCalabaza
             ),
             TipoDePlato(
                 "Sangría de Halloween",
@@ -40,7 +51,8 @@ class ListaHallowen {
                 "15 min",
                 1,
                 false,
-                IngredientesSangriaDeHalloween.listaSangriaHalloween
+                IngredientesSangriaDeHalloween.listaSangriaHalloween,
+                PasosSangriaDeHalloween.pasosDePreparacionSangriaHalloween
             ),
             TipoDePlato(
                 "Dedos de Bruja",
@@ -49,7 +61,8 @@ class ListaHallowen {
                 "25 min",
                 2,
                 false,
-                IngredientesDedosDeBruja.listaDedosDeBruja
+                IngredientesDedosDeBruja.listaDedosDeBruja,
+                PasosDedosDeBruja.pasosDePreparaciónDedosDeBruja
             ),
             TipoDePlato(
                 "Sopa de Calabaza",
@@ -58,7 +71,8 @@ class ListaHallowen {
                 "30 min",
                 2,
                 false,
-                IngredientesSopaDeCalabazas.listaSopaCalabaza
+                IngredientesSopaDeCalabazas.listaSopaCalabaza,
+                PasosSopaDeCalabazas.pasosDePreparacionSopaCalabaza
             ),
             TipoDePlato(
                 "Pizza de Momias",
@@ -67,7 +81,8 @@ class ListaHallowen {
                 "20 min",
                 1,
                 false,
-                IngredientesPizzaSDeMomias.listaPizzaMomias
+                IngredientesPizzaSDeMomias.listaPizzaMomias,
+                PasosPizzaSDeMomias.pasosDePreparacionPizzaMomias
             ),
             TipoDePlato(
                 "Cerebros de Gelatina",
@@ -76,7 +91,8 @@ class ListaHallowen {
                 "15 min",
                 1,
                 false,
-                IngredientesCerebrosDeGelatina.listaCerebrosGelatina
+                IngredientesCerebrosDeGelatina.listaCerebrosGelatina,
+                PasosCerebrosDeGelatina.pasosDePreparaciónCerebrosGelatina
             ),
             TipoDePlato(
                 "Escobas de Bruja",
@@ -85,7 +101,8 @@ class ListaHallowen {
                 "25 min",
                 2,
                 false,
-                IngredientesEscobasDeBrujas.listaEscobasBruja
+                IngredientesEscobasDeBrujas.listaEscobasBruja,
+                PasosEscobasDeBrujas.pasosDePreparaciónEscobasDeBruja
             ),
             TipoDePlato(
                 "Ojos Sangrantes",
@@ -94,7 +111,8 @@ class ListaHallowen {
                 "25 min",
                 1,
                 false,
-                IngredientesOjosSangrantes.listaGalletasOjosSangrantes
+                IngredientesOjosSangrantes.listaGalletasOjosSangrantes,
+                PasosOjosSangrantes.pasosDePreparaciónGalletasOjosSangrantes
             )
         )
     }

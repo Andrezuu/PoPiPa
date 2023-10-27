@@ -50,7 +50,7 @@ class MainMenuActivity : AppCompatActivity() {
     }
     //Entrar en otras pantallas de la barra de abajo
     fun onPerfilButtonClicked(view: View) {
-        val intent: Intent = Intent(context, PerfilUsuarioActivity::class.java)
+        val intent: Intent = Intent(this, PerfilUsuarioActivity::class.java)
         startActivity(intent)
     }
     fun onRecetasUsuarioClicked(view: View){
@@ -98,6 +98,7 @@ class MainMenuActivity : AppCompatActivity() {
         val recetas = ListaDeRecomendacion.listaTiposDeDesayuno
 
         for (receta in recetas) {
+            //TODO if(receta.dificultad <= 2) para filtrar la dificultad del usuario
             val tituloReceta = receta.titulo
             val descripcion = receta.descripcion
             val tiempo = receta.tiempoDePreparacion

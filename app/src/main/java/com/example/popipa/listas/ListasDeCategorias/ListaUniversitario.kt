@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.IngredientesSandwichDeJamonYQueso
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.IngredientesTacosRapidos
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.IngredientesTostadasConAguacate
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosArrozFritoConVegetales
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosBurritoDeDesayuno
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosEnsaladaDePollo
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosFideosInstantaneos
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosHamburguesaConPapasFritas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosPastaInstantanea
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosPizzaCongelada
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosSandwichDeJamonYQueso
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosTacosRapidos
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario.PasosTostadasConAguacate
 
 class ListaUniversitario {
     companion object {
@@ -23,7 +33,8 @@ class ListaUniversitario {
                 "5 min",
                 2,
                 false,
-                IngredientesSandwichDeJamonYQueso.listaSandwichJamonQueso
+                IngredientesSandwichDeJamonYQueso.listaSandwichJamonQueso,
+                PasosSandwichDeJamonYQueso.pasosDePreparacionSandwichJamonQueso
             ),
             TipoDePlato(
                 "Ensalada de Pollo",
@@ -32,7 +43,8 @@ class ListaUniversitario {
                 "10 min",
                 1,
                 false,
-                IngredientesEnsaladaDePollo.listaEnsaladaDePollo
+                IngredientesEnsaladaDePollo.listaEnsaladaDePollo,
+                PasosEnsaladaDePollo.pasosDePreparacionEnsaladaPolloCesar
             ),
             TipoDePlato(
                 "Pasta Instantánea",
@@ -41,7 +53,8 @@ class ListaUniversitario {
                 "5 min",
                 1,
                 false,
-                IngredientesPastaInstantanea.listaPreparacionPastaInstantanea
+                IngredientesPastaInstantanea.listaPreparacionPastaInstantanea,
+                PasosPastaInstantanea.pasosDePreparacionPastaInstantanea
             ),
             TipoDePlato(
                 "Tacos Rápidos",
@@ -50,7 +63,8 @@ class ListaUniversitario {
                 "15 min",
                 1,
                 false,
-                IngredientesTacosRapidos.listaPreparacionTacosRapido
+                IngredientesTacosRapidos.listaPreparacionTacosRapido,
+                PasosTacosRapidos.pasosDePreparacionTacosRapido
             ),
             TipoDePlato(
                 "Hamburguesa con Papas Fritas",
@@ -59,7 +73,8 @@ class ListaUniversitario {
                 "20 min",
                 1,
                 false,
-                IngredientesHamburguesaConPapasFritas.listaHamburguesaConPapasFritas
+                IngredientesHamburguesaConPapasFritas.listaHamburguesaConPapasFritas,
+                PasosHamburguesaConPapasFritas.pasosDePreparacionHamburguesaConPapasFritas
             ),
             TipoDePlato(
                 "Arroz Frito con Vegetales",
@@ -68,7 +83,8 @@ class ListaUniversitario {
                 "10 min",
                 1,
                 false,
-                IngredientesArrozFritoConVegetales.listaArrozFritoVegetales
+                IngredientesArrozFritoConVegetales.listaArrozFritoVegetales,
+                PasosArrozFritoConVegetales.pasosDePreparacionArrozFritoVegetales
             ),
             TipoDePlato(
                 "Pizza Congelada",
@@ -77,7 +93,8 @@ class ListaUniversitario {
                 "5 min",
                 1,
                 false,
-                IngredientesPizzaCongelada.listaPizzaCongelada
+                IngredientesPizzaCongelada.listaPizzaCongelada,
+                PasosPizzaCongelada.pasosDePreparacionPizzaCongelada
             ),
             TipoDePlato(
                 "Fideos Instantáneos",
@@ -86,7 +103,8 @@ class ListaUniversitario {
                 "3 min",
                 1,
                 false,
-                IngredientesFideosInstantaneos.listaFideosInstantaneos
+                IngredientesFideosInstantaneos.listaFideosInstantaneos,
+                PasosFideosInstantaneos.pasosDePreparacionFideosInstantaneos
             ),
             TipoDePlato(
                 "Burrito de Desayuno",
@@ -95,7 +113,8 @@ class ListaUniversitario {
                 "10 min",
                 1,
                 false,
-                IngredientesBurritoDeDesayuno.listaBurritosDesayuno
+                IngredientesBurritoDeDesayuno.listaBurritosDesayuno,
+                PasosBurritoDeDesayuno.pasosDePreparacionBurritosDesayuno
             ),
             TipoDePlato(
                 "Tostadas con Aguacate",
@@ -104,7 +123,8 @@ class ListaUniversitario {
                 "15 min",
                 1,
                 false,
-                IngredientesTostadasConAguacate.listaTostadasConAguacate
+                IngredientesTostadasConAguacate.listaTostadasConAguacate,
+                PasosTostadasConAguacate.pasosDePreparacionTostadasConAguacate
             )
         )
     }

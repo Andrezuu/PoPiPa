@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.Ingr
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesSandwichDePavo
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesSopaDeLentejas
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesTacosDeCarne
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosBurritosDePollo
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosEnsaladaCesar
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosHamburguesaVegetariana
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosPastaPrimavera
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosPokeBowl
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosPolloALaParrilla
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosPolloAlCurry
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosSandwichDePavo
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosSopaDeLentejas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosTacosDeCarne
 
 class ListaAlmuerzos {
     companion object {
@@ -23,7 +33,8 @@ class ListaAlmuerzos {
                 "30 min",
                 1,
                 false,
-                IngredientesPolloALaParrilla.listaPolloParrilla
+                IngredientesPolloALaParrilla.listaPolloParrilla,
+                PasosPolloALaParrilla.pasosDePreparacionPolloParrilla
             ),
             TipoDePlato(
                 "Ensalada César",
@@ -32,7 +43,8 @@ class ListaAlmuerzos {
                 "20 min",
                 1,
                 false,
-                IngredientesEnsaladaCesar.listaEnsaladaCesar
+                IngredientesEnsaladaCesar.listaEnsaladaCesar,
+                PasosEnsaladaCesar.pasosDePreparacionEnsaladaCesar
             ),
             TipoDePlato(
                 "Sándwich de Pavo",
@@ -41,7 +53,8 @@ class ListaAlmuerzos {
                 "15 min",
                 1,
                 false,
-                IngredientesSandwichDePavo.listaSandwichPavo
+                IngredientesSandwichDePavo.listaSandwichPavo,
+                PasosSandwichDePavo.pasosDePreparacionSandwichPavo
             ),
             TipoDePlato(
                 "Pasta Primavera",
@@ -50,7 +63,8 @@ class ListaAlmuerzos {
                 "25 min",
                 2,
                 false,
-                IngredientesPastaPrimavera.listaPastaPrimavera
+                IngredientesPastaPrimavera.listaPastaPrimavera,
+                PasosPastaPrimavera.pasosDePreparacionPastaPrimavera
             ),
             TipoDePlato(
                 "Sopa de Lentejas",
@@ -59,7 +73,8 @@ class ListaAlmuerzos {
                 "30 min",
                 2,
                 false,
-                IngredientesSopaDeLentejas.listaSopaLentejas
+                IngredientesSopaDeLentejas.listaSopaLentejas,
+                PasosSopaDeLentejas.pasosDePreparacionSopaLentejas
             ),
             TipoDePlato(
                 "Burritos de Pollo",
@@ -68,7 +83,8 @@ class ListaAlmuerzos {
                 "20 min",
                 2,
                 false,
-                IngredientesBurritosDePollo.listaBurritosDePollo
+                IngredientesBurritosDePollo.listaBurritosDePollo,
+                PasosBurritosDePollo.pasosDePreparacionBurritosDePollo
             ),
             TipoDePlato(
                 "Poke Bowl",
@@ -77,7 +93,8 @@ class ListaAlmuerzos {
                 "20 min",
                 2,
                 false,
-                IngredientesPokeBowl.listaPokeBowl
+                IngredientesPokeBowl.listaPokeBowl,
+                PasosPokeBowl.pasosDePreparaciónPokeBowl
             ),
             TipoDePlato(
                 "Hamburguesa Vegetariana",
@@ -86,7 +103,8 @@ class ListaAlmuerzos {
                 "25 min",
                 2,
                 false,
-                IngredientesHamburguesaVegetariana.listaHamburguesaVegetariana
+                IngredientesHamburguesaVegetariana.listaHamburguesaVegetariana,
+                PasosHamburguesaVegetariana.pasosDePreparacionHamburguesaVegetariana
             ),
             TipoDePlato(
                 "Pollo al Curry",
@@ -95,7 +113,8 @@ class ListaAlmuerzos {
                 "30 min",
                 2,
                 false,
-                IngredientesPolloAlCurry.listaPolloAlCurry
+                IngredientesPolloAlCurry.listaPolloAlCurry,
+                PasosPolloAlCurry.pasosDePreparacionPolloAlCurry
             ),
             TipoDePlato(
                 "Tacos de Carne",
@@ -104,7 +123,8 @@ class ListaAlmuerzos {
                 "25 min",
                 2,
                 false,
-                IngredientesTacosDeCarne.listaTacosCarne
+                IngredientesTacosDeCarne.listaTacosCarne,
+                PasosTacosDeCarne.pasosDePreparacionTacosCarne
             )
         )
     }
