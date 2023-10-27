@@ -58,54 +58,80 @@
 
         </View>
 
-
-        <EditText
-            android:id="@+id/usuario_edit_nombres"
+        <TextView
+            android:id="@+id/usuario_titulo_nombres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
-            android:layout_marginVertical="10dp"
-            android:hint="@string/nombres"
-            android:inputType="text"
+            android:layout_marginVertical="70dp"
+            android:fontFamily="@font/lilita"
             android:maxLength="40"
             android:maxLines="5"
+            android:text="@string/nombres"
+            android:textSize="16sp"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/usuario_edit_apellidos"
+        <TextView
+            android:id="@+id/usuario_nombres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginVertical="10dp"
-            android:hint="@string/apellidos"
-            android:inputType="text"
+            android:fontFamily="@font/roboto"
             android:maxLength="40"
             android:maxLines="5"
-            app:layout_constraintTop_toBottomOf="@id/usuario_edit_nombres" />
+            android:text="@string/nombres"
+            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_nombres" />
 
-        <EditText
-            android:id="@+id/usuario_edit_email"
+        <TextView
+            android:id="@+id/usuario_titulo_apellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginVertical="10dp"
-            android:hint="@string/email"
-            android:inputType="text"
+            android:fontFamily="@font/lilita"
             android:maxLength="40"
             android:maxLines="5"
-            app:layout_constraintTop_toBottomOf="@id/usuario_edit_apellidos" />
+            android:text="@string/apellidos"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/usuario_nombres" />
 
-        <EditText
-            android:id="@+id/usuario_edit_password"
+        <TextView
+            android:id="@+id/usuario_apellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginVertical="10dp"
-            android:hint="@string/contrase_a"
-            android:inputType="textPassword"
+            android:fontFamily="@font/roboto"
             android:maxLength="40"
             android:maxLines="5"
-            app:layout_constraintTop_toBottomOf="@id/usuario_edit_email" />
+            android:text="@string/apellidos"
+            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_apellidos" />
+
+        <TextView
+            android:id="@+id/usuario_titulo_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/lilita"
+            android:maxLength="40"
+            android:maxLines="5"
+            android:text="@string/email"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/usuario_apellidos" />
+
+        <TextView
+            android:id="@+id/usuario_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/roboto"
+            android:maxLength="40"
+            android:maxLines="5"
+            android:text="@string/email"
+            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_email" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

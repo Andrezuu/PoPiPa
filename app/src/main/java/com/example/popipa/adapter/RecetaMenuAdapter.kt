@@ -1,7 +1,6 @@
 package com.example.popipa.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -51,7 +50,14 @@ class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapt
             binding.textViewRecetaMenuNombre.text = data.nombre
             binding.textViewRecetaMenuDescripcion.text = data.descripcion
             binding.textViewRecetaTiempoMenu.text = data.tiempo
-            binding.dificultad.setBackgroundColor(Color.parseColor("#F8981D"))
+            context?.let {
+                binding.dificultad.setBackgroundColor(
+                    ContextCompat.getColor(
+                        it,
+                        color
+                    )
+                )
+            }
         }
     }
 
