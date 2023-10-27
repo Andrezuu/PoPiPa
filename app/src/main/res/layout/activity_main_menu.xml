@@ -87,20 +87,26 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"
-        android:layout_height="440dp"
+        android:layout_height="400dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/para_ti">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_recetaMenu"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            tools:listitem="@layout/item_receta_menu">
+            android:orientation="vertical">
 
-        </androidx.recyclerview.widget.RecyclerView>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_recetaMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                tools:listitem="@layout/item_tipo_plato">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 

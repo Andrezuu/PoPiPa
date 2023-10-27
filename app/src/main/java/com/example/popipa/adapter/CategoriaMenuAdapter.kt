@@ -9,7 +9,10 @@ import com.example.popipa.databinding.ItemCategoriaMenuBinding
 
 class CategoriaMenuAdapter :
     RecyclerView.Adapter<CategoriaMenuAdapter.CategoriaMenuAdapterViewHolder>() {
-    private var onClickListener: OnClickListener? = null
+
+    //funcion lambda que recibe CategoriaTipoDePlato para poder mostrar la pantalla
+    //con los datos respectivos
+    var onCategoriaClick: ((CategoriaTipoDePlato) -> Unit)? = null
     private var context: Context? = null
     private val listaCategoriaMenus = mutableListOf<CategoriaTipoDePlato>()
     override fun onCreateViewHolder(
@@ -32,20 +35,11 @@ class CategoriaMenuAdapter :
     ) {
         holder.binding(listaCategoriaMenus[position])
         holder.itemView.setOnClickListener {
-            onClickListener?.onClick(position, listaCategoriaMenus[position])
-
+            onCategoriaClick?.invoke(listaCategoriaMenus[position])
         }
     }
 
     override fun getItemCount(): Int = listaCategoriaMenus.size
-
-    fun setOnClickListener(onClickListener: OnClickListener) {
-        this.onClickListener = onClickListener
-    }
-
-    interface OnClickListener {
-        fun onClick(position: Int, model: CategoriaTipoDePlato)
-    }
 
     inner class CategoriaMenuAdapterViewHolder(private val binding: ItemCategoriaMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
