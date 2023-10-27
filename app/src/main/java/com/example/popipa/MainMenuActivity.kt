@@ -94,6 +94,7 @@ class MainMenuActivity : AppCompatActivity() {
         val recetas = ListaDeRecomendacion.listaTiposDeDesayuno
 
         for (receta in recetas) {
+            //TODO if(receta.dificultad <= 2) para filtrar la dificultad del usuario
             val tituloReceta = receta.titulo
             val descripcion = receta.descripcion
             val tiempo = receta.tiempoDePreparacion

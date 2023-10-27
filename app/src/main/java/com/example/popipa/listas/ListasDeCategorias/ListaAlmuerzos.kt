@@ -12,6 +12,9 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.Ingr
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesSandwichDePavo
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesSopaDeLentejas
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesTacosDeCarne
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosEnsaladaCesar
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosPolloALaParrilla
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.PasosSandwichDePavo
 
 class ListaAlmuerzos {
     companion object {
@@ -23,7 +26,8 @@ class ListaAlmuerzos {
                 "30 min",
                 1,
                 false,
-                IngredientesPolloALaParrilla.listaPolloParrilla
+                IngredientesPolloALaParrilla.listaPolloParrilla,
+                PasosPolloALaParrilla.listaPolloParrilla
             ),
             TipoDePlato(
                 "Ensalada César",
@@ -32,7 +36,8 @@ class ListaAlmuerzos {
                 "20 min",
                 1,
                 false,
-                IngredientesEnsaladaCesar.listaEnsaladaCesar
+                IngredientesEnsaladaCesar.listaEnsaladaCesar,
+                PasosEnsaladaCesar.pasosDePreparacionEnsaladaCesar
             ),
             TipoDePlato(
                 "Sándwich de Pavo",
@@ -41,7 +46,8 @@ class ListaAlmuerzos {
                 "15 min",
                 1,
                 false,
-                IngredientesSandwichDePavo.listaSandwichPavo
+                IngredientesSandwichDePavo.listaSandwichPavo,
+                PasosSandwichDePavo.listaSandwichPavo
             ),
             TipoDePlato(
                 "Pasta Primavera",
