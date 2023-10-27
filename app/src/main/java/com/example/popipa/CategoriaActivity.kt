@@ -32,6 +32,14 @@ class CategoriaActivity : AppCompatActivity() {
             onVolverButtonClicked(binding.botonVolver)
         }
 
+        tipoDePlatoAdapter.onRecetaClick = { recetaPressed ->
+            val intent = Intent(context, RecetasCategoriaActivity::class.java)
+            intent.putExtra(MainMenuActivity.CLAVE_RECETA, recetaPressed)
+            intent.putExtra(MainMenuActivity.CLAVE_TITULO_CATEGORIA, binding.tituloCategoria.text)
+            startActivity(intent)
+        }
+
+
     }
 
     fun iniciarRecetaMenuRecyclerView(recetas: List<TipoDePlato>) {
