@@ -50,7 +50,7 @@ class MainMenuActivity : AppCompatActivity() {
     }
     //Entrar en otras pantallas de la barra de abajo
     fun onPerfilButtonClicked(view: View) {
-        val intent: Intent = Intent(context, PerfilUsuarioActivity::class.java)
+        val intent: Intent = Intent(this, PerfilUsuarioActivity::class.java)
         startActivity(intent)
     }
     fun onRecetasUsuarioClicked(view: View){
