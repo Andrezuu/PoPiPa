@@ -17,24 +17,35 @@ import com.example.popipa.listas.ListaCategoriasMenu
 import com.example.popipa.listas.ListaDeRecomendacion
 
 class MainMenuActivity : AppCompatActivity() {
-    val context: Context = this
 
-    private lateinit var binding: ActivityMainMenuBinding
+    private val context: Context = this
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
     private val recetaMenuAdapter by lazy { RecetaMenuAdapter() }
+    private lateinit var binding: ActivityMainMenuBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        iniciarCategoriaMenuRecyclerView()
+        iniciarRecetaMenuRecyclerView()
+
         //ir a la pantalla del perfil de usuario
         binding.buttonPerfil.setOnClickListener {
             onPerfilButtonClicked(binding.buttonPerfil)
         }
 
-        iniciarCategoriaMenuRecyclerView()
-        iniciarRecetaMenuRecyclerView()
+        categoriaMenuAdapter.setOnClickListener(object : CategoriaMenuAdapter.OnClickListener {
+            //permite que los items del recyclerView sean clickeables. Mandando a la respectiva categoria
+            override fun onClick(position: Int, model: CategoriaTipoDePlato) {
+                val categoriaPressed: CategoriaTipoDePlato =
+                    ListaCategoriasMenu.listCategory[position]
+                val intent = Intent(context, CategoriaActivity::class.java)
+                intent.putExtra(CLAVE_CATEGORIA, categoriaPressed)
+                startActivity(intent)
+            }
+        })
 
     }
     //Entrar en otras pantallas de la barra de abajo
@@ -59,7 +70,6 @@ class MainMenuActivity : AppCompatActivity() {
             val categoriaMenu = CategoriaTipoDePlato(titulo, imagen, list)
             categoriaMenus.add(categoriaMenu)
         }
-
 
         categoriaMenuAdapter.addCategoriaMenus(categoriaMenus)
 
@@ -88,13 +98,14 @@ class MainMenuActivity : AppCompatActivity() {
         val recetas = ListaDeRecomendacion.listaTiposDeDesayuno
 
         for (receta in recetas) {
-            val tituloReceta= receta.titulo
+            val tituloReceta = receta.titulo
             val descripcion = receta.descripcion
             val tiempo = receta.tiempoDePreparacion
             val dificultad = receta.dificultad
             val imagenCategoria = receta.imagen
 
-            val recetaMenu = RecetaMenu(tituloReceta, descripcion,tiempo,dificultad,imagenCategoria)
+            val recetaMenu =
+                RecetaMenu(tituloReceta, descripcion, tiempo, dificultad, imagenCategoria)
             recetaMenus.add(recetaMenu)
         }
 
@@ -115,8 +126,10 @@ class MainMenuActivity : AppCompatActivity() {
 
             adapter = recetaMenuAdapter
         }
+    }
 
-
+    companion object {
+        val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"
     }
 }
 
