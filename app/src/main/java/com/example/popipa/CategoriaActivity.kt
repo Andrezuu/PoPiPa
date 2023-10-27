@@ -64,13 +64,19 @@ class CategoriaActivity : AppCompatActivity() {
 
         binding.recyclerRecetaCategoria.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+            //creacion de objeto anonimo. La clase RecyclerView.ItemDecoration provee metodos para
+            //poner mas detalles en los items del RecyclerView
             addItemDecoration(object : RecyclerView.ItemDecoration() {
+                //Este metodo se llama por cada item del Recycler
                 override fun getItemOffsets(
                     outRect: Rect,
                     view: View,
                     parent: RecyclerView,
                     state: RecyclerView.State
                 ) {
+                    // pone un "offset" en la parte de abajo de los items
+                    //Offset: se refiere al margen de los items
                     outRect.bottom = 50
                 }
             })
