@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.Ingr
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesTostadasConAguacate
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesTostadasFrancesas
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesYogurConFrutas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosAcaiBowl
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosBatidoDeProteinas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosDesayunoContinental
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosHuevosBenedictinos
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosMuesliconNueces
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosOmletteDeChampiñones
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosPanquequesArandanos
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosTostadasConAguacate
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosTostadasFrancesas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.PasosYogurConFrutas
 
 class ListaDesayunos {
     companion object {
@@ -23,7 +33,8 @@ class ListaDesayunos {
                 "15 min",
                 1,
                 false,
-                IngredientesTostadasConAguacate.listTostadasConAguacate
+                IngredientesTostadasConAguacate.listTostadasConAguacate,
+                PasosTostadasConAguacate.pasosDePreparacionTostadasConAguacate
             ),
             TipoDePlato(
                 "Omelette de Champiñones",
@@ -32,7 +43,8 @@ class ListaDesayunos {
                 "20 min",
                 2,
                 false,
-                IngredientesOmletteDeChampiñones.listaOmeletteChampiñones
+                IngredientesOmletteDeChampiñones.listaOmeletteChampiñones,
+                PasosOmletteDeChampiñones.pasosDePreparacionOmeletteChampinones
             ),
             TipoDePlato(
                 "Panqueques de Arándanos",
@@ -41,7 +53,8 @@ class ListaDesayunos {
                 "25 min",
                 1,
                 false,
-                IngredientesPanquequesArandanos.listaPanquequesArandanos
+                IngredientesPanquequesArandanos.listaPanquequesArandanos,
+                PasosPanquequesArandanos.pasosDePreparacionPanquequesArandanos
             ),
             TipoDePlato(
                 "Yogur con Frutas",
@@ -50,7 +63,8 @@ class ListaDesayunos {
                 "10 min",
                 1,
                 false,
-                IngredientesYogurConFrutas.listaYogurConFrutas
+                IngredientesYogurConFrutas.listaYogurConFrutas,
+                PasosYogurConFrutas.pasosDePreparacionYogurConFrutas
             ),
             TipoDePlato(
                 "Desayuno Continental",
@@ -59,7 +73,8 @@ class ListaDesayunos {
                 "15 min",
                 2,
                 false,
-                IngredientesDesayunoContinental.listaDesayunoContinental
+                IngredientesDesayunoContinental.listaDesayunoContinental,
+                PasosDesayunoContinental.pasosDePreparacionDesayunoContinental
             ),
             TipoDePlato(
                 "Tostadas Francesas",
@@ -68,7 +83,8 @@ class ListaDesayunos {
                 "20 min",
                 2,
                 false,
-                IngredientesTostadasFrancesas.listaTostadasFrancesas
+                IngredientesTostadasFrancesas.listaTostadasFrancesas,
+                PasosTostadasFrancesas.pasosDePreparacionTostadasFrancesas
             ),
             TipoDePlato(
                 "Batido de Proteínas",
@@ -77,7 +93,8 @@ class ListaDesayunos {
                 "10 min",
                 2,
                 false,
-                IngredientesBatidoDeProteinas.listaBatidosProteina
+                IngredientesBatidoDeProteinas.listaBatidosProteina,
+                PasosBatidoDeProteinas.pasosDePreparacionBatidoProteina
             ),
             TipoDePlato(
                 "Muesli con Nueces",
@@ -86,7 +103,8 @@ class ListaDesayunos {
                 "15 min",
                 2,
                 false,
-                IngredientesMuesliconNueces.listaMuesliNueces
+                IngredientesMuesliconNueces.listaMuesliNueces,
+                PasosMuesliconNueces.pasosDePreparacionMuesliNueces
             ),
             TipoDePlato(
                 "Huevos Benedictinos",
@@ -95,7 +113,8 @@ class ListaDesayunos {
                 "20 min",
                 2,
                 false,
-                IngredientesHuevosBenedictinos.listaHuevosBenedictinos
+                IngredientesHuevosBenedictinos.listaHuevosBenedictinos,
+                PasosHuevosBenedictinos.pasosDePreparacionHuevosBenedictinos
             ),
             TipoDePlato(
                 "Acai Bowl",
@@ -104,7 +123,8 @@ class ListaDesayunos {
                 "10 min",
                 2,
                 false,
-                IngredientesAcaiBowl.listaAcaiBowl
+                IngredientesAcaiBowl.listaAcaiBowl,
+                PasosAcaiBowl.pasosDePreparacionAcaiBowl
             )
         )
     }

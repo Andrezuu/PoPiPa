@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.Ingredie
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.IngredientesSopaDeTomate
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.IngredientesTacosDePescado
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.IngredientesWrapDePollo
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosCurryDeGarbanzos
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosEnsaladaCaprese
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosHamburguesaDePavo
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosPastaconPesto
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosPizzaMargarita
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosSalmonALaParrilla
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosSopaDeTomate
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosTacosDePescado
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosTofuSalteado
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cenas.PasosWrapDePollo
 
 class ListaCenas {
     companion object {
@@ -23,7 +33,8 @@ class ListaCenas {
                 "25 min",
                 1,
                 false,
-                IngredientesSalmonALaParrilla.listaSalmonParrilla
+                IngredientesSalmonALaParrilla.listaSalmonParrilla,
+                PasosSalmonALaParrilla.pasosDePreparacionSalmonParrilla
             ),
             TipoDePlato(
                 "Ensalada Caprese",
@@ -32,7 +43,8 @@ class ListaCenas {
                 "15 min",
                 1,
                 false,
-                IngredientesEnsaladaCaprese.listaEnsaladaCaprese
+                IngredientesEnsaladaCaprese.listaEnsaladaCaprese,
+                PasosEnsaladaCaprese.pasosDePreparacionEnsaladaCaprese
             ),
             TipoDePlato(
                 "Wrap de Pollo",
@@ -41,7 +53,8 @@ class ListaCenas {
                 "20 min",
                 1,
                 false,
-                IngredientesWrapDePollo.listaWrapPollo
+                IngredientesWrapDePollo.listaWrapPollo,
+                PasosWrapDePollo.pasosDePreparacionWrapPollo
             ),
             TipoDePlato(
                 "Pasta con Pesto",
@@ -50,7 +63,8 @@ class ListaCenas {
                 "20 min",
                 2,
                 false,
-                IngredientesPastaconPesto.listaPastaConPesto
+                IngredientesPastaconPesto.listaPastaConPesto,
+                PasosPastaconPesto.pasosDePreparacionPastaConPesto
             ),
             TipoDePlato(
                 "Sopa de Tomate",
@@ -59,7 +73,8 @@ class ListaCenas {
                 "30 min",
                 2,
                 false,
-                IngredientesSopaDeTomate.listaSopaTomate
+                IngredientesSopaDeTomate.listaSopaTomate,
+                PasosSopaDeTomate.pasosDePreparacionSopaTomate
             ),
             TipoDePlato(
                 "Tofu Salteado",
@@ -68,7 +83,8 @@ class ListaCenas {
                 "25 min",
                 2,
                 false,
-                IngredienteTofuSalteado.listaTofuSalteado
+                IngredienteTofuSalteado.listaTofuSalteado,
+                PasosTofuSalteado.pasosDePreparacionTofuSalteado
             ),
             TipoDePlato(
                 "Pizza Margarita",
@@ -77,7 +93,8 @@ class ListaCenas {
                 "20 min",
                 2,
                 false,
-                IngredientesPizzaMargarita.listaPizzaMargarita
+                IngredientesPizzaMargarita.listaPizzaMargarita,
+                PasosPizzaMargarita.pasosDePreparacionPizzaMargarita
             ),
             TipoDePlato(
                 "Hamburguesa de Pavo",
@@ -86,7 +103,8 @@ class ListaCenas {
                 "25 min",
                 2,
                 false,
-                IngredientesHamburguesaDePavo.listaHamburguesaPavo
+                IngredientesHamburguesaDePavo.listaHamburguesaPavo,
+                PasosHamburguesaDePavo.pasosDePreparacionHamburguesaPavo
             ),
             TipoDePlato(
                 "Curry de Garbanzos",
@@ -95,7 +113,8 @@ class ListaCenas {
                 "30 min",
                 2,
                 false,
-                IngredientesCurryDeGarbanzos.listaCurryGarbanzos
+                IngredientesCurryDeGarbanzos.listaCurryGarbanzos,
+                PasosCurryDeGarbanzos.pasosDePreparacionCurryGarbanzos
             ),
             TipoDePlato(
                 "Tacos de Pescado",
@@ -104,7 +123,8 @@ class ListaCenas {
                 "25 min",
                 2,
                 false,
-                IngredientesTacosDePescado.listaTacosDePescado
+                IngredientesTacosDePescado.listaTacosDePescado,
+                PasosTacosDePescado.pasosDePreparacionTacosDePescado
             )
         )
     }

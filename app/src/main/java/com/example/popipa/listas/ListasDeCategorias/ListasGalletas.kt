@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.Ingre
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.IngredientesGalletasDeLimon
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.IngredientesGalletasDeMantequilla
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.IngredientesGalletasDeMantequillaDeMani
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeAlmendra
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeAvenaYMiel
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeAvenaYNueces
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeAvenaYPasas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeAzucar
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeChocolate
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeJengibre
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeLimon
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeMantequilla
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Galletas.PasosGalletasDeMantequillaDeMani
 
 class ListasGalletas {
     companion object {
@@ -23,7 +33,8 @@ class ListasGalletas {
                 "30 min",
                 1,
                 false,
-                IngredientesGalletasDeChocolate.listaGalletasChocolate
+                IngredientesGalletasDeChocolate.listaGalletasChocolate,
+                PasosGalletasDeChocolate.pasosDePreparacionGalletasChocolate
             ),
             TipoDePlato(
                 "Galletas de Avena y Pasas",
@@ -32,7 +43,8 @@ class ListasGalletas {
                 "20 min",
                 1,
                 false,
-                IngredientesGalletasDeAvenaYPasas.listaGalletasAvenaPasas
+                IngredientesGalletasDeAvenaYPasas.listaGalletasAvenaPasas,
+                PasosGalletasDeAvenaYPasas.pasosDePreparacionGalletasAvenaPasas
             ),
             TipoDePlato(
                 "Galletas de Mantequilla",
@@ -41,7 +53,8 @@ class ListasGalletas {
                 "15 min",
                 1,
                 false,
-                IngredientesGalletasDeMantequilla.listaGalletasMantequilla
+                IngredientesGalletasDeMantequilla.listaGalletasMantequilla,
+                PasosGalletasDeMantequilla.pasosDePreparaciónGalletasMantequilla
             ),
             TipoDePlato(
                 "Galletas de Almendra",
@@ -50,7 +63,8 @@ class ListasGalletas {
                 "25 min",
                 1,
                 false,
-                IngredientesGalletasDeAlmendra.listaGalletasAlmendra
+                IngredientesGalletasDeAlmendra.listaGalletasAlmendra,
+                PasosGalletasDeAlmendra.pasosDePreparacionGalletasAlmendra
             ),
             TipoDePlato(
                 "Galletas de Avena y Miel",
@@ -59,7 +73,8 @@ class ListasGalletas {
                 "30 min",
                 1,
                 false,
-                IngredientesGalletasDeAvenaYMiel.listaGalletasAvenaMiel
+                IngredientesGalletasDeAvenaYMiel.listaGalletasAvenaMiel,
+                PasosGalletasDeAvenaYMiel.pasosDePreparacionGalletasAvenaMiel
             ),
             TipoDePlato(
                 "Galletas de Mantequilla de Maní",
@@ -68,7 +83,8 @@ class ListasGalletas {
                 "20 min",
                 1,
                 false,
-                IngredientesGalletasDeMantequillaDeMani.listaGalletasMantequillaMani
+                IngredientesGalletasDeMantequillaDeMani.listaGalletasMantequillaMani,
+                PasosGalletasDeMantequillaDeMani.pasosDePreparaciónGalletasMantequillaMani
             ),
             TipoDePlato(
                 "Galletas de Azúcar",
@@ -77,7 +93,8 @@ class ListasGalletas {
                 "30 min",
                 1,
                 false,
-                IngredientesGalletasDeAzucar.listaGalletasAzucar
+                IngredientesGalletasDeAzucar.listaGalletasAzucar,
+                PasosGalletasDeAzucar.pasosDePreparacionGalletasAzucar
             ),
             TipoDePlato(
                 "Galletas de Limón",
@@ -86,7 +103,8 @@ class ListasGalletas {
                 "25 min",
                 1,
                 false,
-                IngredientesGalletasDeLimon.listaGalletasLimón
+                IngredientesGalletasDeLimon.listaGalletasLimón,
+                PasosGalletasDeLimon.pasosDePreparaciónGalletasLimón
             ),
             TipoDePlato(
                 "Galletas de Avena y Nueces",
@@ -95,7 +113,8 @@ class ListasGalletas {
                 "20 min",
                 1,
                 false,
-                IngredientesGalletasDeAvenaYNueces.listaGalletasAvenaNueces
+                IngredientesGalletasDeAvenaYNueces.listaGalletasAvenaNueces,
+                PasosGalletasDeAvenaYNueces.pasosDePreparacionGalletasAvenaNueces
             ),
             TipoDePlato(
                 "Galletas de Jengibre",
@@ -104,7 +123,8 @@ class ListasGalletas {
                 "35 min",
                 2,
                 false,
-                IngredientesGalletasDeJengibre.listaGalletasJengibre
+                IngredientesGalletasDeJengibre.listaGalletasJengibre,
+                PasosGalletasDeJengibre.pasosDePreparacionGalletasJengibre
             )
         )
     }

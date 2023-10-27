@@ -1,65 +1,46 @@
 package com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario
 
+import com.example.popipa.R
 import com.example.popipa.dataClases.Ingrediente
+import com.example.popipa.dataClases.PasoDePreparación
 
 class PasosEnsaladaDePollo {
     companion object {
-        val listaEnsaladaDePollo = listOf<Ingrediente>(
-            Ingrediente(
-                "Pechugas de pollo cocidas y desmenuzadas",
-                "2 unidades"
+        val pasosDePreparacionEnsaladaPolloCesar = listOf(
+            PasoDePreparación(
+                1,
+                "Preparar los ingredientes: Cocine 2 pechugas de pollo, desmúnelas y reserve. Lave y pique 1 cabeza grande de lechuga romana. Reúna 1 taza de crutones, 1/2 taza de queso parmesano rallado, 1/2 taza de salsa César, 2 cucharadas de aceite de oliva, sal y pimienta al gusto.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Lechuga romana",
-                "1 cabeza grande, lavada y picada"
+            PasoDePreparación(
+                2,
+                "Montar la ensalada: En un tazón grande, combine la lechuga picada con los crutones y el queso parmesano rallado.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Crutones",
-                "1 taza"
+            PasoDePreparación(
+                3,
+                "Agregar el pollo: Agregue las pechugas de pollo cocidas y desmenuzadas a la ensalada.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Queso parmesano rallado",
-                "1/2 taza"
+            PasoDePreparación(
+                4,
+                "Aliñar la ensalada: Rocíe 1/2 taza de salsa César sobre la ensalada y mezcle bien para asegurarse de que todos los ingredientes estén cubiertos.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Salsa César",
-                "1/2 taza"
+            PasoDePreparación(
+                5,
+                "Aliñar con aceite de oliva: Rocíe 2 cucharadas de aceite de oliva sobre la ensalada y mezcle nuevamente para darle brillo y sabor.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Aceite de oliva",
-                "2 cucharadas"
+            PasoDePreparación(
+                6,
+                "Sazonar: Añada sal y pimienta al gusto. Asegúrese de que la ensalada esté bien sazonada según sus preferencias personales.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Sal y pimienta",
-                "Al gusto"
-            ),
-            Ingrediente(
-                "Pechugas de pollo cocidas y desmenuzadas",
-                "2 unidades"
-            ),
-            Ingrediente(
-                "Lechuga romana",
-                "1 cabeza grande, lavada y picada"
-            ),
-            Ingrediente(
-                "Crutones",
-                "1 taza"
-            ),
-            Ingrediente(
-                "Queso parmesano rallado",
-                "1/2 taza"
-            ),
-            Ingrediente(
-                "Salsa César",
-                "1/2 taza"
-            ),
-            Ingrediente(
-                "Aceite de oliva",
-                "2 cucharadas"
-            ),
-            Ingrediente(
-                "Sal y pimienta",
-                "Al gusto"
+            PasoDePreparación(
+                7,
+                "Servir: Sirva la Ensalada de Pollo César en platos individuales. Puede agregar más queso parmesano rallado y crutones por encima si lo desea. ¡Disfrute de su deliciosa ensalada!",
+                R.drawable.pasteles
             )
         )
     }

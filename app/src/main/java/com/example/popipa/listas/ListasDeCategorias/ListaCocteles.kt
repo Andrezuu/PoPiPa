@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.Ingre
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.IngredientesNegroni
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.IngredientesPiscoSour
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.IngredientesPiñaColada
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosCaipinha
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosCosmopolitan
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosCubaLibre
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosDaiquiriDeFresa
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosMargarita
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosMintJulep
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosMojito
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosNegroni
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosPiscoSour
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.PasosPiñaColada
 
 class ListaCocteles {
     companion object {
@@ -23,7 +33,8 @@ class ListaCocteles {
                 "10 min",
                 1,
                 Megusta = false,
-                IngredientesMargarita.listaMargarita
+                IngredientesMargarita.listaMargarita,
+                PasosMargarita.pasosDePreparacionMargarita
             ),
             TipoDePlato(
                 "Mojito",
@@ -32,7 +43,8 @@ class ListaCocteles {
                 "5 min",
                 1,
                 Megusta = false,
-                IngredientesMojito.listaMojito
+                IngredientesMojito.listaMojito,
+                PasosMojito.pasosDePreparacionMojito
             ),
             TipoDePlato(
                 "Piña Colada",
@@ -41,7 +53,9 @@ class ListaCocteles {
                 "10 min",
                 1,
                 Megusta = false,
-                IngredientesPiñaColada.listaPinaColada
+                IngredientesPiñaColada.listaPinaColada,
+                PasosPiñaColada.pasosDePreparacionPinaColada
+
             ),
             TipoDePlato(
                 "Daiquiri de Fresa",
@@ -50,7 +64,8 @@ class ListaCocteles {
                 "5 min",
                 1,
                 Megusta = false,
-                IngredientesDaiquiriDeFresa.listaDaiquiriFresa
+                IngredientesDaiquiriDeFresa.listaDaiquiriFresa,
+                PasosDaiquiriDeFresa.pasosDePreparacionDaiquiriFresa
             ),
             TipoDePlato(
                 "Negroni",
@@ -59,7 +74,8 @@ class ListaCocteles {
                 "5 min",
                 1,
                 Megusta = false,
-                IngredientesNegroni.listaNegroni
+                IngredientesNegroni.listaNegroni,
+                PasosNegroni.pasosDePreparacionNegroni
             ),
             TipoDePlato(
                 "Caipirinha",
@@ -68,7 +84,8 @@ class ListaCocteles {
                 "5 min",
                 1,
                 Megusta = false,
-                IngredientesCaipinha.listaCaipirinha
+                IngredientesCaipinha.listaCaipirinha,
+                PasosCaipinha.pasosDePreparacionCaipirinha
             ),
             TipoDePlato(
                 "Mint Julep",
@@ -77,7 +94,8 @@ class ListaCocteles {
                 "10 min",
                 1,
                 Megusta = false,
-                IngredientesMintJulep.listaMintJulep
+                IngredientesMintJulep.listaMintJulep,
+                PasosMintJulep.pasosDePreparacionMintJulep
             ),
             TipoDePlato(
                 "Cuba Libre",
@@ -86,7 +104,8 @@ class ListaCocteles {
                 "5 min",
                 1,
                 Megusta = false,
-                IngredientesCubaLibre.listaCubaLibre
+                IngredientesCubaLibre.listaCubaLibre,
+                PasosCubaLibre.pasosDePreparacionCubaLibre
             ),
             TipoDePlato(
                 "Cosmopolitan",
@@ -95,7 +114,8 @@ class ListaCocteles {
                 "5 min",
                 1,
                 Megusta = false,
-                IngredientesCosmopolitan.listaCosmopolitan
+                IngredientesCosmopolitan.listaCosmopolitan,
+                PasosCosmopolitan.pasosDePreparacionCosmopolitan
             ),
             TipoDePlato(
                 "Pisco Sour",
@@ -104,7 +124,8 @@ class ListaCocteles {
                 "5 min",
                 1,
                 Megusta = false,
-                IngredientesPiscoSour.listaPiscoSour
+                IngredientesPiscoSour.listaPiscoSour,
+                PasosPiscoSour.pasosDePreparacionPiscoSour
             )
         )
     }

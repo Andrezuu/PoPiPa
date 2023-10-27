@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.Ingredient
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.IngredientesPanDePita
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.IngredientesPanDePlatano
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.IngredientesPanIntegral
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosBanguetteDeQuesoYHierbas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosBollosDeCanela
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosChapataArtesanal
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosFocacciaItaliana
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosPanDeAjo
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosPanDeCenteno
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosPanDeMoldeIntegral
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosPanDePita
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosPanDePlatano
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pan.PasosPanIntegral
 
 class ListasPan {
     companion object {
@@ -23,7 +33,8 @@ class ListasPan {
                 "20 min",
                 1,
                 false,
-                IngredientesBanguetteDeQuesoYHierbas.listaBaguetteQuesoHierbas
+                IngredientesBanguetteDeQuesoYHierbas.listaBaguetteQuesoHierbas,
+                PasosBanguetteDeQuesoYHierbas.pasosDePreparacionBaguetteQuesoHierbas
             ),
             TipoDePlato(
                 "Pan de Ajo",
@@ -32,7 +43,8 @@ class ListasPan {
                 "15 min",
                 1,
                 false,
-                IngredientesPanDeAjo.listaPanDeAjo
+                IngredientesPanDeAjo.listaPanDeAjo,
+                PasosPanDeAjo.pasosDePreparacionPanDeAjo
             ),
             TipoDePlato(
                 "Pan Integral",
@@ -41,7 +53,8 @@ class ListasPan {
                 "30 min",
                 2,
                 false,
-                IngredientesPanIntegral.listaPanIntegral
+                IngredientesPanIntegral.listaPanIntegral,
+                PasosPanIntegral.pasosDePreparacionPanIntegral
             ),
             TipoDePlato(
                 "Bollos de Canela",
@@ -50,7 +63,8 @@ class ListasPan {
                 "25 min",
                 2,
                 false,
-                IngredientesBollosDeCanela.listaBollosCanela
+                IngredientesBollosDeCanela.listaBollosCanela,
+                PasosBollosDeCanela.pasosDePreparacionBollosCanela
             ),
             TipoDePlato(
                 "Pan de Pita",
@@ -59,7 +73,8 @@ class ListasPan {
                 "20 min",
                 2,
                 false,
-                IngredientesPanDePita.listaPreparacionPanDePita
+                IngredientesPanDePita.listaPreparacionPanDePita,
+                PasosPanDePita.pasosDePreparacionPanDePita
             ),
             TipoDePlato(
                 "Focaccia Italiana",
@@ -68,7 +83,8 @@ class ListasPan {
                 "30 min",
                 2,
                 false,
-                IngredientesFocacciaItaliana.listaFocacciaItaliana
+                IngredientesFocacciaItaliana.listaFocacciaItaliana,
+                PasosFocacciaItaliana.pasosDePreparacionFocacciaItaliana
             ),
             TipoDePlato(
                 "Pan de Plátano",
@@ -77,7 +93,8 @@ class ListasPan {
                 "45 min",
                 2,
                 false,
-                IngredientesPanDePlatano.listaPanDePlatano
+                IngredientesPanDePlatano.listaPanDePlatano,
+                PasosPanDePlatano.pasosDePreparacionPanDePlatano
             ),
             TipoDePlato(
                 "Pan de Centeno",
@@ -86,7 +103,8 @@ class ListasPan {
                 "40 min",
                 2,
                 false,
-                IngredientesPanDeCenteno.listaPanDeCenteno
+                IngredientesPanDeCenteno.listaPanDeCenteno,
+                PasosPanDeCenteno.pasosDePreparacionPanDeCenteno
             ),
             TipoDePlato(
                 "Chapata Artesanal",
@@ -95,7 +113,8 @@ class ListasPan {
                 "35 min",
                 2,
                 false,
-                IngredientesChapataArtesanal.listaChapataArtesanal
+                IngredientesChapataArtesanal.listaChapataArtesanal,
+                PasosChapataArtesanal.pasosDePreparacionChapataArtesanal
             ),
             TipoDePlato(
                 "Pan de Molde Integral",
@@ -104,7 +123,8 @@ class ListasPan {
                 "30 min",
                 1,
                 false,
-                IngredientesPanDeMoldeIntegral.listaPanDeMoldeIntegral
+                IngredientesPanDeMoldeIntegral.listaPanDeMoldeIntegral,
+                PasosPanDeMoldeIntegral.pasosDePreparacionPanDeMoldeIntegral
             )
         )
     }

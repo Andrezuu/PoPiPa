@@ -12,6 +12,16 @@ import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.Ingred
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.IngredientesSalsaDeArandanos
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.IngredientesSopaDePavo
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.IngredientesTrufasDeChocolate
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosCoctelFetsivo
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosEnsaladaFestiva
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosGalletasDeJengibre
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosGuisantesDeLaSuerte
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosJamonGlaseado
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosPastelDeFrutas
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosPavoRelleno
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosSalsaDeArandanos
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosSopaDePavo
+import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Navidad.PasosTrufasDeChocolate
 
 class ListaNavidad {
     companion object {
@@ -23,7 +33,8 @@ class ListaNavidad {
                 "180 min",
                 2,
                 false,
-                IngredientesPavoRelleno.listaPavoRelleno
+                IngredientesPavoRelleno.listaPavoRelleno,
+                PasosPavoRelleno.pasosDePreparacionPavoRelleno
 
             ),
             TipoDePlato(
@@ -33,7 +44,8 @@ class ListaNavidad {
                 "45 min",
                 1,
                 false,
-                IngredientesSopaDePavo.listaSopaPavo
+                IngredientesSopaDePavo.listaSopaPavo,
+                PasosSopaDePavo.pasosDePreparacionSopaPavo
             ),
             TipoDePlato(
                 "Ensalada Festiva",
@@ -42,7 +54,8 @@ class ListaNavidad {
                 "20 min",
                 1,
                 false,
-                IngredientesEnsaladaFestiva.listaEnsaladaFestiva
+                IngredientesEnsaladaFestiva.listaEnsaladaFestiva,
+                PasosEnsaladaFestiva.pasosDePreparacionEnsaladaFestiva
             ),
             TipoDePlato(
                 "Jamón Glaseado",
@@ -51,7 +64,8 @@ class ListaNavidad {
                 "120 min",
                 1,
                 false,
-                IngredientesJamonGlaseado.listaJamonGlaseado
+                IngredientesJamonGlaseado.listaJamonGlaseado,
+                PasosJamonGlaseado.pasosDePreparacionJamonGlaseado
             ),
             TipoDePlato(
                 "Galletas de Jengibre",
@@ -60,7 +74,8 @@ class ListaNavidad {
                 "45 min",
                 1,
                 false,
-                IngredientesGalletasDeJengibre.listaGalletasDeJengibre
+                IngredientesGalletasDeJengibre.listaGalletasDeJengibre,
+                PasosGalletasDeJengibre.pasosDePreparacionGalletasDeJengibre
             ),
             TipoDePlato(
                 "Salsa de Arándanos",
@@ -69,7 +84,8 @@ class ListaNavidad {
                 "20 min",
                 1,
                 false,
-                IngredientesSalsaDeArandanos.listaSalsaArandanos
+                IngredientesSalsaDeArandanos.listaSalsaArandanos,
+                PasosSalsaDeArandanos.pasosDePreparacionSalsaArandanos
             ),
             TipoDePlato(
                 "Pastel de Frutas",
@@ -78,7 +94,8 @@ class ListaNavidad {
                 "180 min",
                 2,
                 false,
-                IngredientesPastelDeFrutas.listaPastelFrutas
+                IngredientesPastelDeFrutas.listaPastelFrutas,
+                PasosPastelDeFrutas.pasosDePreparacionPastelFrutas
             ),
             TipoDePlato(
                 "Coctel Festivo",
@@ -87,7 +104,8 @@ class ListaNavidad {
                 "10 min",
                 1,
                 false,
-                IngredientesCoctelFetsivo.listaCoctelFestivoNavidad
+                IngredientesCoctelFetsivo.listaCoctelFestivoNavidad,
+                PasosCoctelFetsivo.pasosDePreparacionCoctelFestivoNavidad
             ),
             TipoDePlato(
                 "Trufas de Chocolate",
@@ -96,7 +114,8 @@ class ListaNavidad {
                 "60 min",
                 2,
                 false,
-                IngredientesTrufasDeChocolate.listaTrufasDeChocolate
+                IngredientesTrufasDeChocolate.listaTrufasDeChocolate,
+                PasosTrufasDeChocolate.pasosDePreparacionTrufasDeChocolate
             ),
             TipoDePlato(
                 "Guisantes de la Suerte",
@@ -105,7 +124,8 @@ class ListaNavidad {
                 "20 min",
                 1,
                 false,
-                IngredientesGuisantesDeLaSuerte.listaGuisantesSuerte
+                IngredientesGuisantesDeLaSuerte.listaGuisantesSuerte,
+                PasosGuisantesDeLaSuerte.pasosDePreparacionGuisantesSuerte
             )
         )
     }

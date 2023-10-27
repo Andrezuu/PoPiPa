@@ -1,77 +1,51 @@
 package com.example.popipa.listas.ListasdeIngredientesPorCategoria.Pasteles
 
+import com.example.popipa.R
 import com.example.popipa.dataClases.Ingrediente
+import com.example.popipa.dataClases.PasoDePreparación
 
 class PasosPastelDeZanahoria {
     companion object {
-        val listaPastelZanahoria = listOf<Ingrediente>(
-            Ingrediente(
-                "Harina de trigo",
-                "2 tazas"
+        val pasosDePreparacionPastelDeZanahoria = listOf(
+            PasoDePreparación(
+                1,
+                "Precalentar el horno: Precaliente el horno a 180°C (350°F) y engrase un molde para pastel.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Azúcar",
-                "2 tazas"
+            PasoDePreparación(
+                2,
+                "Preparar la masa: En un tazón grande, combine 2 tazas de harina de trigo, 2 tazas de azúcar, 3 tazas de zanahorias ralladas, 4 huevos, 1 taza de aceite vegetal, 2 cucharaditas de polvo de hornear, 1 cucharadita de bicarbonato de sodio, 1 cucharadita de canela en polvo, 1/2 cucharadita de nuez moscada (opcional), 1/2 cucharadita de sal y 1 cucharadita de vainilla. Mezcle hasta obtener una masa homogénea.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Zanahorias ralladas",
-                "3 tazas"
+            PasoDePreparación(
+                3,
+                "Agregar nueces y pasas (opcional): Si lo desea, puede agregar 1 taza de nueces picadas y 1/2 taza de pasas a la masa y mezclar bien.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Huevos",
-                "4 unidades"
+            PasoDePreparación(
+                4,
+                "Hornear: Vierta la masa en el molde preparado y hornee en el horno precalentado durante 30-35 minutos, o hasta que un palillo insertado en el centro salga limpio.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Aceite vegetal",
-                "1 taza"
+            PasoDePreparación(
+                5,
+                "Enfriar: Deje enfriar el pastel en el molde durante unos minutos antes de desmoldarlo y dejar que se enfríe por completo en una rejilla.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Polvo de hornear",
-                "2 cucharaditas"
+            PasoDePreparación(
+                6,
+                "Preparar el glaseado: En un tazón, mezcle 1 taza de queso crema, 1/4 de taza de mantequilla, 2 tazas de azúcar glas y 1 cucharadita de vainilla hasta obtener un glaseado suave.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Bicarbonato de sodio",
-                "1 cucharadita"
+            PasoDePreparación(
+                7,
+                "Glasear el pastel: Una vez que el pastel esté completamente frío, extienda el glaseado sobre la parte superior del pastel de zanahoria.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Canela en polvo",
-                "1 cucharadita"
-            ),
-            Ingrediente(
-                "Nuez moscada (opcional)",
-                "1/2 cucharadita"
-            ),
-            Ingrediente(
-                "Sal",
-                "1/2 cucharadita"
-            ),
-            Ingrediente(
-                "Vainilla",
-                "1 cucharadita"
-            ),
-            Ingrediente(
-                "Nueces picadas (opcional)",
-                "1 taza"
-            ),
-            Ingrediente(
-                "Pasas (opcional)",
-                "1/2 taza"
-            ),
-            Ingrediente(
-                "Queso crema (para el glaseado)",
-                "8 oz (aproximadamente 1 taza)"
-            ),
-            Ingrediente(
-                "Mantequilla (para el glaseado)",
-                "1/4 de taza"
-            ),
-            Ingrediente(
-                "Azúcar glas (para el glaseado)",
-                "2 tazas"
-            ),
-            Ingrediente(
-                "Vainilla (para el glaseado)",
-                "1 cucharadita"
+            PasoDePreparación(
+                8,
+                "Servir y disfrutar: Corte el pastel de zanahoria en porciones y disfrute de este delicioso postre casero.",
+                R.drawable.pasteles
             )
         )
     }

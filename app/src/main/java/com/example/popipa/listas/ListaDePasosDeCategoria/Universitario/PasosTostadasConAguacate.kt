@@ -1,49 +1,41 @@
 package com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario
 
+import com.example.popipa.R
 import com.example.popipa.dataClases.Ingrediente
+import com.example.popipa.dataClases.PasoDePreparación
 
 class PasosTostadasConAguacate {
     companion object {
-        val listaTostadasConAguacate = listOf<Ingrediente>(
-            Ingrediente(
-                "Pan Rebanado",
-                "2 a 4 rebanadas"
+        val pasosDePreparacionTostadasConAguacate = listOf(
+            PasoDePreparación(
+                1,
+                "Preparar el aguacate: Corte los aguacates por la mitad, retire el hueso y saque la pulpa en un tazón. Agregue jugo de limón, sal, pimienta negra molida y, si lo desea, hojuelas de chile rojo. Machaque y mezcle todo para hacer un puré de aguacate sazonado.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Aguacates maduros",
-                "2 unidades medianas"
+            PasoDePreparación(
+                2,
+                "Tostar el pan: Tueste las rebanadas de pan hasta que estén doradas y crujientes. Puede hacerlo en una tostadora o en una sartén con un poco de aceite de oliva si lo desea.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Limón (para el jugo)",
-                "Jugo de medio limón o al gusto"
+            PasoDePreparación(
+                3,
+                "Untar el puré de aguacate: Extienda generosamente el puré de aguacate sazonado sobre las tostadas.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Sal al gusto",
-                "Una pizca"
+            PasoDePreparación(
+                4,
+                "Decorar: Si lo desea, decore las tostadas con rodajas de tomate cherry, hojas de cilantro y un chorrito de aceite de oliva.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Pimienta negra molida al gusto",
-                "Una pizca"
+            PasoDePreparación(
+                5,
+                "Opción con huevo pochado (opcional): Si desea servir con huevo pochado, prepare los huevos pochados como desee y colóquelos sobre las tostadas con aguacate.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Hojuelas de chile rojo (opcional, para un poco de picante)",
-                "Al gusto"
-            ),
-            Ingrediente(
-                "Aceite de oliva virgen extra (opcional)",
-                "Un chorrito para rociar sobre las tostadas"
-            ),
-            Ingrediente(
-                "Tomates cherry (opcional, para decoración)",
-                "4-6 tomates cherry cortados en rodajas"
-            ),
-            Ingrediente(
-                "Hojas de cilantro (opcional, para decoración)",
-                "Unas cuantas hojas frescas"
-            ),
-            Ingrediente(
-                "Huevos (opcional, para servir con tostadas de aguacate y huevo pochado)",
-                "La cantidad que desees, generalmente 1 o 2 por tostada"
+            PasoDePreparación(
+                6,
+                "Servir: Sirva las tostadas con aguacate como aperitivo, desayuno o merienda. ¡Disfrute de esta deliciosa y saludable opción!",
+                R.drawable.pasteles
             )
         )
     }

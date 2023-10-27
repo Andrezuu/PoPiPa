@@ -1,65 +1,46 @@
 package com.example.popipa.listas.ListasdeIngredientesPorCategoria.Universitario
 
+import com.example.popipa.R
 import com.example.popipa.dataClases.Ingrediente
+import com.example.popipa.dataClases.PasoDePreparación
 
 class PasosTacosRapidos {
     companion object {
-        val listaPreparacionTacosRapido = listOf<Ingrediente>(
-            Ingrediente(
-                "Carne molida",
-                "300 gramos"
+        val pasosDePreparacionTacosRapido = listOf(
+            PasoDePreparación(
+                1,
+                "Preparar la carne: En una sartén grande, cocine la carne molida a fuego medio-alto hasta que esté dorada. Drene el exceso de grasa si es necesario.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Cebolla",
-                "1 unidad, picada"
+            PasoDePreparación(
+                2,
+                "Agregar verduras y condimentos: Agregue la cebolla, pimiento rojo, pimiento verde, ajo y chile en polvo a la carne cocida. Cocine hasta que las verduras estén tiernas y los condimentos se mezclen bien.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Pimiento rojo",
-                "1 unidad, picado"
+            PasoDePreparación(
+                3,
+                "Incorporar la salsa de tomate: Vierta la salsa de tomate en la mezcla de carne y verduras. Revuelva y cocine a fuego lento durante unos minutos para calentar la salsa.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Pimiento verde",
-                "1 unidad, picado"
+            PasoDePreparación(
+                4,
+                "Calentar las tortillas: Caliente las tortillas de maíz en una sartén caliente o en el microondas hasta que estén calientes y flexibles.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Chile en polvo",
-                "2 cucharaditas"
+            PasoDePreparación(
+                5,
+                "Armar los tacos: Coloque una porción de la mezcla de carne y verduras en el centro de cada tortilla. Espolvoree queso rallado sobre la mezcla.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Comino molido",
-                "1 cucharadita"
+            PasoDePreparación(
+                6,
+                "Agregar ingredientes adicionales: Agregue lechuga, tomate, crema agria y rodajas de aguacate al gusto.",
+                R.drawable.pasteles
             ),
-            Ingrediente(
-                "Ajo",
-                "2 dientes, picados"
-            ),
-            Ingrediente(
-                "Salsa de tomate",
-                "1 taza"
-            ),
-            Ingrediente(
-                "Tortillas de maíz",
-                "8 unidades"
-            ),
-            Ingrediente(
-                "Queso rallado",
-                "1 taza"
-            ),
-            Ingrediente(
-                "Lechuga",
-                "1 taza, picada"
-            ),
-            Ingrediente(
-                "Tomate",
-                "1 unidad, picado"
-            ),
-            Ingrediente(
-                "Crema agria",
-                "1/2 taza"
-            ),
-            Ingrediente(
-                "Aguacate",
-                "1 unidad, en rodajas"
+            PasoDePreparación(
+                7,
+                "Servir: Doble los extremos de las tortillas sobre el relleno y sirva los tacos rápidos. ¡Disfrute de su comida deliciosa y rápida!",
+                R.drawable.pasteles
             )
         )
     }
