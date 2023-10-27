@@ -12,6 +12,7 @@ import com.example.popipa.adapter.CategoriaMenuAdapter
 import com.example.popipa.adapter.RecetaMenuAdapter
 import com.example.popipa.dataClases.CategoriaTipoDePlato
 import com.example.popipa.dataClases.RecetaMenu
+import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityMainMenuBinding
 import com.example.popipa.listas.ListaCategoriasMenu
 import com.example.popipa.listas.ListaDeRecomendacion
@@ -44,6 +45,16 @@ class MainMenuActivity : AppCompatActivity() {
                 val intent = Intent(context, CategoriaActivity::class.java)
                 intent.putExtra(CLAVE_CATEGORIA, categoriaPressed)
                 startActivity(intent)
+            }
+        })
+
+        recetaMenuAdapter.setOnClickListener(object: RecetaMenuAdapter.OnClickListener {
+            override fun onClick(position: Int, model: RecetaMenu) {
+                val recetaPressed: TipoDePlato = ListaDeRecomendacion.listaTiposDeDesayuno[position]
+                val intent = Intent(context, RecetasCategoriaActivity::class.java)
+                intent.putExtra(CLAVE_RECETA, recetaPressed)
+                startActivity(intent)
+
             }
         })
 
@@ -131,6 +142,7 @@ class MainMenuActivity : AppCompatActivity() {
 
     companion object {
         val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"
+        val CLAVE_RECETA = "CLAVE_RECETA"
     }
 }
 

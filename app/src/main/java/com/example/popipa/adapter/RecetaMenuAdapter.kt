@@ -6,11 +6,12 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.R
+import com.example.popipa.dataClases.CategoriaTipoDePlato
 import com.example.popipa.dataClases.RecetaMenu
 import com.example.popipa.databinding.ItemRecetaMenuBinding
 
 class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapterViewHolder>() {
-
+    private var onClickListener: OnClickListener? = null
     private var context: Context? = null
     private val listaRecetaMenus = mutableListOf<RecetaMenu>()
     override fun onCreateViewHolder(
@@ -35,6 +36,14 @@ class RecetaMenuAdapter : RecyclerView.Adapter<RecetaMenuAdapter.RecetaMenuAdapt
     }
 
     override fun getItemCount(): Int = listaRecetaMenus.size
+
+    fun setOnClickListener(onClickListener: OnClickListener) {
+        this.onClickListener = onClickListener
+    }
+
+    interface OnClickListener {
+        fun onClick(position: Int, model: RecetaMenu)
+    }
 
     inner class RecetaMenuAdapterViewHolder(private val binding: ItemRecetaMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {

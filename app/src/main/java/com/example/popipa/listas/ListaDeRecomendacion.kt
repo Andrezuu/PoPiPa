@@ -56,17 +56,6 @@ import com.example.popipa.listas.ListaDeIngredientesDeRecomendacion.PasosTacosSu
 import com.example.popipa.listas.ListaDeIngredientesDeRecomendacion.PasosTamalesElote
 import com.example.popipa.listas.ListaDeIngredientesDeRecomendacion.PasosTamalesOaxaqueños
 import com.example.popipa.listas.ListaDeIngredientesDeRecomendacion.PasosTostadasTinga
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesAcaiBowl
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesBatidoDeProteinas
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesDesayunoContinental
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesHuevosBenedictinos
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesMuesliconNueces
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesOmletteDeChampiñones
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesPanquequesArandanos
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesTostadasConAguacate
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesTostadasFrancesas
-import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Desayunos.IngredientesYogurConFrutas
-
 class ListaDeRecomendacion {
     companion object {
     val listaTiposDeDesayuno = listOf<TipoDePlato>(
