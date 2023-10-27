@@ -9,9 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.MainMenuActivity.Companion.CLAVE_CATEGORIA
-import com.example.popipa.adapter.RecetaMenuAdapter
+import com.example.popipa.adapter.TipoDePlatoAdapter
 import com.example.popipa.dataClases.CategoriaTipoDePlato
-import com.example.popipa.dataClases.RecetaMenu
 import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityCategoriaBinding
 
@@ -19,7 +18,7 @@ import com.example.popipa.databinding.ActivityCategoriaBinding
 class CategoriaActivity : AppCompatActivity() {
 
     private val context: Context = this
-    private val recetaMenuAdapter by lazy { RecetaMenuAdapter() }
+    private val tipoDePlatoAdapter by lazy { TipoDePlatoAdapter() }
     private lateinit var binding: ActivityCategoriaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,20 +36,32 @@ class CategoriaActivity : AppCompatActivity() {
 
     fun iniciarRecetaMenuRecyclerView(recetas: List<TipoDePlato>) {
 
-        val recetaMenus = mutableListOf<RecetaMenu>()
+        val tipoDePlatos = mutableListOf<TipoDePlato>()
         for (receta in recetas) {
             val tituloReceta = receta.titulo
             val descripcion = receta.descripcion
+            val imagenCategoria = receta.imagen
             val tiempo = receta.tiempoDePreparacion
             val dificultad = receta.dificultad
-            val imagenCategoria = receta.imagen
-
+            val meGusta = receta.meGusta
+            val listaIngredientes = receta.listIngrediente
+            val listaPasos = receta.listPasos
             val recetaMenu =
-                RecetaMenu(tituloReceta, descripcion, tiempo, dificultad, imagenCategoria)
-            recetaMenus.add(recetaMenu)
+                TipoDePlato(
+                    tituloReceta,
+                    descripcion,
+                    imagenCategoria,
+                    tiempo,
+                    dificultad,
+                    meGusta,
+                    listaIngredientes,
+                    listaPasos
+                )
+            tipoDePlatos.add(recetaMenu)
         }
 
-        recetaMenuAdapter.addRecetaMenus(recetaMenus)
+        tipoDePlatoAdapter.addRecetaMenus(tipoDePlatos)
+
         binding.recyclerRecetaCategoria.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -64,7 +75,7 @@ class CategoriaActivity : AppCompatActivity() {
                 }
             })
 
-            adapter = recetaMenuAdapter
+            adapter = tipoDePlatoAdapter
         }
 
     }

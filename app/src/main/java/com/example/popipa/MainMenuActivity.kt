@@ -9,9 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.adapter.CategoriaMenuAdapter
-import com.example.popipa.adapter.RecetaMenuAdapter
+import com.example.popipa.adapter.TipoDePlatoAdapter
 import com.example.popipa.dataClases.CategoriaTipoDePlato
-import com.example.popipa.dataClases.RecetaMenu
 import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityMainMenuBinding
 import com.example.popipa.listas.ListaCategoriasMenu
@@ -21,7 +20,7 @@ class MainMenuActivity : AppCompatActivity() {
 
     private val context: Context = this
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
-    private val recetaMenuAdapter by lazy { RecetaMenuAdapter() }
+    private val tipoDePlatoAdapter by lazy { TipoDePlatoAdapter() }
     private lateinit var binding: ActivityMainMenuBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,35 +36,31 @@ class MainMenuActivity : AppCompatActivity() {
             onPerfilButtonClicked(binding.buttonPerfil)
         }
 
-        categoriaMenuAdapter.setOnClickListener(object : CategoriaMenuAdapter.OnClickListener {
-            //permite que los items del recyclerView sean clickeables. Mandando a la respectiva categoria
-            override fun onClick(position: Int, model: CategoriaTipoDePlato) {
-                val categoriaPressed: CategoriaTipoDePlato =
-                    ListaCategoriasMenu.listCategory[position]
-                val intent = Intent(context, CategoriaActivity::class.java)
-                intent.putExtra(CLAVE_CATEGORIA, categoriaPressed)
-                startActivity(intent)
-            }
-        })
+        categoriaMenuAdapter.onCategoriaClick = { categoriaPressed ->
+            val intent = Intent(context, CategoriaActivity::class.java)
+            intent.putExtra(CLAVE_CATEGORIA, categoriaPressed)
+            startActivity(intent)
 
-        recetaMenuAdapter.setOnClickListener(object: RecetaMenuAdapter.OnClickListener {
-            override fun onClick(position: Int, model: RecetaMenu) {
-                val recetaPressed: TipoDePlato = ListaDeRecomendacion.listaTiposDeDesayuno[position]
-                val intent = Intent(context, RecetasCategoriaActivity::class.java)
-                intent.putExtra(CLAVE_RECETA, recetaPressed)
-                startActivity(intent)
+        }
 
-            }
-        })
+        tipoDePlatoAdapter.onRecetaClick = { recetaPressed ->
+            val intent = Intent(context, RecetasCategoriaActivity::class.java)
+            intent.putExtra(CLAVE_RECETA, recetaPressed)
+            intent.putExtra(CLAVE_TITULO_CATEGORIA, "Para Ti")
+            startActivity(intent)
+
+        }
 
     }
+
     //Entrar en otras pantallas de la barra de abajo
     fun onPerfilButtonClicked(view: View) {
         val intent: Intent = Intent(this, PerfilUsuarioActivity::class.java)
         startActivity(intent)
     }
-    fun onRecetasUsuarioClicked(view: View){
-        val intent:Intent = Intent(this,RecetasUsuario::class.java)
+
+    fun onRecetasUsuarioClicked(view: View) {
+        val intent: Intent = Intent(this, RecetasUsuario::class.java)
         startActivity(intent)
     }
 
@@ -104,25 +99,34 @@ class MainMenuActivity : AppCompatActivity() {
 
     fun iniciarRecetaMenuRecyclerView() {
 
-        val recetaMenus = mutableListOf<RecetaMenu>()
-
         val recetas = ListaDeRecomendacion.listaTiposDeDesayuno
 
+        val recetaMenus = mutableListOf<TipoDePlato>()
         for (receta in recetas) {
-            //TODO if(receta.dificultad <= 2) para filtrar la dificultad del usuario
             val tituloReceta = receta.titulo
             val descripcion = receta.descripcion
+            val imagenCategoria = receta.imagen
             val tiempo = receta.tiempoDePreparacion
             val dificultad = receta.dificultad
-            val imagenCategoria = receta.imagen
-
+            val meGusta = receta.meGusta
+            val listaIngredientes = receta.listIngrediente
+            val listaPasos = receta.listPasos
             val recetaMenu =
-                RecetaMenu(tituloReceta, descripcion, tiempo, dificultad, imagenCategoria)
+                TipoDePlato(
+                    tituloReceta,
+                    descripcion,
+                    imagenCategoria,
+                    tiempo,
+                    dificultad,
+                    meGusta,
+                    listaIngredientes,
+                    listaPasos
+                )
             recetaMenus.add(recetaMenu)
         }
 
 
-        recetaMenuAdapter.addRecetaMenus(recetaMenus)
+        tipoDePlatoAdapter.addRecetaMenus(recetaMenus)
         binding.recyclerRecetaMenu.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -136,13 +140,14 @@ class MainMenuActivity : AppCompatActivity() {
                 }
             })
 
-            adapter = recetaMenuAdapter
+            adapter = tipoDePlatoAdapter
         }
     }
 
     companion object {
         val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"
         val CLAVE_RECETA = "CLAVE_RECETA"
+        val CLAVE_TITULO_CATEGORIA = "CLAVE_TITULO_CATEGORIA"
     }
 }
 

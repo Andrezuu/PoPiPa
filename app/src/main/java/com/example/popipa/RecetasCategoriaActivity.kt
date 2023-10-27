@@ -2,10 +2,14 @@ package com.example.popipa
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.MainMenuActivity.Companion.CLAVE_RECETA
+import com.example.popipa.MainMenuActivity.Companion.CLAVE_TITULO_CATEGORIA
 import com.example.popipa.adapter.IngredienteAdapter
 import com.example.popipa.dataClases.Ingrediente
 import com.example.popipa.dataClases.TipoDePlato
@@ -21,6 +25,10 @@ class RecetasCategoriaActivity : AppCompatActivity() {
         binding = ActivityRecetasCategoriaBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val recetaActual = intent.getSerializableExtra(CLAVE_RECETA) as TipoDePlato
+        val nombreCategoria = intent.getSerializableExtra(CLAVE_TITULO_CATEGORIA) as String
+
+        binding.nombreCategoria.text = nombreCategoria
+        binding.nombreReceta.text = recetaActual.titulo
         iniciarIngredientesRecyclerView(recetaActual.listIngrediente)
         binding.botonVolver.setOnClickListener {
             onVolverButtonClicked(binding.botonVolver)
@@ -43,6 +51,22 @@ class RecetasCategoriaActivity : AppCompatActivity() {
         }
 
         ingredienteAdapter.addIngredientes(ingredientes)
+
+        binding.recyclerIngredientes.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            addItemDecoration(object : RecyclerView.ItemDecoration() {
+                override fun getItemOffsets(
+                    outRect: Rect,
+                    view: View,
+                    parent: RecyclerView,
+                    state: RecyclerView.State
+                ) {
+                    outRect.right = 50
+                }
+            })
+
+            adapter = ingredienteAdapter
+        }
     }
 
 }

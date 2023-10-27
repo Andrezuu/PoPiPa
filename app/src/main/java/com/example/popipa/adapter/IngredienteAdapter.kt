@@ -6,8 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.popipa.dataClases.Ingrediente
 import com.example.popipa.databinding.ItemIngredienteBinding
-import com.example.popipa.databinding.ItemRecetaMenuBinding
-
 
 class IngredienteAdapter : RecyclerView.Adapter<IngredienteAdapter.IngredienteAdapterViewHolder>() {
 
@@ -27,13 +25,17 @@ class IngredienteAdapter : RecyclerView.Adapter<IngredienteAdapter.IngredienteAd
         )
     }
 
-    override fun onBindViewHolder(holder: IngredienteAdapter.IngredienteAdapterViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: IngredienteAdapter.IngredienteAdapterViewHolder,
+        position: Int
+    ) {
         holder.binding(listaIngredientes[position])
     }
 
     override fun getItemCount(): Int = listaIngredientes.size
 
-    inner class IngredienteAdapterViewHolder(private val binding: ItemIngredienteBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class IngredienteAdapterViewHolder(private val binding: ItemIngredienteBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun binding(data: Ingrediente) {
             binding.ingredienteNombre.text = data.nombre
             binding.ingredienteCantidad.text = data.cantidad
