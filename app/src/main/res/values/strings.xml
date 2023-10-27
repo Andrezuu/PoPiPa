@@ -10,5 +10,6 @@
     <string name="apellidos">Apellidos</string>
     <string name="nombres">Nombres</string>
     <string name="pocket_nchef">Pocket\nChef</string>
-
+    <string name="tus_recetas">Tus Recetas</string>
+    <string name="ojo">OJO</string>
 </resources>
