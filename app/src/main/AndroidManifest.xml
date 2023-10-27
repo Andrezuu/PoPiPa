@@ -30,6 +30,9 @@
             android:name=".MainMenuActivity"
             android:exported="false" />
         <activity
+            android:name=".RecetasUsuario"
+            android:exported="false" />
+        <activity
             android:name=".InicioActivity"
             android:exported="true">
             <intent-filter>
