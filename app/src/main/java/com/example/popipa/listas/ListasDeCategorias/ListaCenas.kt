@@ -29,7 +29,7 @@ class ListaCenas {
             TipoDePlato(
                 "Salmón a la Parrilla",
                 "Filete de salmón a la parrilla con limón y eneldo. Acompañado de espárragos asados, una cena saludable y deliciosa.",
-                R.drawable.pasteles,
+                R.drawable.salmon_a_la_parrilla,
                 "25 min",
                 1,
                 false,
@@ -39,7 +39,7 @@ class ListaCenas {
             TipoDePlato(
                 "Ensalada Caprese",
                 "Ensalada Caprese con tomate, mozzarella y albahaca fresca. Aderezada con aceite de oliva y vinagre balsámico, una opción ligera y refrescante para la cena.",
-                R.drawable.pasteles,
+                R.drawable.ensalada_crepese,
                 "15 min",
                 1,
                 false,
@@ -49,7 +49,7 @@ class ListaCenas {
             TipoDePlato(
                 "Wrap de Pollo",
                 "Wrap relleno de pollo a la parrilla, lechuga, tomate y salsa de yogur. Ideal para una cena rápida y sabrosa.",
-                R.drawable.pasteles,
+                R.drawable.wrap_de_polllo,
                 "20 min",
                 1,
                 false,
@@ -59,7 +59,7 @@ class ListaCenas {
             TipoDePlato(
                 "Pasta con Pesto",
                 "Pasta con salsa de pesto de albahaca, piñones y queso parmesano. Una opción fácil y deliciosa para una cena reconfortante.",
-                R.drawable.pasteles,
+                R.drawable.pasta_con_pesto,
                 "20 min",
                 2,
                 false,
@@ -69,7 +69,7 @@ class ListaCenas {
             TipoDePlato(
                 "Sopa de Tomate",
                 "Sopa de tomate casera con tomates maduros, cebolla y albahaca. Una elección cálida y reconfortante para la cena.",
-                R.drawable.pasteles,
+                R.drawable.sopa_de_tomate,
                 "30 min",
                 2,
                 false,
@@ -79,7 +79,7 @@ class ListaCenas {
             TipoDePlato(
                 "Tofu Salteado",
                 "Tofu salteado con vegetales y salsa de soja. Una cena vegetariana llena de sabor y proteínas.",
-                R.drawable.pasteles,
+                R.drawable.tofu_salteado,
                 "25 min",
                 2,
                 false,
@@ -89,7 +89,7 @@ class ListaCenas {
             TipoDePlato(
                 "Pizza Margarita",
                 "Pizza Margarita con tomate, mozzarella y albahaca fresca. Una cena clásica y deliciosa para compartir.",
-                R.drawable.pasteles,
+                R.drawable.pizza_margarita,
                 "20 min",
                 2,
                 false,
@@ -99,7 +99,7 @@ class ListaCenas {
             TipoDePlato(
                 "Hamburguesa de Pavo",
                 "Hamburguesa de pavo con aguacate, lechuga y tomate. Una opción más saludable para disfrutar de una cena estilo hamburguesa.",
-                R.drawable.pasteles,
+                R.drawable.hamburguesa_de_pavo,
                 "25 min",
                 2,
                 false,
@@ -109,7 +109,7 @@ class ListaCenas {
             TipoDePlato(
                 "Curry de Garbanzos",
                 "Curry de garbanzos con arroz basmati. Una cena vegetariana llena de sabor y especias.",
-                R.drawable.pasteles,
+                R.drawable.curry_de_garbanzos,
                 "30 min",
                 2,
                 false,
@@ -119,7 +119,7 @@ class ListaCenas {
             TipoDePlato(
                 "Tacos de Pescado",
                 "Tacos de pescado a la parrilla con tortillas de maíz y salsa fresca. Una opción sabrosa para una cena al estilo mexicano.",
-                R.drawable.pasteles,
+                R.drawable.tacos_de_pescado,
                 "25 min",
                 2,
                 false,

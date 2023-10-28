@@ -29,7 +29,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Margarita",
                 "Cóctel Margarita con tequila, licor de naranja y jugo de limón. El equilibrio perfecto entre dulce y ácido.",
-                R.drawable.cocteles,
+                R.drawable.margarita,
                 "10 min",
                 1,
                 Megusta = false,
@@ -39,7 +39,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Mojito",
                 "Refrescante Mojito con ron, lima, menta y soda. Ideal para disfrutar en un día soleado.",
-                R.drawable.cocteles,
+                R.drawable.mojito,
                 "5 min",
                 1,
                 Megusta = false,
@@ -49,7 +49,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Piña Colada",
                 "Piña Colada cremosa con ron, piña y crema de coco. Un cóctel tropical y delicioso para relajarte.",
-                R.drawable.cocteles,
+                R.drawable.pina_colada,
                 "10 min",
                 1,
                 Megusta = false,
@@ -60,7 +60,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Daiquiri de Fresa",
                 "Daiquiri de fresa con ron, fresas frescas y jugo de limón. Un cóctel afrutado y dulce.",
-                R.drawable.cocteles,
+                R.drawable.daiquiri_de_fresa,
                 "5 min",
                 1,
                 Megusta = false,
@@ -70,7 +70,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Negroni",
                 "Cóctel Negroni con ginebra, vermut y Campari. Una bebida intensa y ligeramente amarga.",
-                R.drawable.cocteles,
+                R.drawable.negroni,
                 "5 min",
                 1,
                 Megusta = false,
@@ -80,7 +80,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Caipirinha",
                 "Caipirinha brasileña con cachaça, lima y azúcar. Un cóctel cítrico y refrescante.",
-                R.drawable.cocteles,
+                R.drawable.caipinha,
                 "5 min",
                 1,
                 Megusta = false,
@@ -90,7 +90,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Mint Julep",
                 "Mint Julep con bourbon, azúcar y hojas de menta. Un cóctel clásico y refrescante.",
-                R.drawable.cocteles,
+                R.drawable.mint_julep,
                 "10 min",
                 1,
                 Megusta = false,
@@ -100,7 +100,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Cuba Libre",
                 "Cuba Libre con ron, cola y limón. Un cóctel simple y delicioso para los amantes del ron.",
-                R.drawable.cocteles,
+                R.drawable.cuba_libre,
                 "5 min",
                 1,
                 Megusta = false,
@@ -110,7 +110,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Cosmopolitan",
                 "Cóctel Cosmopolitan con vodka, licor de naranja y jugo de arándano. Una bebida sofisticada y llena de sabor.",
-                R.drawable.cocteles,
+                R.drawable.cosmopolita,
                 "5 min",
                 1,
                 Megusta = false,
@@ -120,7 +120,7 @@ class ListaCocteles {
             TipoDePlato(
                 "Pisco Sour",
                 "Pisco Sour peruano con pisco, limón, azúcar y clara de huevo. Una bebida única y refrescante.",
-                R.drawable.cocteles,
+                R.drawable.pisco_sour,
                 "5 min",
                 1,
                 Megusta = false,
