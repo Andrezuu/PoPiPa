@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="340dp"
+    android:layout_height="250dp"
+    android:background="@drawable/background_esquinas_redondeadas"
+    android:backgroundTint="@color/gray">
+
+    <TextView
+        android:id="@+id/numero_paso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/lilita"
+        android:text="@string/nombres"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/descripcion_paso"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto"
+        android:maxLines="8"
+        android:text="@string/nombres"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numero_paso">
+
+    </TextView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toEndOf="@id/descripcion_paso"
+        app:layout_constraintTop_toTopOf="@id/descripcion_paso">
+
+        <ImageView
+            android:id="@+id/imagen_paso"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@drawable/background_esquinas_redondeadas"
+            android:src="@drawable/desayunos">
+
+        </ImageView>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

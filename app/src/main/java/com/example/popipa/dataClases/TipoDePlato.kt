@@ -8,7 +8,7 @@ data class TipoDePlato(
     val imagen: Int,
     val tiempoDePreparacion: String,
     val dificultad: Int, //1 facil , 2 media,3 dificil
-    var Megusta: Boolean,
+    var meGusta: Boolean,
     val listIngrediente: List<Ingrediente>,
-    val listPasos: List<PasoDePreparación>
+    val listPasos: List<PasoDePreparacion>
 ) : Serializable

@@ -1,7 +1,7 @@
 package com.example.popipa.listas.ListasDeCategorias
 
-import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.R
+import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.IngredientesCaipinha
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.IngredientesCosmopolitan
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Cocteles.IngredientesCubaLibre
@@ -32,7 +32,7 @@ class ListaCocteles {
                 R.drawable.margarita,
                 "10 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesMargarita.listaMargarita,
                 PasosMargarita.pasosDePreparacionMargarita
             ),
@@ -42,7 +42,7 @@ class ListaCocteles {
                 R.drawable.mojito,
                 "5 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesMojito.listaMojito,
                 PasosMojito.pasosDePreparacionMojito
             ),
@@ -52,7 +52,7 @@ class ListaCocteles {
                 R.drawable.pina_colada,
                 "10 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesPiñaColada.listaPinaColada,
                 PasosPiñaColada.pasosDePreparacionPinaColada
 
@@ -63,7 +63,7 @@ class ListaCocteles {
                 R.drawable.daiquiri_de_fresa,
                 "5 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesDaiquiriDeFresa.listaDaiquiriFresa,
                 PasosDaiquiriDeFresa.pasosDePreparacionDaiquiriFresa
             ),
@@ -73,7 +73,7 @@ class ListaCocteles {
                 R.drawable.negroni,
                 "5 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesNegroni.listaNegroni,
                 PasosNegroni.pasosDePreparacionNegroni
             ),
@@ -83,7 +83,7 @@ class ListaCocteles {
                 R.drawable.caipinha,
                 "5 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesCaipinha.listaCaipirinha,
                 PasosCaipinha.pasosDePreparacionCaipirinha
             ),
@@ -93,7 +93,7 @@ class ListaCocteles {
                 R.drawable.mint_julep,
                 "10 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesMintJulep.listaMintJulep,
                 PasosMintJulep.pasosDePreparacionMintJulep
             ),
@@ -103,7 +103,7 @@ class ListaCocteles {
                 R.drawable.cuba_libre,
                 "5 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesCubaLibre.listaCubaLibre,
                 PasosCubaLibre.pasosDePreparacionCubaLibre
             ),
@@ -113,7 +113,7 @@ class ListaCocteles {
                 R.drawable.cosmopolita,
                 "5 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesCosmopolitan.listaCosmopolitan,
                 PasosCosmopolitan.pasosDePreparacionCosmopolitan
             ),
@@ -123,7 +123,7 @@ class ListaCocteles {
                 R.drawable.pisco_sour,
                 "5 min",
                 1,
-                Megusta = false,
+                false,
                 IngredientesPiscoSour.listaPiscoSour,
                 PasosPiscoSour.pasosDePreparacionPiscoSour
             )

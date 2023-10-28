@@ -1,27 +1,27 @@
 package com.example.popipa.listas.ListaDeIngredientesDeRecomendacion
 
 import com.example.popipa.R
-import com.example.popipa.dataClases.PasoDePreparación
+import com.example.popipa.dataClases.PasoDePreparacion
 
 class PasosTacosSuadero {
     companion object {
         val pasosDePreparacionSuadero = listOf(
-            PasoDePreparación(
+            PasoDePreparacion(
                 1,
                 "Freír la carne: Calienta aceite vegetal en una sartén grande. Fría las tiras de carne de suadero hasta que estén doradas y crujientes.",
                 R.drawable.pasteles
             ),
-            PasoDePreparación(
+            PasoDePreparacion(
                 2,
                 "Preparar las tortillas: Calienta las tortillas de maíz en un comal o sartén hasta que estén calientes y flexibles.",
                 R.drawable.pasteles
             ),
-            PasoDePreparación(
+            PasoDePreparacion(
                 3,
                 "Armar los tacos: Coloca la carne de suadero en el centro de cada tortilla. Agrega cebolla picada, cilantro fresco y salsa de tu elección al gusto.",
                 R.drawable.pasteles
             ),
-            PasoDePreparación(
+            PasoDePreparacion(
                 4,
                 "Servir: Exprime jugo de limón sobre los tacos y sazona con sal al gusto. Sirve los tacos de suadero calientes.",
                 R.drawable.pasteles
