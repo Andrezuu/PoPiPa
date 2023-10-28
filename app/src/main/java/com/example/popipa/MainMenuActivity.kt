@@ -31,10 +31,22 @@ class MainMenuActivity : AppCompatActivity() {
         iniciarCategoriaMenuRecyclerView()
         iniciarRecetaMenuRecyclerView()
 
-        //ir a la pantalla del perfil de usuario
-        binding.buttonPerfil.setOnClickListener {
-            onPerfilButtonClicked(binding.buttonPerfil)
+        //Entrar en otras pantallas de la barra de abajo
+        binding.buttonMisRecetas.setOnClickListener {
+            intent = Intent(context, RecetasUsuario::class.java)
+            startActivity(intent)
         }
+
+        binding.buttonBuscar.setOnClickListener {
+            intent = Intent(context, FiltradorActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.buttonPerfil.setOnClickListener {
+            intent = Intent(context, PerfilUsuarioActivity::class.java)
+            startActivity(intent)
+        }
+
 
         categoriaMenuAdapter.onCategoriaClick = { categoriaPressed ->
             val intent = Intent(context, CategoriaActivity::class.java)
@@ -53,16 +65,6 @@ class MainMenuActivity : AppCompatActivity() {
 
     }
 
-    //Entrar en otras pantallas de la barra de abajo
-    fun onPerfilButtonClicked(view: View) {
-        val intent: Intent = Intent(this, PerfilUsuarioActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun onRecetasUsuarioClicked(view: View) {
-        val intent: Intent = Intent(this, RecetasUsuario::class.java)
-        startActivity(intent)
-    }
 
     fun iniciarCategoriaMenuRecyclerView() {
 

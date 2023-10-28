@@ -14,4 +14,17 @@
     <string name="ojo">OJO</string>
     <string name="ingredientes">Ingredientes</string>
     <string name="preparaci_n">Preparación</string>
+    <string name="escoja_sus_filtros">Escoja sus filtros</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="almuerzos">Almuerzos</string>
+    <string name="cenas">Cenas</string>
+    <string name="cocteles">Cocteles</string>
+    <string name="desayunos">Desayunos</string>
+    <string name="estudiante">Estudiante</string>
+    <string name="galletas">Galletas</string>
+    <string name="halloween">Halloween</string>
+    <string name="navidad">Navidad</string>
+    <string name="pan">Pan</string>
+    <string name="pasteles">Pasteles</string>
+
 </resources>

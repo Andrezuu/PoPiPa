@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".FiltradorActivity">
+
+    <ImageButton
+        android:id="@+id/boton_volver"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/deshacer"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageButton>
+
+    <LinearLayout
+        android:id="@+id/titulo_filtrar"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/purple"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton_volver">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/busqueda">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="4"
+            android:fontFamily="@font/lilita"
+            android:text="@string/escoja_sus_filtros"
+            android:textColor="@color/white"
+            android:textSize="35sp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/opciones"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/gray"
+        app:layout_constraintBottom_toTopOf="@id/go_filtrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo_filtrar">
+
+    </View>
+
+    <Button
+        android:id="@+id/selec_almuerzos"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/almuerzos"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/selec_cenas"
+        app:layout_constraintStart_toStartOf="@id/opciones"
+        app:layout_constraintTop_toTopOf="@id/opciones">
+
+    </Button>
+
+    <Button
+        android:id="@+id/selec_cenas"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/cenas"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/opciones"
+        app:layout_constraintStart_toEndOf="@id/selec_almuerzos"
+        app:layout_constraintTop_toTopOf="@id/opciones">
+
+    </Button>
+
+    <Button
+        android:id="@+id/selec_cocteles"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/cocteles"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/selec_desayunos"
+        app:layout_constraintStart_toStartOf="@id/opciones"
+        app:layout_constraintTop_toBottomOf="@id/selec_almuerzos">
+
+    </Button>
+
+    <Button
+        android:id="@+id/selec_desayunos"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/desayunos"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/opciones"
+        app:layout_constraintStart_toEndOf="@id/selec_cocteles"
+        app:layout_constraintTop_toBottomOf="@id/selec_cenas">
+
+    </Button>
+
+    <Button
+        android:id="@+id/selec_estudiante"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/estudiante"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/selec_galletas"
+        app:layout_constraintStart_toStartOf="@id/opciones"
+        app:layout_constraintTop_toBottomOf="@id/selec_cocteles">
+
+    </Button>
+
+
+    <Button
+        android:id="@+id/selec_galletas"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/galletas"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/opciones"
+        app:layout_constraintStart_toEndOf="@id/selec_estudiante"
+        app:layout_constraintTop_toBottomOf="@id/selec_desayunos">
+
+    </Button>
+
+    <Button
+        android:id="@+id/selec_halloween"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/halloween"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/selec_navidad"
+        app:layout_constraintStart_toStartOf="@id/opciones"
+        app:layout_constraintTop_toBottomOf="@id/selec_estudiante">
+
+    </Button>
+
+    <Button
+        android:id="@+id/selec_navidad"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/navidad"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/opciones"
+        app:layout_constraintStart_toEndOf="@id/selec_halloween"
+        app:layout_constraintTop_toBottomOf="@id/selec_galletas">
+
+    </Button>
+
+    <Button
+        android:id="@+id/selec_pan"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/pan"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/selec_pasteles"
+        app:layout_constraintStart_toStartOf="@id/opciones"
+        app:layout_constraintTop_toBottomOf="@id/selec_halloween">
+
+    </Button>
+
+    <Button
+        android:id="@+id/selec_pasteles"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/gray2"
+        android:fontFamily="@font/roboto"
+        android:text="@string/pasteles"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/opciones"
+        app:layout_constraintStart_toEndOf="@id/selec_pan"
+        app:layout_constraintTop_toBottomOf="@id/selec_navidad">
+
+    </Button>
+
+
+    <Button
+        android:id="@+id/go_filtrar"
+        android:layout_width="230dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/purple"
+        android:fontFamily="@font/lilita"
+        android:text="@string/filtrar"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/opciones">
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

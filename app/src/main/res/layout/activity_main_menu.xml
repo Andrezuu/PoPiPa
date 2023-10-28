@@ -110,9 +110,9 @@
     <LinearLayout
         android:id="@+id/layout_botones"
         android:layout_width="match_parent"
-        android:layout_height="84dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        android:background="@drawable/background_esquinas_redondeadas"
+        android:background="@drawable/background_esquinas_superiores_redondeadas"
         android:backgroundTint="@color/purple"
         android:orientation="horizontal"
         android:weightSum="5"
@@ -125,8 +125,7 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/refrigerador"
-            android:onClick="onRecetasUsuarioClicked">
+            android:background="@drawable/refrigerador">
 
         </ImageButton>
 
@@ -159,12 +158,12 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="1"
+
             android:background="@drawable/busqueda">
 
         </ImageButton>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/button_perfil"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_gravity="center"
@@ -173,11 +172,11 @@
             app:cardCornerRadius="30dp">
 
             <ImageButton
+                android:id="@+id/button_perfil"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/desayunos"
-                android:onClick="onPerfilButtonClicked">
+                android:background="@drawable/desayunos">
 
             </ImageButton>
         </androidx.cardview.widget.CardView>
