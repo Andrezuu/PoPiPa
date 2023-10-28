@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.popipa.adapter.RecetaMenuAdapter
+import com.example.popipa.adapter.CategoriaMenuAdapter
 import com.example.popipa.adapter.RecetasUsuarioAdapter
 import com.example.popipa.dataClases.RecetaMenu
 import com.example.popipa.databinding.ActivityRecetasUsuarioBinding
