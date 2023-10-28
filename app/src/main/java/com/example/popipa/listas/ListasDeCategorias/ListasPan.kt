@@ -29,7 +29,7 @@ class ListasPan {
             TipoDePlato(
                 "Baguette de Queso y Hierbas",
                 "Baguette recién horneado con queso derretido y hierbas aromáticas. Un pan delicioso y reconfortante para disfrutar en cualquier momento.",
-                R.drawable.navidad,
+                R.drawable.baguette_de_queso_y_hierbas,
                 "20 min",
                 1,
                 false,
@@ -39,7 +39,7 @@ class ListasPan {
             TipoDePlato(
                 "Pan de Ajo",
                 "Pan de ajo recién horneado con mantequilla de ajo y perejil. Un acompañamiento clásico y sabroso para muchas comidas.",
-                R.drawable.navidad,
+                R.drawable.pan_de_ajo,
                 "15 min",
                 1,
                 false,
@@ -49,7 +49,7 @@ class ListasPan {
             TipoDePlato(
                 "Pan Integral",
                 "Pan integral casero con semillas de chía, lino y avena. Una opción saludable y llena de fibra para el día a día.",
-                R.drawable.navidad,
+                R.drawable.pan_integral,
                 "30 min",
                 2,
                 false,
@@ -59,7 +59,7 @@ class ListasPan {
             TipoDePlato(
                 "Bollos de Canela",
                 "Bollos de canela glaseados y esponjosos. Un dulce panecillo perfecto para el desayuno o la merienda.",
-                R.drawable.navidad,
+                R.drawable.bollos_de_canela,
                 "25 min",
                 2,
                 false,
@@ -69,7 +69,7 @@ class ListasPan {
             TipoDePlato(
                 "Pan de Pita",
                 "Pan de pita fresco y esponjoso para rellenar con tus ingredientes favoritos. Ideal para bocadillos y comidas ligeras.",
-                R.drawable.navidad,
+                R.drawable.pan_pita,
                 "20 min",
                 2,
                 false,
@@ -79,7 +79,7 @@ class ListasPan {
             TipoDePlato(
                 "Focaccia Italiana",
                 "Focaccia de estilo italiano con aceite de oliva, romero y sal marina. Un pan plano y delicioso para compartir en la mesa.",
-                R.drawable.navidad,
+                R.drawable.focaccia_italiana,
                 "30 min",
                 2,
                 false,
@@ -89,7 +89,7 @@ class ListasPan {
             TipoDePlato(
                 "Pan de Plátano",
                 "Pan de plátano húmedo y repleto de trozos de plátano maduro. Un postre con sabor a frutas y textura suave.",
-                R.drawable.navidad,
+                R.drawable.pan_de_platano,
                 "45 min",
                 2,
                 false,
@@ -99,7 +99,7 @@ class ListasPan {
             TipoDePlato(
                 "Pan de Centeno",
                 "Pan de centeno oscuro y denso con una corteza crujiente. Un pan robusto y lleno de sabor para acompañar comidas saladas.",
-                R.drawable.navidad,
+                R.drawable.pan_de_centeno,
                 "40 min",
                 2,
                 false,
@@ -109,7 +109,7 @@ class ListasPan {
             TipoDePlato(
                 "Chapata Artesanal",
                 "Chapata artesanal con aceite de oliva, sal marina y una miga ligera. Un pan rústico y auténtico que te transporta a Italia.",
-                R.drawable.navidad,
+                R.drawable.chapata_artesanal,
                 "35 min",
                 2,
                 false,
@@ -119,7 +119,7 @@ class ListasPan {
             TipoDePlato(
                 "Pan de Molde Integral",
                 "Pan de molde integral con semillas de girasol y calabaza. Perfecto para bocadillos y sándwiches saludables.",
-                R.drawable.navidad,
+                R.drawable.pan_molde_integral,
                 "30 min",
                 1,
                 false,

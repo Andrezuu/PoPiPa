@@ -29,7 +29,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Sándwich de Jamón y Queso",
                 "Un sándwich clásico con jamón, queso y condimentos. Listo en 5 minutos.",
-                R.drawable.universitaria,
+                R.drawable.sandwich_de_jamon_y_queso,
                 "5 min",
                 2,
                 false,
@@ -39,7 +39,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Ensalada de Pollo",
                 "Ensalada fresca con pollo a la parrilla, lechuga y aderezo de tu elección. Preparada en 10 minutos.",
-                R.drawable.universitaria,
+                R.drawable.ensalada_de_pollo,
                 "10 min",
                 1,
                 false,
@@ -49,7 +49,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Pasta Instantánea",
                 "Pasta instantánea con salsa de tomate y queso. Listo en 5 minutos.",
-                R.drawable.universitaria,
+                R.drawable.pasta_instantanea,
                 "5 min",
                 1,
                 false,
@@ -59,7 +59,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Tacos Rápidos",
                 "Tacos sencillos con carne molida, tortillas y guarniciones. Preparados en 15 minutos.",
-                R.drawable.universitaria,
+                R.drawable.tacos_rapido,
                 "15 min",
                 1,
                 false,
@@ -69,7 +69,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Hamburguesa con Papas Fritas",
                 "Hamburguesa clásica con papas fritas. Lista en 20 minutos.",
-                R.drawable.universitaria,
+                R.drawable.hamburguesa_con_papas_fritas,
                 "20 min",
                 1,
                 false,
@@ -79,7 +79,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Arroz Frito con Vegetales",
                 "Arroz frito con una mezcla de vegetales y salsa de soja. Preparado en 10 minutos.",
-                R.drawable.universitaria,
+                R.drawable.arroz_frito_con_vegetales,
                 "10 min",
                 1,
                 false,
@@ -89,7 +89,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Pizza Congelada",
                 "Pizza congelada para hornear en el microondas o el horno. Lista en 5 minutos.",
-                R.drawable.universitaria,
+                R.drawable.pizza_congelada,
                 "5 min",
                 1,
                 false,
@@ -99,7 +99,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Fideos Instantáneos",
                 "Fideos instantáneos con caldo y verduras. Listos en 3 minutos.",
-                R.drawable.universitaria,
+                R.drawable.fideos_instantaneos,
                 "3 min",
                 1,
                 false,
@@ -109,7 +109,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Burrito de Desayuno",
                 "Burrito con huevos revueltos, tocino y queso. Preparado en 10 minutos.",
-                R.drawable.universitaria,
+                R.drawable.burrito_de_desayuno,
                 "10 min",
                 1,
                 false,
@@ -119,7 +119,7 @@ class ListaUniversitario {
             TipoDePlato(
                 "Tostadas con Aguacate",
                 "Tostadas de aguacate con huevos pochados. Una opción saludable lista en 15 minutos.",
-                R.drawable.universitaria,
+                R.drawable.tostada_aguacate,
                 "15 min",
                 1,
                 false,
