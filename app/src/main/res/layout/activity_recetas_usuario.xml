@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/boton_volver2"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_margin="10dp"
         android:background="@drawable/deshacer"
         android:backgroundTint="@color/black"
@@ -31,7 +31,7 @@
             android:text="@string/tus_recetas"
             android:background="@color/purple"
             android:gravity="center"
-            android:textSize="50dp"
+            android:textSize="30dp"
             android:padding="15dp"
             android:fontFamily="@font/lilita"
             android:textColor="@color/white">
@@ -55,7 +55,7 @@
             android:text="@string/ojo"
             android:background="@color/orange"
             android:gravity="center"
-            android:textSize="35dp"
+            android:textSize="25dp"
             android:padding="10dp"
             android:fontFamily="@font/lilita"
             android:textColor="@color/white">

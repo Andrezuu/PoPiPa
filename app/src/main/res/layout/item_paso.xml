@@ -15,7 +15,7 @@
         android:fontFamily="@font/lilita"
         android:text="@string/nombres"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,14 +26,14 @@
         android:id="@+id/descripcion_paso"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+
         android:ellipsize="end"
         android:fontFamily="@font/roboto"
-        android:maxLines="8"
+        android:maxLines="14"
         android:text="@string/nombres"
         android:textColor="@color/black"
         android:layout_marginStart="16dp"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/numero_paso">
 

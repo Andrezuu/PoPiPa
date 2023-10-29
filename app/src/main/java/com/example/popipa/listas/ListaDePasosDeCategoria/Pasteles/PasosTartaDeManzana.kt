@@ -8,7 +8,7 @@ class PasosTartaDeManzana {
         val pasosDePreparacionTartaDeManzana = listOf(
             PasoDePreparacion(
                 1,
-                "Preparar la masa: En un tazón, combine 1 1/2 tazas de harina de trigo, 1/2 taza de mantequilla fría en cubos, 1/2 cucharadita de sal y 2 cucharadas de azúcar. Use un tenedor o un procesador de alimentos para mezclar hasta que la mezcla se parezca a migas. Agregue 3-4 cucharadas de agua fría y mezcle hasta que la masa se una en una bola. Envolviendo en plástico y refrigere durante 30 minutos.",
+                "En un tazón, combine 1 1/2 tazas de harina de trigo, 1/2 taza de mantequilla fría en cubos, 1/2 cucharadita de sal y 2 cucharadas de azúcar. Use un tenedor o un procesador de alimentos para mezclar hasta que la mezcla se parezca a migas. Agregue 3-4 cucharadas de agua fría y mezcle hasta que la masa se una en una bola. Envolviendo en plástico y refrigere durante 30 minutos.",
                 R.drawable.pasteles
             ),
             PasoDePreparacion(

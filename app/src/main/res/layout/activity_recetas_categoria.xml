@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/boton_volver"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_margin="10dp"
         android:background="@drawable/deshacer"
         android:backgroundTint="@color/black"
@@ -23,7 +23,7 @@
     <LinearLayout
         android:id="@+id/linear_layout_nombres_categoria_receta"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:weightSum="2"
         app:layout_constraintStart_toStartOf="@id/boton_volver"
@@ -32,7 +32,7 @@
         <TextView
             android:id="@+id/nombre_categoria"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_weight="1"
             android:background="@drawable/background_esquinas_redondeadas"
@@ -40,14 +40,14 @@
             android:fontFamily="@font/lilita"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="24sp">
+            android:textSize="22sp">
 
         </TextView>
 
         <TextView
             android:id="@+id/nombre_receta"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:background="@drawable/background_esquinas_redondeadas"
@@ -55,7 +55,7 @@
             android:fontFamily="@font/lilita"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="24sp">
+            android:textSize="22sp">
 
         </TextView>
 
@@ -74,7 +74,7 @@
         android:gravity="center"
         android:text="@string/ingredientes"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/boton_volver"
         app:layout_constraintTop_toBottomOf="@id/linear_layout_nombres_categoria_receta">
 
