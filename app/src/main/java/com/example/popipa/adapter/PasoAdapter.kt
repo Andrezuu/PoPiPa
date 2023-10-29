@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.popipa.R
 import com.example.popipa.dataClases.PasoDePreparacion
 import com.example.popipa.databinding.ItemPasoBinding
 
@@ -35,7 +36,7 @@ class PasoAdapter : RecyclerView.Adapter<PasoAdapter.PasoAdapterViewHolder>() {
             val numeroPaso = "Paso " + data.numero.toString()
             binding.numeroPaso.text = numeroPaso
             binding.descripcionPaso.text = data.descripcion
-            binding.imagenPaso.setImageResource(data.viewpaso)
+            binding.imagenPaso.setImageResource(R.drawable.corazon_me_gusta)
         }
 
     }

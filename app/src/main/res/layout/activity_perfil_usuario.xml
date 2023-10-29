@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/boton_volver"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_margin="10dp"
         android:background="@drawable/deshacer"
         android:backgroundTint="@color/black"
@@ -132,6 +132,31 @@
             android:maxLines="5"
             android:text="@string/email"
             app:layout_constraintTop_toBottomOf="@id/usuario_titulo_email" />
+
+        <TextView
+            android:id="@+id/titulo_experiencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/lilita"
+            android:maxLength="40"
+            android:maxLines="5"
+            android:textSize="16sp"
+            android:text="@string/titulo_experiencia"
+            app:layout_constraintTop_toBottomOf="@id/usuario_email"/>
+        <TextView
+            android:id="@+id/usuario_experiencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/roboto"
+            android:maxLength="40"
+            android:maxLines="5"
+            android:text="@string/experiencia"
+            app:layout_constraintTop_toBottomOf="@id/titulo_experiencia"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

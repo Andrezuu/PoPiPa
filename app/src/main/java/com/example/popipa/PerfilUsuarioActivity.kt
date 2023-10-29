@@ -33,9 +33,17 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         binding.botonVolver.setOnClickListener {
             onVolverButtonClicked(binding.botonVolver)
         }
-
+        val sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
+        val nombreUsuario = sharedPreferences.getString("nombre", "")
+        val apellidoUsuario = sharedPreferences.getString("apellido","")
+        val emailUsuario = sharedPreferences.getString("email","")
+        val contraseña = sharedPreferences.getString("contraseña","")
 
         //TODO poner los datos del usuario actual en la pantalla de usuario
+        binding.usuarioApellidos.text = apellidoUsuario
+        binding.usuarioEmail.text = emailUsuario
+        binding.usuarioNombres.text = nombreUsuario
+
     }
 
     fun abrirGaleria(result: ActivityResult) {

@@ -11,9 +11,11 @@
     <string name="nombres">Nombres</string>
     <string name="pocket_nchef">Pocket\nChef</string>
     <string name="tus_recetas">Tus Recetas</string>
-    <string name="ojo">OJO</string>
+    <string name="ojo">Tus gustos son?</string>
     <string name="ingredientes">Ingredientes</string>
     <string name="preparaci_n">Preparación</string>
+    <string name="titulo_experiencia">Experiencia</string>
+    <string name="experiencia">Elige tu experiencia</string>
     <string name="escoja_sus_filtros">Escoja sus filtros</string>
     <string name="filtrar">Filtrar</string>
     <string name="almuerzos">Almuerzos</string>
@@ -26,5 +28,6 @@
     <string name="navidad">Navidad</string>
     <string name="pan">Pan</string>
     <string name="pasteles">Pasteles</string>
+    <string name="su_experiencia">Su experiencia</string>
 
 </resources>
