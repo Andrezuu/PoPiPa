@@ -32,4 +32,7 @@
     <string name="agregarPasos">Agregar Pasos</string>
     <string name="finalizar">Finalizar</string>
     <string name="aumentar">+</string>
+    <string name="nombreIngrediente">Nombre Ingrediente</string>
+    <string name="cantidadRequerida">Cantidad Requerida</string>
+    <string name="ingresarDescripcion">Ingrese la descripción del plato por favor</string>
 </resources>

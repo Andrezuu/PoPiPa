@@ -37,6 +37,7 @@ class RecetasUsuarioAdapter: RecyclerView.Adapter<RecetasUsuarioAdapter.RecetasU
     }
     override fun getItemCount(): Int = listaRecetasUsuario.size
 
+
     inner class RecetasUsuarioAdapterViewHolder(private val binding: ItemRecetaUsuarioBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun binding(data: RecetaMenu) {
