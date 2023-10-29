@@ -13,7 +13,7 @@ class PasosPastelDeZanahoria {
             ),
             PasoDePreparacion(
                 2,
-                "Preparar la masa: En un tazón grande, combine 2 tazas de harina de trigo, 2 tazas de azúcar, 3 tazas de zanahorias ralladas, 4 huevos, 1 taza de aceite vegetal, 2 cucharaditas de polvo de hornear, 1 cucharadita de bicarbonato de sodio, 1 cucharadita de canela en polvo, 1/2 cucharadita de nuez moscada (opcional), 1/2 cucharadita de sal y 1 cucharadita de vainilla. Mezcle hasta obtener una masa homogénea.",
+                "Combinar 2 tazas de harina de trigo, 2 tazas de azúcar, 3 tazas de zanahorias ralladas, 4 huevos, 1 taza de aceite vegetal, 2 cucharaditas de polvo de hornear, 1 cucharadita de bicarbonato de sodio, 1 cucharadita de canela en polvo, 1/2 cucharadita de nuez moscada (opcional), 1/2 cucharadita de sal y 1 cucharadita de vainilla. Mezcle hasta obtener una masa homogénea.",
                 R.drawable.pasteles
             ),
             PasoDePreparacion(

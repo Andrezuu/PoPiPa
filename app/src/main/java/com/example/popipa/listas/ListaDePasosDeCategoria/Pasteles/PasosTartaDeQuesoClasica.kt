@@ -13,7 +13,7 @@ class PasosTartaDeQuesoClasica {
             ),
             PasoDePreparacion(
                 2,
-                "Preparar el relleno: En un tazón grande, mezcle 500 gramos de queso crema con 200 gramos de azúcar hasta obtener una mezcla suave. Agregue 3 huevos uno a uno, batiendo bien después de cada adición. Luego, agregue 200 gramos de crema agria, 2 cucharadas de harina de trigo, 1 cucharadita de extracto de vainilla y 1 cucharadita de ralladura de limón. Mezcle bien hasta que todos los ingredientes estén combinados.",
+                "En un tazón, mezcle 500 gr de queso crema con 200 gr de azúcar hasta obtener una mezcla suave. Agregue 3 huevos uno a uno, batiendo bien después de cada adición. Luego, agregue 200 gr de crema agria, 2 cucharadas de harina de trigo, 1 cucharadita de extracto de vainilla y 1 cucharadita de ralladura de limón. Mezcle bien hasta los ingredientes estén combinados.",
                 R.drawable.pasteles
             ),
             PasoDePreparacion(
