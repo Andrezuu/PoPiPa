@@ -14,4 +14,10 @@
     <string name="ojo">OJO</string>
     <string name="ingredientes">Ingredientes</string>
     <string name="preparaci_n">Preparación</string>
+    <string name="tituloCategoria">Título de Categoria</string>
+    <string name="tituloReceta">Título de Receta</string>
+    <string name="agregarIngredientes">Agregar Ingredientes</string>
+    <string name="agregarPasos">Agregar Pasos</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="aumentar">+</string>
 </resources>

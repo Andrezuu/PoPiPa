@@ -63,6 +63,10 @@ class MainMenuActivity : AppCompatActivity() {
         val intent: Intent = Intent(this, RecetasUsuario::class.java)
         startActivity(intent)
     }
+    fun onAgregacionRecetasClicked(view: View){
+        val intent:Intent=Intent(this,AgregacionRecetas::class.java)
+        startActivity(intent)
+    }
 
     fun iniciarCategoriaMenuRecyclerView() {
 

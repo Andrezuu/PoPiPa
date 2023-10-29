@@ -112,7 +112,7 @@
         android:layout_width="match_parent"
         android:layout_height="84dp"
         android:layout_gravity="center"
-        android:background="@drawable/background_esquinas_redondeadas"
+        android:background="@drawable/background_esquinas_superiores_redondeadas"
         android:backgroundTint="@color/purple"
         android:orientation="horizontal"
         android:weightSum="5"
@@ -148,7 +148,8 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/agregar">
+            android:background="@drawable/agregar"
+            android:onClick="onAgregacionRecetasClicked">
 
         </ImageButton>
 
