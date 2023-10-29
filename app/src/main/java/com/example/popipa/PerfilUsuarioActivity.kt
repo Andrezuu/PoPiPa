@@ -5,74 +5,103 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.view.View
-import androidx.activity.result.ActivityResult
+import android.util.Base64
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.toBitmap
 import com.example.popipa.databinding.ActivityPerfilUsuarioBinding
+import java.io.ByteArrayOutputStream
 
 
 class PerfilUsuarioActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPerfilUsuarioBinding
     private val context: Context = this
+
     private val galeriaLauncher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult(),
-        ::abrirGaleria
-    )
+        ActivityResultContracts.GetContent()
+    ) { image ->
+        binding.fotoPerfil.setImageURI(image)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPerfilUsuarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        loadData()
 
         //abrir la galeria para cambiar la foto de perfil
         binding.fotoPerfil.setOnClickListener {
-            onImagenPerfilButtonClicked(binding.fotoPerfil)
+            galeriaLauncher.launch("image/*")
+
+        }
+
+        binding.guardar.setOnClickListener {
+            saveData()
         }
 
         binding.botonVolver.setOnClickListener {
-            onVolverButtonClicked(binding.botonVolver)
+            val intent = Intent(context, MainMenuActivity::class.java)
+            startActivity(intent)
         }
+
+
         val sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
         val nombreUsuario = sharedPreferences.getString("nombre", "")
-        val apellidoUsuario = sharedPreferences.getString("apellido","")
-        val emailUsuario = sharedPreferences.getString("email","")
-        val contraseña = sharedPreferences.getString("contraseña","")
+        val apellidoUsuario = sharedPreferences.getString("apellido", "")
+        val emailUsuario = sharedPreferences.getString("email", "")
+
+        val contrasena = sharedPreferences.getString("contraseña", "")
 
         //TODO poner los datos del usuario actual en la pantalla de usuario
         binding.usuarioApellidos.text = apellidoUsuario
         binding.usuarioEmail.text = emailUsuario
         binding.usuarioNombres.text = nombreUsuario
 
-    }
-
-    fun abrirGaleria(result: ActivityResult) {
-        if (result.resultCode == RESULT_OK) {
-            // Guardar informacion en tipo URI de la imagen seleccionada
-            val imageUri = result.data?.data
-            // Convertir la imagen a un bitmap, con un let  debido al tipaje
-            val bitmapImage = BitmapFactory.decodeStream(imageUri?.let {
-                contentResolver.openInputStream(
-                    it
-                )
-            })
-            //reescalar la imagen para luego cargarla a la aplicacion
-            val resizedBitmapImage = Bitmap.createScaledBitmap(bitmapImage, 800, 800, true)
-            binding.fotoPerfil.setImageBitmap(resizedBitmapImage)
-        }
-    }
-
-    fun onImagenPerfilButtonClicked(view: View) {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        galeriaLauncher.launch(intent)
 
     }
 
-    fun onVolverButtonClicked(view: View) {
-        val intent = Intent(context, MainMenuActivity::class.java)
-        startActivity(intent)
+    fun saveData() {
+
+
+        val imageSelected = binding.fotoPerfil.drawable.toBitmap()
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+
+        val imageString: String = bitmapToString(imageSelected)
+
+        editor.putString("STRING_KEY", imageString)
+        editor.apply()
+
+        binding.fotoPerfil.setImageBitmap(imageSelected)
+        //binding.prueba2.text = imageString
+        Toast.makeText(context, "Foto guardada!", Toast.LENGTH_SHORT).show()
+
+
     }
 
+    fun loadData() {
+
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val imagenGuardadaString = sharedPreferences.getString("STRING_KEY", "")
+
+        val imagenGuardada = imagenGuardadaString?.let { stringToBitmap(it) }
+
+        binding.fotoPerfil.setImageBitmap(imagenGuardada)
+    }
+
+    fun bitmapToString(bitmap: Bitmap): String {
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+        val byteArray = byteArrayOutputStream.toByteArray()
+        return Base64.encodeToString(byteArray, Base64.DEFAULT)
+    }
+
+    fun stringToBitmap(encodedString: String): Bitmap? {
+        val decodedBytes = Base64.decode(encodedString, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+    }
 
 }
