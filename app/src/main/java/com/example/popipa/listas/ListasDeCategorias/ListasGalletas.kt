@@ -29,7 +29,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Chocolate",
                 "Galletas crujientes de chocolate con trozos de chocolate derretido en cada bocado. Un placer irresistible para los amantes del chocolate.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_chocolate,
                 "30 min",
                 1,
                 false,
@@ -39,7 +39,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Avena y Pasas",
                 "Galletas suaves de avena con pasas jugosas. Una merienda saludable y deliciosa para disfrutar en cualquier momento del día.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_avena_y_pasas,
                 "20 min",
                 1,
                 false,
@@ -49,7 +49,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Mantequilla",
                 "Galletas de mantequilla con una textura que se deshace en la boca. Perfectas para acompañar un café o té.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_mantequilla,
                 "15 min",
                 1,
                 false,
@@ -59,7 +59,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Almendra",
                 "Galletas crujientes de almendra con un delicado sabor a almendras tostadas. Un manjar para los amantes de las almendras.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_almendra,
                 "25 min",
                 1,
                 false,
@@ -69,7 +69,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Avena y Miel",
                 "Galletas de avena endulzadas con miel y con un toque de canela. Una opción reconfortante y saludable para la merienda.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_avena_y_miel,
                 "30 min",
                 1,
                 false,
@@ -79,7 +79,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Mantequilla de Maní",
                 "Galletas suaves de mantequilla de maní con un corazón de chocolate. Irresistibles para los amantes del maní y el chocolate.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_mantequilla_de_mani,
                 "20 min",
                 1,
                 false,
@@ -89,7 +89,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Azúcar",
                 "Galletas de azúcar decoradas con glaseado colorido. Perfectas para celebraciones y eventos especiales.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_azucar,
                 "30 min",
                 1,
                 false,
@@ -99,7 +99,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Limón",
                 "Galletas de limón con un toque refrescante y espolvoreadas con azúcar en polvo. Ideales para disfrutar con una taza de té.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_limon,
                 "25 min",
                 1,
                 false,
@@ -109,7 +109,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Avena y Nueces",
                 "Galletas de avena con trozos de nueces crujientes. Una opción saludable y llena de sabor para tus meriendas.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_avena_y_nueces,
                 "20 min",
                 1,
                 false,
@@ -119,7 +119,7 @@ class ListasGalletas {
             TipoDePlato(
                 "Galletas de Jengibre",
                 "Galletas de jengibre con forma de personas y decoradas con glaseado. Clásicas en la temporada navideña.",
-                R.drawable.navidad,
+                R.drawable.galletas_de_jengibre,
                 "35 min",
                 2,
                 false,

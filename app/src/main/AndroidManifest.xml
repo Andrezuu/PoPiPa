@@ -18,6 +18,9 @@
             android:name=".AgregacionRecetas"
             android:exported="false" />
         <activity
+            android:name=".FiltradorActivity"
+            android:exported="false" />
+        <activity
             android:name=".RecetasCategoriaActivity"
             android:exported="false" />
         <activity

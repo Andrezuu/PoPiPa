@@ -31,9 +31,20 @@ class MainMenuActivity : AppCompatActivity() {
         iniciarCategoriaMenuRecyclerView()
         iniciarRecetaMenuRecyclerView()
 
-        //ir a la pantalla del perfil de usuario
+        //Entrar en otras pantallas de la barra de abajo
+        binding.buttonMisRecetas.setOnClickListener {
+            intent = Intent(context, RecetasUsuario::class.java)
+            startActivity(intent)
+        }
+
+        binding.buttonBuscar.setOnClickListener {
+            intent = Intent(context, FiltradorActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.buttonPerfil.setOnClickListener {
-            onPerfilButtonClicked(binding.buttonPerfil)
+            intent = Intent(context, PerfilUsuarioActivity::class.java)
+            startActivity(intent)
         }
 
         categoriaMenuAdapter.onCategoriaClick = { categoriaPressed ->
