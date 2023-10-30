@@ -104,4 +104,43 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
     }
 
+//    fun initSpinner() {
+//        val dataList = mutableListOf<String>()
+//        dataList.add("Basico")
+//        dataList.add("Junnior Chef")
+//        dataList.add("Chef")
+//
+//        val adapter = ArrayAdapter(
+//            this,
+//            android.R.layout.simple_spinner_item,
+//            dataList
+//        )
+//
+//        binding.spiner.adapter = adapter
+//        binding.spiner.onItemSelectedListener = object :
+//            AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+//                //binding.guardarExperiencia.text = dataList[position]
+//                spinnerSelected = dataList[position]
+//                Toast.makeText(this@PerfilUsuarioActivity, "Chef?", Toast.LENGTH_LONG).show()
+//            }
+//            override fun onNothingSelected(p0: AdapterView<*>?) {
+//            }
+//
+//        }
+//    }
+
+
+//    fun managePreferences() {
+//        preference = PreferenceManager.getDefaultSharedPreferences(this)
+//        binding.botonGuardarExperiencia.setOnClickListener {
+//            val editor = preference.edit()
+//            var savedData = spinnerSelected
+//            editor.putString("experiencia",savedData)
+//            editor.apply()
+//            val experiencia = preference.getString("experiencia","F")
+//            binding.textGuardarExperiencia.text = experiencia
+//            editor.apply()
+//        }
+//    }
 }

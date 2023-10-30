@@ -2,8 +2,10 @@ package com.example.popipa
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Rect
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,14 +24,24 @@ class MainMenuActivity : AppCompatActivity() {
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
     private val tipoDePlatoAdapter by lazy { TipoDePlatoAdapter() }
     private lateinit var binding: ActivityMainMenuBinding
+
+//    private lateinit var preference: SharedPreferences
+//    lateinit var  experiencia :String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        preference = PreferenceManager.getDefaultSharedPreferences(this)
+//        preference.getString("experiencia","")
+
+
         iniciarCategoriaMenuRecyclerView()
         iniciarRecetaMenuRecyclerView()
+
+
 
         //Entrar en otras pantallas de la barra de abajo
         binding.buttonMisRecetas.setOnClickListener {
@@ -44,6 +56,12 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding.buttonPerfil.setOnClickListener {
             intent = Intent(context, PerfilUsuarioActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        binding.buttonMeGusta.setOnClickListener {
+            intent = Intent(context, ActivityTuMeGusta::class.java)
             startActivity(intent)
         }
 
@@ -112,34 +130,47 @@ class MainMenuActivity : AppCompatActivity() {
         }
     }
 
+
+    //Recuperar datos de SharedPreferences en otro Activity
+
+    fun funexperiencia(experiencia1: String): Int {
+        return when (experiencia1) {
+            "Basico" -> 1
+            "Junior Chef" -> 2
+            else -> 3
+        }
+    }
+
     fun iniciarRecetaMenuRecyclerView() {
 
         val recetas = ListaDeRecomendacion.listaTiposDeDesayuno
-
         val recetaMenus = mutableListOf<TipoDePlato>()
         for (receta in recetas) {
+
+            val dificultad = receta.dificultad
+
+           // if (funexperiencia(experiencia) >= dificultad) {
             val tituloReceta = receta.titulo
             val descripcion = receta.descripcion
             val imagenCategoria = receta.imagen
             val tiempo = receta.tiempoDePreparacion
-            val dificultad = receta.dificultad
             val meGusta = receta.meGusta
             val listaIngredientes = receta.listIngrediente
             val listaPasos = receta.listPasos
             val recetaMenu =
-                TipoDePlato(
-                    tituloReceta,
-                    descripcion,
-                    imagenCategoria,
-                    tiempo,
-                    dificultad,
-                    meGusta,
-                    listaIngredientes,
-                    listaPasos
-                )
+                    TipoDePlato(
+                        tituloReceta,
+                        descripcion,
+                        imagenCategoria,
+                        tiempo,
+                        dificultad,
+                        meGusta,
+                        listaIngredientes,
+                        listaPasos
+                    )
             recetaMenus.add(recetaMenu)
+         //   }
         }
-
 
         tipoDePlatoAdapter.addRecetaMenus(recetaMenus)
         binding.recyclerRecetaMenu.apply {

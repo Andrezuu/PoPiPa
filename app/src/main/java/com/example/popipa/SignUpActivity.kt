@@ -1,8 +1,11 @@
 package com.example.popipa
 
+import android.R
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.View
 import android.view.ViewParent
 import android.widget.AdapterView
@@ -23,6 +26,8 @@ class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var auth: FirebaseAuth
+    var spinnerSelected = "Experiencia"
+    private lateinit var preference: SharedPreferences
     private val context: Context = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,22 +36,12 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = Firebase.auth
 
-
-        val options = arrayOf("Basico", "Asistente", "Chef") //nuevo
-
-        val spiner = findViewById<Spinner>(R.id.action_bar_spinner)
-        val adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, options)//nuevo
-        spiner.adapter = adapter///nuevo
-
-
-
-
         binding.crearCuenta.setOnClickListener {
             clickCrearCuenta(
                 binding.editGmail.text.toString(),
                 binding.editPassword.text.toString(),
                 binding.editNombres.text.toString(),
-                binding.editApellidos.text.toString()
+                binding.editApellidos.text.toString(),
             )
         }
 
@@ -55,7 +50,6 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 
     fun clickCrearCuenta(email: String, contrasena: String, nombres: String, apellidos: String) {
         auth.createUserWithEmailAndPassword(email, contrasena)
@@ -70,12 +64,12 @@ class SignUpActivity : AppCompatActivity() {
                     editor.putString("contraseña",contrasena)
                     editor.putString("apellido",apellidos)
                     editor.putString("email",email)
-                    //editor.putString("experiecia",spiner)
                     editor.apply()
+
+
                     val intent = Intent(context, LogInActivity::class.java)
                     startActivity(intent)
                 }
             }
     }
-
 }
