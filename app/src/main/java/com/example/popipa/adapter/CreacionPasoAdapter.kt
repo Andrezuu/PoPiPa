@@ -37,7 +37,6 @@ class CreacionPasoAdapter : RecyclerView.Adapter<CreacionPasoAdapter.CreacionPas
 
     inner class CreacionPasoAdapterViewHolder(private val binding: ItemCreacionPasoBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun binding(data: PasoDePreparacion) {
             binding.descripcionPaso.text= Editable.Factory.getInstance().newEditable(data.descripcion)
             binding.numeroPaso.text= "Paso ${listaPasosPlato.size}"
@@ -48,9 +47,9 @@ class CreacionPasoAdapter : RecyclerView.Adapter<CreacionPasoAdapter.CreacionPas
             binding.recetaDescripcion.text = data.descripcion*/
         }
     }
-    fun addPasoReceta(newPaso:PasoDePreparacion){
-            //listaPasosPlato.clear()
-            listaPasosPlato.add(newPaso)
+    fun addPasoReceta(newPaso:List<PasoDePreparacion>){
+            listaPasosPlato.clear()
+            listaPasosPlato.addAll(newPaso)
             notifyDataSetChanged()
 
     }
