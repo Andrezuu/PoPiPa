@@ -11,16 +11,15 @@ import android.view.ViewParent
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
+import com.example.popipa.MainMenuActivity.Companion.APELLIDO_KEY
+import com.example.popipa.MainMenuActivity.Companion.EMAIL_KEY
+import com.example.popipa.MainMenuActivity.Companion.NOMBRE_KEY
 import com.example.popipa.databinding.ActivitySignInBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import java.text.FieldPosition
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -35,6 +34,14 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
+
+
+        val options = arrayOf("Basico", "Asistente", "Chef") //nuevo
+
+        val spiner = findViewById<Spinner>(R.id.action_bar_spinner)
+        val adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, options)//nuevo
+        spiner.adapter = adapter///nuevo
+
 
         binding.crearCuenta.setOnClickListener {
             clickCrearCuenta(
@@ -51,6 +58,7 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+
     fun clickCrearCuenta(email: String, contrasena: String, nombres: String, apellidos: String) {
         auth.createUserWithEmailAndPassword(email, contrasena)
             .addOnCompleteListener(this) { task ->
@@ -64,6 +72,10 @@ class SignUpActivity : AppCompatActivity() {
                     editor.putString("contraseña",contrasena)
                     editor.putString("apellido",apellidos)
                     editor.putString("email",email)
+                    editor.putString(NOMBRE_KEY, nombres)
+                    editor.putString(APELLIDO_KEY, apellidos)
+                    editor.putString(EMAIL_KEY, email)
+                    //editor.putString("experiecia",spiner)
                     editor.apply()
 
 
@@ -72,4 +84,5 @@ class SignUpActivity : AppCompatActivity() {
                 }
             }
     }
+
 }

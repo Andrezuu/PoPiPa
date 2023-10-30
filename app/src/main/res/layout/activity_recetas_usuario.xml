@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecetasUsuario"
-    android:background="@color/blue">
+    android:background="@color/blue"
+    tools:context=".RecetasUsuario">
 
     <ImageButton
         android:id="@+id/boton_volver2"
@@ -15,9 +15,11 @@
         android:background="@drawable/deshacer"
         android:backgroundTint="@color/black"
         android:onClick="onVolverButtonClicked2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
     </ImageButton>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/tus_recetas"
         android:layout_width="match_parent"
@@ -25,16 +27,18 @@
         android:layout_margin="10dp"
         app:cardCornerRadius="30dp"
         app:layout_constraintTop_toBottomOf="@id/boton_volver2">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tus_recetas"
             android:background="@color/purple"
-            android:gravity="center"
-            android:textSize="30dp"
-            android:padding="15dp"
             android:fontFamily="@font/lilita"
-            android:textColor="@color/white">
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/tus_recetas"
+            android:textColor="@color/white"
+            android:textSize="30dp">
+
         </TextView>
     </androidx.cardview.widget.CardView>
 
@@ -45,20 +49,21 @@
         android:layout_marginHorizontal="70dp"
         android:layout_marginTop="15dp"
         app:cardCornerRadius="30dp"
-        app:layout_constraintTop_toBottomOf="@id/tus_recetas"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent">
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tus_recetas">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/ojo"
             android:background="@color/orange"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:padding="10dp"
             android:fontFamily="@font/lilita"
-            android:textColor="@color/white">
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/ojo"
+            android:textColor="@color/white"
+            android:textSize="25dp">
+
         </TextView>
     </androidx.cardview.widget.CardView>
 
@@ -66,9 +71,11 @@
         android:id="@+id/recycler_tusRecetas11"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ojo_recetas">
+        app:layout_constraintTop_toBottomOf="@+id/ojo_recetas"
+        app:layout_constraintBottom_toTopOf="@id/button_add">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_tusRecetas"
@@ -79,16 +86,20 @@
 
         </androidx.recyclerview.widget.RecyclerView>
     </androidx.core.widget.NestedScrollView>
+
     <ImageButton
         android:id="@+id/button_add"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:layout_constraintTop_toBottomOf="@id/recycler_tusRecetas11"
+        android:layout_margin="20dp"
+        android:background="@drawable/agregar"
+        android:backgroundTint="@color/gray"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/agregar"
-        android:backgroundTint="@color/gray">
+        app:layout_constraintTop_toBottomOf="@id/recycler_tusRecetas11"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="onCrearRecetaButtonClicked3">
+
     </ImageButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

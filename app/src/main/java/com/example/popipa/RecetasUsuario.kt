@@ -2,52 +2,73 @@ package com.example.popipa
 
 import android.content.Intent
 import android.graphics.Rect
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.popipa.adapter.CategoriaMenuAdapter
 import com.example.popipa.adapter.RecetasUsuarioAdapter
-import com.example.popipa.dataClases.RecetaMenu
+import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityRecetasUsuarioBinding
-import com.example.popipa.listas.ListaDeRecomendacion
+import com.example.popipa.listas.ListasDeCategorias.ListaAlmuerzos
 
 class RecetasUsuario : AppCompatActivity() {
-
-    private lateinit var binding:ActivityRecetasUsuarioBinding
+    private var recetasUsuario = mutableListOf<TipoDePlato>()
+    private val context = this
+    private lateinit var binding: ActivityRecetasUsuarioBinding
     private val recetaMenuAdapter by lazy { RecetasUsuarioAdapter() }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecetasUsuarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        recetasUsuario = ListaAlmuerzos.listaAlmuerzos.toMutableList()
         iniciarRecetasUsuarioRecyclerView()
+
+        recetaMenuAdapter.onDeleteClick = { position ->
+            recetasUsuario.removeAt(position)
+            iniciarRecetasUsuarioRecyclerView()
+        }
     }
+    //Funciones para cambiar de pantalla
     fun onVolverButtonClicked2(view: View) {
-        val intent = Intent(this, MainMenuActivity::class.java)
+        val intent = Intent(context, MainMenuActivity::class.java)
         startActivity(intent)
-        finish()
+    }
+    fun onCrearRecetaButtonClicked3(view: View){
+        val intent = Intent(context, AgregacionRecetas::class.java)
+        intent.putExtra(CLAVE_PANTALLA_RECETA_USUARIO, 2)
+        startActivity(intent)
     }
 
-    fun iniciarRecetasUsuarioRecyclerView(){
-        val recetaMenus = mutableListOf<RecetaMenu>()
+    fun iniciarRecetasUsuarioRecyclerView() {
 
-        val recetas = ListaDeRecomendacion.listaTiposDeDesayuno
 
-        for (receta in recetas) {
+        val changeRecetas = mutableListOf<TipoDePlato>()
+        for (receta in recetasUsuario) {
             val tituloReceta = receta.titulo
             val descripcion = receta.descripcion
+            val imagenCategoria = receta.imagen
             val tiempo = receta.tiempoDePreparacion
             val dificultad = receta.dificultad
-            val imagenCategoria = receta.imagen
-
+            val meGusta = receta.meGusta
+            val listaIngredientes = receta.listIngrediente
+            val listaPasos = receta.listPasos
             val recetaMenu =
-                RecetaMenu(tituloReceta, descripcion, tiempo, dificultad, imagenCategoria)
-            recetaMenus.add(recetaMenu)
+                TipoDePlato(
+                    tituloReceta,
+                    descripcion,
+                    imagenCategoria,
+                    tiempo,
+                    dificultad,
+                    meGusta,
+                    listaIngredientes,
+                    listaPasos
+                )
+            changeRecetas.add(recetaMenu)
         }
 
 
-        recetaMenuAdapter.addRecetaUsuarioMenu(recetaMenus)
+        recetaMenuAdapter.addRecetaUsuarioMenu(changeRecetas)
         binding.recyclerTusRecetas.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -62,6 +83,10 @@ class RecetasUsuario : AppCompatActivity() {
             })
 
             adapter = recetaMenuAdapter
+
         }
+    }
+    companion object{
+        val CLAVE_PANTALLA_RECETA_USUARIO = "CLAVE_PANTALLA_RECETA_USUARIO"
     }
 }

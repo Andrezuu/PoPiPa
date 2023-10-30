@@ -26,58 +26,45 @@ class AgregacionRecetas : AppCompatActivity() {
     private lateinit var binding: ActivityAgregacionRecetasBinding
     private lateinit var itemCreacionPasoBinding: ItemCreacionPasoBinding
     private val pasoPlatoAdapter by lazy { CreacionPasoAdapter() }
-
-    private val listaPasosPlato = mutableListOf<PasoDePreparacion>()
     private val ingredientesDisponibles = mutableListOf<Ingrediente>()
-    private val galeriaLauncher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult(),
-        ::abrirGaleria
-    )
 
+    private val galeriaLauncher = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { image ->
+        itemCreacionPasoBinding.imagenPaso.setImageURI(image)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAgregacionRecetasBinding.inflate(layoutInflater)
+        itemCreacionPasoBinding = ItemCreacionPasoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.recyclerPasoCreacion.adapter = pasoPlatoAdapter
-        itemCreacionPasoBinding = ItemCreacionPasoBinding.inflate(layoutInflater)
+        //setContentView(itemCreacionPasoBinding.root)
 
-        //abrir la galeria para cambiar la foto del paso de la receta
         itemCreacionPasoBinding.imagenPaso.setOnClickListener {
-            onImagenNuevoPasoClicked(itemCreacionPasoBinding.imagenPaso)
+            galeriaLauncher.launch("image/*")
+
         }
     }
+
     // Funciones para cambiar de pantallas
     fun onVolverButtonClickedFromAgregarRe(view: View) {
-        val intent = Intent(this, MainMenuActivity::class.java)
-        startActivity(intent)
+        val pantallaOrigen = intent.getIntExtra(CLAVE_PANTALLA_ANTERIOR,0)
+        when (pantallaOrigen){
+            1 -> {
+                val intent = Intent(this, MainMenuActivity::class.java)
+                startActivity(intent)
+            }
+            2 -> {
+                val intent = Intent(this, RecetasUsuario::class.java)
+                startActivity(intent)
+            }
+        }
         finish()
     }
     fun onHechoButtonClickedFromAgregarRe(view: View){
         val intent = Intent(this, Descripcion_Dificultad__YMas_Receta::class.java)
         startActivity(intent)
-    }
-
-    fun abrirGaleria(result: ActivityResult) {
-        if (result.resultCode == RESULT_OK) {
-            // Guardar informacion en tipo URI de la imagen seleccionada
-            val imageUri = result.data?.data
-            // Convertir la imagen a un bitmap, con un let  debido al tipaje
-            val bitmapImage = BitmapFactory.decodeStream(imageUri?.let {
-                contentResolver.openInputStream(
-                    it
-                )
-            })
-            //reescalar la imagen para luego cargarla a la aplicacion
-            val resizedBitmapImage = Bitmap.createScaledBitmap(bitmapImage, 800, 800, true)
-            itemCreacionPasoBinding.imagenPaso.setImageBitmap(resizedBitmapImage)
-        }
-    }
-
-    fun onImagenNuevoPasoClicked(view: View) {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        galeriaLauncher.launch(intent)
-        itemCreacionPasoBinding = ItemCreacionPasoBinding.inflate(layoutInflater)
     }
 
     fun onAgregarIngrediente(view: View) {
@@ -93,15 +80,16 @@ class AgregacionRecetas : AppCompatActivity() {
             Toast.makeText(this, "Ingrese nombre y cantidad por favor", Toast.LENGTH_SHORT).show()
         }
     }
-    private var indicePasoReceta = 1
+    var indicePasoReceta = 0
     private val recetaPasos = mutableListOf<PasoDePreparacion>()
     fun iniciarPasoRecetaRecyclerView(view: View) {
-        val nuevoPaso = PasoDePreparacion(indicePasoReceta, "", indicePasoReceta)
-        //recetaPasos.add(nuevoPaso)
-        pasoPlatoAdapter.addPasoReceta(nuevoPaso)
+        val nuevoPaso = PasoDePreparacion(indicePasoReceta, itemCreacionPasoBinding.descripcionPaso.text.toString(), 1)
+        recetaPasos.add(nuevoPaso)
         indicePasoReceta++
+        pasoPlatoAdapter.addPasoReceta(recetaPasos)
+        itemCreacionPasoBinding.descripcionPaso.text.clear()
         binding.recyclerPasoCreacion.adapter?.notifyItemInserted(pasoPlatoAdapter.itemCount-1)
-
+        /*
         binding.recyclerPasoCreacion.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -116,9 +104,22 @@ class AgregacionRecetas : AppCompatActivity() {
             })
 
             adapter = pasoPlatoAdapter
+        }*/
+        if (binding.recyclerPasoCreacion.layoutManager == null) {
+            binding.recyclerPasoCreacion.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            binding.recyclerPasoCreacion.addItemDecoration(object : RecyclerView.ItemDecoration() {
+                override fun getItemOffsets(
+                    outRect: Rect,
+                    view: View,
+                    parent: RecyclerView,
+                    state: RecyclerView.State
+                ) {
+                    outRect.bottom = 50
+                }
+            })
+            binding.recyclerPasoCreacion.adapter = pasoPlatoAdapter
         }
     }
-
     fun onAgregarPasos(view: View) {
         val nuevoItem = layoutInflater.inflate(R.layout.item_creacion_paso, null)
         val botonImagen = nuevoItem.findViewById<ImageButton>(R.id.imagen_paso)
@@ -127,5 +128,8 @@ class AgregacionRecetas : AppCompatActivity() {
         // Agregar el nuevo item a la lista de pasos
         val linearLayout = findViewById<LinearLayout>(R.id.probar)
         linearLayout.addView(nuevoItem)
+    }
+    companion object {
+        val CLAVE_PANTALLA_ANTERIOR = "CLAVE_PANTALLA_ANTERIOR"
     }
 }

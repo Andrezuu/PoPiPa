@@ -43,15 +43,10 @@ class FiltradorActivity : AppCompatActivity() {
             var isSalmon = false
             boton.setOnClickListener {
                 if (!isSalmon) {
-                    context?.let {
-                        boton.setBackgroundColor(ContextCompat.getColor(context, R.color.salmon))
-
-                    }
+                    boton.setBackgroundColor(ContextCompat.getColor(context, R.color.salmon))
                 } else {
-                    context?.let {
-                        boton.setBackgroundColor(ContextCompat.getColor(context, R.color.gray2))
 
-                    }
+                    boton.setBackgroundColor(ContextCompat.getColor(context, R.color.gray2))
                 }
                 isSalmon = !isSalmon
                 botonesSeleccionado[boton] = isSalmon
@@ -61,6 +56,7 @@ class FiltradorActivity : AppCompatActivity() {
         binding.goFiltrar.setOnClickListener {
             //filtrar que botones fueron clikeados
             val botonesPressed = botonesSeleccionado.filter { it.value }
+
             //juntar las categorias seleccionadas en una lista de categorias
             val categoriasFiltradas = botonesPressed.flatMap { boton ->
                 ListaCategoriasMenu.listCategory.filter { categoria ->
@@ -71,12 +67,13 @@ class FiltradorActivity : AppCompatActivity() {
             //juntar todas los tipos de plato (receta) de las categorias filtradas en una lista de lista de platos
 
             val recetasFiltradas = mutableListOf<List<TipoDePlato>>()
-            categoriasFiltradas.forEach {
-                recetasFiltradas.add(it.listPlato)
+
+            categoriasFiltradas.forEach { categoria ->
+                recetasFiltradas.add(categoria.listPlato)
             }
 
             //crear una nueva categoria resultados, se le asigna cualquier imagen
-            //y se le hace un flatten a recetasFiltras
+            //y se le hace un flatten a recetasFiltradas
             //esto para que la lista de listas de platos sea una sola lista de platos
             val resultadoFiltrado = CategoriaTipoDePlato(
                 "Resultados",
