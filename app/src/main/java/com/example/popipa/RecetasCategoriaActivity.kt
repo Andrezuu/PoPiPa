@@ -37,13 +37,20 @@ class RecetasCategoriaActivity : AppCompatActivity() {
         iniciarPasosRecyclerView(recetaActual.listPasos)
 
         binding.botonVolver.setOnClickListener {
-            onVolverButtonClicked(binding.botonVolver)
+            val intent = Intent(context, MainMenuActivity::class.java)
+            startActivity(intent)
         }
-    }
+        var isColor = false
+        binding.botonLike.setOnClickListener {
 
-    fun onVolverButtonClicked(view: View) {
-        val intent = Intent(context, MainMenuActivity::class.java)
-        startActivity(intent)
+            if (recetaActual.meGusta) {
+                binding.botonLike.setBackgroundResource(R.drawable.corazon_me_gusta_gris)
+
+            } else {
+                binding.botonLike.setBackgroundResource(R.drawable.corazon_me_gusta)
+            }
+            recetaActual.meGusta = !recetaActual.meGusta
+        }
     }
 
     fun iniciarIngredientesRecyclerView(newIngredientes: List<Ingrediente>) {

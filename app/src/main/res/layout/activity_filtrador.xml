@@ -52,7 +52,7 @@
             android:fontFamily="@font/lilita"
             android:text="@string/escoja_sus_filtros"
             android:textColor="@color/white"
-            android:textSize="35sp">
+            android:textSize="32sp">
 
         </TextView>
 
@@ -244,6 +244,7 @@
         android:backgroundTint="@color/purple"
         android:fontFamily="@font/lilita"
         android:text="@string/filtrar"
+        android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

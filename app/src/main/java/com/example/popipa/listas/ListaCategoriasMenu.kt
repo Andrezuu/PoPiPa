@@ -18,7 +18,7 @@ class ListaCategoriasMenu {
         val listCategory = listOf<CategoriaTipoDePlato>(
             CategoriaTipoDePlato(
                 "Desayunos",
-                R.drawable.pasteles,
+                R.drawable.desayunos,
                 ListaDesayunos.listaTiposDeDesayuno
             ),
             CategoriaTipoDePlato(
