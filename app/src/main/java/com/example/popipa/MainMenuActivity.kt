@@ -74,8 +74,9 @@ class MainMenuActivity : AppCompatActivity() {
         val intent: Intent = Intent(this, RecetasUsuario::class.java)
         startActivity(intent)
     }
-    fun onAgregacionRecetasClicked(view: View){
-        val intent:Intent=Intent(this,AgregacionRecetas::class.java)
+
+    fun onAgregacionRecetasClicked(view: View) {
+        val intent: Intent = Intent(this, AgregacionRecetas::class.java)
         startActivity(intent)
     }
 
@@ -159,10 +160,15 @@ class MainMenuActivity : AppCompatActivity() {
         }
     }
 
+    //KEYS PARA SHARED PREFERENCES E INTENTS
     companion object {
         val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"
         val CLAVE_RECETA = "CLAVE_RECETA"
         val CLAVE_TITULO_CATEGORIA = "CLAVE_TITULO_CATEGORIA"
+        val IMAGE_STRING_KEY = "IMAGE_STRING_KEY"
+        val NOMBRE_KEY = "NOMBRE_KEY"
+        val APELLIDO_KEY = "APELLIDO_KEY"
+        val EMAIL_KEY = "EMAIL_KEY"
     }
 }
 
