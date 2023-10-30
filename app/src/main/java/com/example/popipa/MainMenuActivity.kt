@@ -31,7 +31,7 @@ class MainMenuActivity : AppCompatActivity() {
         iniciarCategoriaMenuRecyclerView()
         iniciarRecetaMenuRecyclerView()
 
-        //Entrar en otras pantallas de la barra de abajo
+        //Entrar en las pantallas de la barra de abajo
         binding.buttonMisRecetas.setOnClickListener {
             intent = Intent(context, RecetasUsuario::class.java)
             startActivity(intent)
@@ -39,6 +39,11 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding.buttonBuscar.setOnClickListener {
             intent = Intent(context, FiltradorActivity::class.java)
+            startActivity(intent)
+        }
+        binding.buttonAgregar.setOnClickListener{
+            intent = Intent(context, AgregacionRecetas::class.java)
+            intent.putExtra(CLAVE_PANTALLA_MAIN_MENU, 1)
             startActivity(intent)
         }
 
@@ -62,21 +67,6 @@ class MainMenuActivity : AppCompatActivity() {
 
         }
 
-    }
-
-    //Entrar en otras pantallas de la barra de abajo
-    fun onPerfilButtonClicked(view: View) {
-        val intent: Intent = Intent(this, PerfilUsuarioActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun onRecetasUsuarioClicked(view: View) {
-        val intent: Intent = Intent(this, RecetasUsuario::class.java)
-        startActivity(intent)
-    }
-    fun onAgregacionRecetasClicked(view: View){
-        val intent:Intent=Intent(this,AgregacionRecetas::class.java)
-        startActivity(intent)
     }
 
     fun iniciarCategoriaMenuRecyclerView() {
@@ -163,6 +153,7 @@ class MainMenuActivity : AppCompatActivity() {
         val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"
         val CLAVE_RECETA = "CLAVE_RECETA"
         val CLAVE_TITULO_CATEGORIA = "CLAVE_TITULO_CATEGORIA"
+        val CLAVE_PANTALLA_MAIN_MENU = "CLAVE_PANTALLA_MAIN_MENU"
     }
 }
 

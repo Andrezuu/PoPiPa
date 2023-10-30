@@ -49,8 +49,17 @@ class AgregacionRecetas : AppCompatActivity() {
 
     // Funciones para cambiar de pantallas
     fun onVolverButtonClickedFromAgregarRe(view: View) {
-        val intent = Intent(this, MainMenuActivity::class.java)
-        startActivity(intent)
+        val pantallaOrigen = intent.getIntExtra(CLAVE_PANTALLA_ANTERIOR,0)
+        when (pantallaOrigen){
+            1 -> {
+                val intent = Intent(this, MainMenuActivity::class.java)
+                startActivity(intent)
+            }
+            2 -> {
+                val intent = Intent(this, RecetasUsuario::class.java)
+                startActivity(intent)
+            }
+        }
         finish()
     }
     fun onHechoButtonClickedFromAgregarRe(view: View){
@@ -119,5 +128,8 @@ class AgregacionRecetas : AppCompatActivity() {
         // Agregar el nuevo item a la lista de pasos
         val linearLayout = findViewById<LinearLayout>(R.id.probar)
         linearLayout.addView(nuevoItem)
+    }
+    companion object {
+        val CLAVE_PANTALLA_ANTERIOR = "CLAVE_PANTALLA_ANTERIOR"
     }
 }

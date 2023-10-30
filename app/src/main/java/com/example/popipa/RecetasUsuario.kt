@@ -29,9 +29,14 @@ class RecetasUsuario : AppCompatActivity() {
             iniciarRecetasUsuarioRecyclerView()
         }
     }
-
+    //Funciones para cambiar de pantalla
     fun onVolverButtonClicked2(view: View) {
         val intent = Intent(context, MainMenuActivity::class.java)
+        startActivity(intent)
+    }
+    fun onCrearRecetaButtonClicked3(view: View){
+        val intent = Intent(context, AgregacionRecetas::class.java)
+        intent.putExtra(CLAVE_PANTALLA_RECETA_USUARIO, 2)
         startActivity(intent)
     }
 
@@ -80,5 +85,8 @@ class RecetasUsuario : AppCompatActivity() {
             adapter = recetaMenuAdapter
 
         }
+    }
+    companion object{
+        val CLAVE_PANTALLA_RECETA_USUARIO = "CLAVE_PANTALLA_RECETA_USUARIO"
     }
 }
