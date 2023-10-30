@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="340dp"
-    android:layout_height="250dp"
+    android:layout_height="260dp"
     android:background="@drawable/background_esquinas_redondeadas"
     android:backgroundTint="@color/gray">
 
@@ -16,40 +16,42 @@
         android:text="@string/nombres"
         android:textColor="@color/black"
         android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
 
     <TextView
         android:id="@+id/descripcion_paso"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-
+        android:layout_marginStart="10dp"
         android:ellipsize="end"
         android:fontFamily="@font/roboto"
         android:maxLines="14"
         android:text="@string/nombres"
         android:textColor="@color/black"
-        android:layout_marginStart="16dp"
-        android:textSize="12sp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/card_paso"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/numero_paso">
 
     </TextView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:id="@+id/card_paso"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:cardCornerRadius="30dp"
-        app:layout_constraintStart_toEndOf="@id/descripcion_paso"
-        app:layout_constraintTop_toTopOf="@id/descripcion_paso">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imagen_paso"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@drawable/background_esquinas_redondeadas"
             android:src="@drawable/desayunos">
 
