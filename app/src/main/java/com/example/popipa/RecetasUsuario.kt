@@ -13,7 +13,7 @@ import com.example.popipa.databinding.ActivityRecetasUsuarioBinding
 import com.example.popipa.listas.ListasDeCategorias.ListaAlmuerzos
 
 class RecetasUsuario : AppCompatActivity() {
-    var recetasUsuario = mutableListOf<TipoDePlato>()
+    private var recetasUsuario = mutableListOf<TipoDePlato>()
     private val context = this
     private lateinit var binding: ActivityRecetasUsuarioBinding
     private val recetaMenuAdapter by lazy { RecetasUsuarioAdapter() }
