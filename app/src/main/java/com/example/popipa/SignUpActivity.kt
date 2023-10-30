@@ -3,21 +3,16 @@ package com.example.popipa
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.view.ViewParent
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
+import com.example.popipa.MainMenuActivity.Companion.APELLIDO_KEY
+import com.example.popipa.MainMenuActivity.Companion.EMAIL_KEY
+import com.example.popipa.MainMenuActivity.Companion.NOMBRE_KEY
 import com.example.popipa.databinding.ActivitySignInBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import java.text.FieldPosition
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -37,8 +32,6 @@ class SignUpActivity : AppCompatActivity() {
         val spiner = findViewById<Spinner>(R.id.action_bar_spinner)
         val adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, options)//nuevo
         spiner.adapter = adapter///nuevo
-
-
 
 
         binding.crearCuenta.setOnClickListener {
@@ -66,10 +59,9 @@ class SignUpActivity : AppCompatActivity() {
                     //TODO mandar usuario para guardar info
                     val sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
-                    editor.putString("nombre", nombres)
-                    editor.putString("contraseña",contrasena)
-                    editor.putString("apellido",apellidos)
-                    editor.putString("email",email)
+                    editor.putString(NOMBRE_KEY, nombres)
+                    editor.putString(APELLIDO_KEY, apellidos)
+                    editor.putString(EMAIL_KEY, email)
                     //editor.putString("experiecia",spiner)
                     editor.apply()
                     val intent = Intent(context, LogInActivity::class.java)
