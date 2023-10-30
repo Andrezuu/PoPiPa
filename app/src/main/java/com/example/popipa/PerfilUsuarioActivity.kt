@@ -79,6 +79,22 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         managePreferences()
     }
 
+    fun guardarSharedPreferences() {
+
+
+        val imageSelected = binding.fotoPerfil.drawable.toBitmap()
+        val editor = sharedPreferences.edit()
+
+        val imageString: String = bitmapToString(imageSelected)
+
+        editor.putString(IMAGE_STRING_KEY, imageString)
+        editor.apply()
+
+        binding.fotoPerfil.setImageBitmap(imageSelected)
+        Toast.makeText(context, "Foto guardada!", Toast.LENGTH_SHORT).show()
+
+    }
+
     fun saveData() {
 
 
@@ -145,14 +161,13 @@ class PerfilUsuarioActivity : AppCompatActivity() {
             R.layout.simple_spinner_item,
             dataList
         )
-
         binding.spiner.adapter = adapter
         binding.spiner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 //binding.guardarExperiencia.text = dataList[position]
                 spinnerSelected = dataList[position]
-                Toast.makeText(this@PerfilUsuarioActivity, "Chef?", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@PerfilUsuarioActivity, "Mi Chef...", Toast.LENGTH_SHORT).show()
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
@@ -168,7 +183,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
             var savedData = spinnerSelected
             editor.putString("experiencia",savedData)
             editor.apply()
-            val experiencia = preference.getString("experiencia","F")
+            val experiencia = preference.getString("experiencia","")
             binding.textoExperiencia.text = experiencia
             editor.apply()
         }

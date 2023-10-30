@@ -25,7 +25,6 @@ class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var auth: FirebaseAuth
-    var spinnerSelected = "Experiencia"
     private lateinit var preference: SharedPreferences
     private val context: Context = this
 
@@ -34,13 +33,6 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-
-
-        val options = arrayOf("Basico", "Asistente", "Chef") //nuevo
-
-        val spiner = findViewById<Spinner>(R.id.action_bar_spinner)
-        val adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, options)//nuevo
-        spiner.adapter = adapter///nuevo
 
 
         binding.crearCuenta.setOnClickListener {
@@ -66,18 +58,11 @@ class SignUpActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
                     //TODO mandar usuario para guardar info
-                    val sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
-                    val editor = sharedPreferences.edit()
-                    editor.putString("nombre", nombres)
-                    editor.putString("contraseña",contrasena)
-                    editor.putString("apellido",apellidos)
-                    editor.putString("email",email)
+                    val editor = preference.edit()
                     editor.putString(NOMBRE_KEY, nombres)
                     editor.putString(APELLIDO_KEY, apellidos)
                     editor.putString(EMAIL_KEY, email)
-                    //editor.putString("experiecia",spiner)
                     editor.apply()
-
 
                     val intent = Intent(context, LogInActivity::class.java)
                     startActivity(intent)

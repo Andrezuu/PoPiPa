@@ -61,172 +61,37 @@ class ListaDeRecomendacion {
     companion object {
     val listaTiposDeDesayuno = listOf<TipoDePlato>(
 
-        TipoDePlato(
-            "Ceviche de pescado",
-            "Ceviche peruano de pescado con limón, ají y choclo.",
-            R.drawable.ceviche,
-            "45 min",
-            3,
-            false,
-            IngredientesCevichePescado.listaCeviche,
-            PasosCevichePescado.pasosDePreparacionCeviche
-        ),
+        TipoDePlato("Ceviche de pescado", "Ceviche peruano de pescado con limón, ají y choclo.", R.drawable.ceviche, "45 min", 2, false, IngredientesCevichePescado.listaCeviche, PasosCevichePescado.pasosDePreparacionCeviche),
 
-        TipoDePlato(
-            "Tacos al pastor",
-            "Tacos al pastor con carne marinada, piña, cilantro y tortillas de maíz.",
-            R.drawable.tacos_al_pastor,
-            "30 min",
-            2,
-            false,
-            IngredientesTacosPastor.listaTacosPastor,
-            PasosTacosPastor.pasosDePreparacionTacosPastor
-        ),
+        TipoDePlato("Tacos al pastor", "Tacos al pastor con carne marinada, piña, cilantro y tortillas de maíz.", R.drawable.tacos_al_pastor, "30 min", 2, false, IngredientesTacosPastor.listaTacosPastor, PasosTacosPastor.pasosDePreparacionTacosPastor),
 
-        TipoDePlato(
-            "Pozole rojo",
-            "Pozole rojo con carne de cerdo, maíz, chile y vegetales.",
-            R.drawable.pozole,
-            "90 min",
-            3,
-            false,
-            IngredientesPozoleRojo.listaPozole,
-            PasosPozoleRojo.pasosDePreparacionPozole
-        ),
+        TipoDePlato("Pozole rojo", "Pozole rojo con carne de cerdo, maíz, chile y vegetales.", R.drawable.pozole, "90 min", 3, false, IngredientesPozoleRojo.listaPozole, PasosPozoleRojo.pasosDePreparacionPozole),
 
-        TipoDePlato(
-            "Tamales oaxaqueños",
-            "Tamales de masa con relleno de pollo envueltos en hoja de plátano.",
-            R.drawable.tamales,
-            "120 min",
-            3,
-            false,
-            IngredientesTamalesOaxaqueños.listaTamales,
-            PasosTamalesOaxaqueños.pasosDePreparacionTamales
-        ),
+        TipoDePlato("Tamales oaxaqueños", "Tamales de masa con relleno de pollo envueltos en hoja de plátano.", R.drawable.tamales, "120 min", 3, false, IngredientesTamalesOaxaqueños.listaTamales, PasosTamalesOaxaqueños.pasosDePreparacionTamales),
 
-        TipoDePlato(
-            "Flan napolitano",
-            "Flan de vainilla con caramelo líquido.",
-            R.drawable.flan,
-            "50 min",
-            3,
-            false,
-            IngredientesFlanNapolitano.listaFlan,
-            PasosFlanNapolitano.pasosDePreparacionFlan
-        ),
+        TipoDePlato("Flan napolitano", "Flan de vainilla con caramelo líquido.", R.drawable.flan, "50 min", 3, false, IngredientesFlanNapolitano.listaFlan, PasosFlanNapolitano.pasosDePreparacionFlan),
 
-        TipoDePlato(
-            "Ceviche de camarones",
-            "Ceviche con camarones, jugo de limón, ají amarillo y choclo.",
-            R.drawable.ceviche_camarones,
-            "30 min",
-            3,
-            false,
-            IngredientesCevicheCamarones.listaCevicheCamarones,
-            PasosCevicheCamarones.pasosDePreparacionCevicheDeCamarones
-        ),
+        TipoDePlato("Ceviche de camarones", "Ceviche con camarones, jugo de limón, ají amarillo y choclo.", R.drawable.ceviche_camarones, "30 min", 3, false, IngredientesCevicheCamarones.listaCevicheCamarones, PasosCevicheCamarones.pasosDePreparacionCevicheDeCamarones),
 
-        TipoDePlato(
-            "Lomo saltado",
-            "Lomo saltado de res con tomate, cebolla y papas fritas.",
-            R.drawable.lomo_saltado,
-            "45 min",
-            2,
-            false,
-            IngredientesLomoSaltado.listaLomoSaltado,
-            PasosLomoSaltado.pasosDePreparacionLomoSaltado
-        ),
+        TipoDePlato("Lomo saltado", "Lomo saltado de res con tomate, cebolla y papas fritas.", R.drawable.lomo_saltado, "45 min", 2, false, IngredientesLomoSaltado.listaLomoSaltado, PasosLomoSaltado.pasosDePreparacionLomoSaltado),
 
-        TipoDePlato(
-            "Ají de gallina",
-            "Ají de gallina con trozos de pollo, ají amarillo y arroz.",
-            R.drawable.aji_gallina,
-            "60 min",
-            3,
-            false,
-            IngredientesAjiGallina.listaAjiDeGallina,
-            PasosAjiGallina.pasosDePreparacionAjiDeGallina
-        ),
+        TipoDePlato("Ají de gallina", "Ají de gallina con trozos de pollo, ají amarillo y arroz.", R.drawable.aji_gallina, "60 min", 3, false, IngredientesAjiGallina.listaAjiDeGallina, PasosAjiGallina.pasosDePreparacionAjiDeGallina),
 
-        TipoDePlato(
-            "Causa limeña",
-            "Causa limeña de papa amarilla con pollo y salsa de ají.",
-            R.drawable.causa_limena,
-            "90 min",
-            3,
-            false,
-            IngredientesCausaLimeña.listaCausaLimena,
-            PasosCausaLimeña.pasosDePreparacionCausaLimena
-        ),
+        TipoDePlato("Causa limeña", "Causa limeña de papa amarilla con pollo y salsa de ají.", R.drawable.causa_limena, "90 min", 1, false, IngredientesCausaLimeña.listaCausaLimena, PasosCausaLimeña.pasosDePreparacionCausaLimena),
 
-        TipoDePlato(
-            "Picarones",
-            "Picarones peruanos con miel de chancaca.",
-            R.drawable.picarones,
-            "45 min",
-            3,
-            false,
-            IngredientesPicarones.listaPicarones,
-            PasosPicarones.pasosDePreparacionPicarones
-        ),
+        TipoDePlato("Picarones", "Picarones peruanos con miel de chancaca.", R.drawable.picarones, "45 min", 1, false, IngredientesPicarones.listaPicarones, PasosPicarones.pasosDePreparacionPicarones),
 
-        TipoDePlato(
-            "Risotto de hongos",
-            "Risotto cremoso con variedad de hongos",
-            R.drawable.risotto,
-            "30 min",
-            3,
-            false,
-            IngredientesRisottoHongos.listaRisotto,
-            PasosRisottoHongos.pasosDePreparacionRisotto
-        ),
+        TipoDePlato("Risotto de hongos", "Risotto cremoso con variedad de hongos", R.drawable.risotto, "30 min", 1, false, IngredientesRisottoHongos.listaRisotto, PasosRisottoHongos.pasosDePreparacionRisotto),
 
-        TipoDePlato(
-            "Tacos de carnitas",
-            "Tortillas de maíz con carnitas y salsa verde",
-            R.drawable.tacos_carnitas,
-            "25 min",
-            2,
-            false,
-            IngredientesTacosCarnitas.listaCarnitas,
-            PasosTacosCarnitas.pasosDePreparacionCarnitas
-        ),
+        TipoDePlato("Tacos de carnitas", "Tortillas de maíz con carnitas y salsa verde", R.drawable.tacos_carnitas, "25 min", 2, false, IngredientesTacosCarnitas.listaCarnitas, PasosTacosCarnitas.pasosDePreparacionCarnitas),
 
-        TipoDePlato(
-            "Tostadas de tinga",
-            "Tostadas con tinga de pollo y frijoles refritos",
-            R.drawable.tostadas,
-            "20 min",
-            2,
-            false,
-            IngredientesTostadasTinga.listaTinga,
-            PasosTostadasTinga.pasosDePreparacionTinga
-        ),
+        TipoDePlato("Tostadas de tinga", "Tostadas con tinga de pollo y frijoles refritos", R.drawable.tostadas, "20 min", 2, false, IngredientesTostadasTinga.listaTinga, PasosTostadasTinga.pasosDePreparacionTinga),
 
-        TipoDePlato(
-            "Pozole verde",
-            "Pozole con pollo en salsa verde de tomatillo",
-            R.drawable.pozole_verde,
-            "60 min",
-            3,
-            false,
-            IngredientesPozoleVerde.listaPozoleVerde,
-            PasosPozoleVerde.pasosDePreparacionPozoleVerde
-        ),
+        TipoDePlato("Pozole verde", "Pozole con pollo en salsa verde de tomatillo", R.drawable.pozole_verde, "60 min", 3, false, IngredientesPozoleVerde.listaPozoleVerde, PasosPozoleVerde.pasosDePreparacionPozoleVerde),
 
-        TipoDePlato(
-            "Enchiladas rojas",
-            "Enchiladas rojas de pollo con queso",
-            R.drawable.enchiladas,
-            "40 min",
-            3,
-            false,
-            IngredientesEnchiladasRojas.listaEnchiladas,
-            PasosEnchiladasRojas.pasosDePreparacionEnchiladas
-        ),
+        TipoDePlato("Enchiladas rojas", "Enchiladas rojas de pollo con queso", R.drawable.enchiladas, "40 min", 1, false, IngredientesEnchiladasRojas.listaEnchiladas, PasosEnchiladasRojas.pasosDePreparacionEnchiladas),
 
-        TipoDePlato("Tamales de elote", "Tamales de masa con granos de elote", R.drawable.tamales_elote, "90 min", 4, false,IngredientesTamalesElote.listaTamalesDeElote,PasosTamalesElote.pasosDePreparacionTamalesDeElote),
+        TipoDePlato("Tamales de elote", "Tamales de masa con granos de elote", R.drawable.tamales_elote, "90 min", 1, false,IngredientesTamalesElote.listaTamalesDeElote,PasosTamalesElote.pasosDePreparacionTamalesDeElote),
 
         TipoDePlato("Ceviche de pulpo", "Ceviche de pulpo con jugo de limón", R.drawable.ceviche_pulpo, "30 min", 3, false,IngredientesCevichePulpo.listaCevichePulpo,PasosCevichePulpo.pasosDePreparacionCevicheDePulpo),
 
@@ -234,7 +99,7 @@ class ListaDeRecomendacion {
 
         TipoDePlato("Empanadas argentinas", "Empanadas fritas de carne con chimichurri", R.drawable.empanadas, "45 min", 3,false, IngredientesEmpanadasArgentinas.listaEmpanadas,PasosEmpanadasArgentinas.pasosDePreparacionEmpanadas),
 
-        TipoDePlato("Asado argentino", "Bife de chorizo, morcilla, chorizo y chimichurri", R.drawable.asado, "60 min", 4,false, IngredientesAsado.listaAsado,PasosAsado.pasosDePreparacionAsado),
+        TipoDePlato("Asado argentino", "Bife de chorizo, morcilla, chorizo y chimichurri", R.drawable.asado, "60 min", 1,false, IngredientesAsado.listaAsado,PasosAsado.pasosDePreparacionAsado),
 
         TipoDePlato("Pasta Alfredo", "Pasta en salsa Alfredo con pollo y champiñones", R.drawable.pasta_alfredo, "30 min", 3,false, IngredientesPastaAlfredo.listaAlfredo,PasosPastaAlfredo.pasosDePreparacionFettuccineAlfredo),
 
@@ -248,7 +113,7 @@ class ListaDeRecomendacion {
 
         TipoDePlato("Pollo al disco", "Pollo a la parrilla con papas y ensalada", R.drawable.pollo_disco, "45 min", 3,false, IngredientesPolloDisco.listaPolloDisco,PasosPolloDisco.pasosDePreparacionPolloDisco),
 
-        TipoDePlato("Pascualina", "Tarta de hojaldre con verdura y jamón", R.drawable.pascualina, "60 min", 4, false,IngredientesPascualina.listaPascualina,PasosPascualina.pasosDePreparacionPascualina)
+        TipoDePlato("Pascualina", "Tarta de hojaldre con verdura y jamón", R.drawable.pascualina, "60 min", 1, false,IngredientesPascualina.listaPascualina,PasosPascualina.pasosDePreparacionPascualina)
     )
     }
 }

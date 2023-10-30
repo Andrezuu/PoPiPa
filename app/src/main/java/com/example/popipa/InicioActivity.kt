@@ -16,7 +16,7 @@ class InicioActivity : AppCompatActivity() {
 
         //Aca se modifica cuanto tiempo estara la pantalla para cambiar
         // a la otra pantalla
-        val tiempoEspera=500 //0.5 segundos
+        val tiempoEspera=200 //0.2 segundos
 
         Handler().postDelayed({
             val intent= Intent(this,LogInActivity::class.java)

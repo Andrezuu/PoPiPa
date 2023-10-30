@@ -25,8 +25,8 @@ class MainMenuActivity : AppCompatActivity() {
     private val tipoDePlatoAdapter by lazy { TipoDePlatoAdapter() }
     private lateinit var binding: ActivityMainMenuBinding
 
-//    private lateinit var preference: SharedPreferences
-//    lateinit var  experiencia :String
+    private lateinit var preference: SharedPreferences
+    lateinit var  experiencia :String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +34,8 @@ class MainMenuActivity : AppCompatActivity() {
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        preference = PreferenceManager.getDefaultSharedPreferences(this)
-//        preference.getString("experiencia","")
+        preference = PreferenceManager.getDefaultSharedPreferences(this)
+        experiencia = preference.getString("experiencia","") ?: "Chef"
 
 
         iniciarCategoriaMenuRecyclerView()
@@ -142,7 +142,7 @@ class MainMenuActivity : AppCompatActivity() {
     fun funexperiencia(experiencia1: String): Int {
         return when (experiencia1) {
             "Basico" -> 1
-            "Junior Chef" -> 2
+            "Junnior Chef" -> 2
             else -> 3
         }
     }
@@ -155,7 +155,7 @@ class MainMenuActivity : AppCompatActivity() {
 
             val dificultad = receta.dificultad
 
-           // if (funexperiencia(experiencia) >= dificultad) {
+            if (funexperiencia(experiencia) >= dificultad) {
             val tituloReceta = receta.titulo
             val descripcion = receta.descripcion
             val imagenCategoria = receta.imagen
@@ -175,7 +175,7 @@ class MainMenuActivity : AppCompatActivity() {
                         listaPasos
                     )
             recetaMenus.add(recetaMenu)
-         //   }
+            }
         }
 
         tipoDePlatoAdapter.addRecetaMenus(recetaMenus)
