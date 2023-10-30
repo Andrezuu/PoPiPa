@@ -46,6 +46,16 @@ class AgregacionRecetas : AppCompatActivity() {
             onImagenNuevoPasoClicked(itemCreacionPasoBinding.imagenPaso)
         }
     }
+    // Funciones para cambiar de pantallas
+    fun onVolverButtonClickedFromAgregarRe(view: View) {
+        val intent = Intent(this, MainMenuActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+    fun onHechoButtonClickedFromAgregarRe(view: View){
+        val intent = Intent(this, Descripcion_Dificultad__YMas_Receta::class.java)
+        startActivity(intent)
+    }
 
     fun abrirGaleria(result: ActivityResult) {
         if (result.resultCode == RESULT_OK) {
@@ -68,12 +78,6 @@ class AgregacionRecetas : AppCompatActivity() {
         intent.type = "image/*"
         galeriaLauncher.launch(intent)
         itemCreacionPasoBinding = ItemCreacionPasoBinding.inflate(layoutInflater)
-    }
-
-    fun onVolverButtonClickedFromAgregarRe(view: View) {
-        val intent = Intent(this, MainMenuActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 
     fun onAgregarIngrediente(view: View) {
