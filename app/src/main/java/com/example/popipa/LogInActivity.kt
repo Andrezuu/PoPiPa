@@ -3,6 +3,7 @@ package com.example.popipa
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import androidx.appcompat.app.AppCompatActivity
 import com.example.popipa.databinding.ActivityLogInBinding
 import com.google.firebase.Firebase
@@ -25,6 +26,20 @@ class LogInActivity : AppCompatActivity() {
         }
         binding.iniciarSesion.setOnClickListener {
             loginUser(binding.editGmail.text.toString(), binding.editPassword.text.toString())
+        }
+        val passwordEditText = binding.editPassword
+        val eyeButton = binding.eyeContrasenaLogIn
+        var isPasswordVisible=false
+        binding.eyeContrasenaLogIn.setOnClickListener{
+            isPasswordVisible = !isPasswordVisible
+            if(isPasswordVisible){
+                passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                eyeButton.setImageResource(R.drawable.eye)
+            }else{
+                passwordEditText.inputType=InputType.TYPE_TEXT_VARIATION_PASSWORD
+                eyeButton.setImageResource(R.drawable.eye)
+            }
+            passwordEditText.setSelection(passwordEditText.text.length)
         }
     }
 

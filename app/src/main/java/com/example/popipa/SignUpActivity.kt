@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.text.InputType
 import android.view.View
 import android.view.ViewParent
 import android.widget.AdapterView
@@ -48,6 +49,23 @@ class SignUpActivity : AppCompatActivity() {
             val intent = Intent(context, LogInActivity::class.java)
             startActivity(intent)
         }
+        val passwordEditText = binding.editPassword
+        val eyeButton = binding.eyeContrasenaLogIn
+
+        var isPasswordVisible = false
+
+        eyeButton.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+            if (isPasswordVisible) {
+                passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                eyeButton.setImageResource(com.example.popipa.R.drawable.eye)
+            } else {
+                passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                eyeButton.setImageResource(com.example.popipa.R.drawable.eye)
+            }
+            passwordEditText.setSelection(passwordEditText.text.length)
+        }
+
     }
 
 

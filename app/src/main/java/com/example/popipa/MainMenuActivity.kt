@@ -26,7 +26,7 @@ class MainMenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainMenuBinding
 
     private lateinit var preference: SharedPreferences
-    lateinit var  experiencia :String
+    lateinit var experiencia: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +35,11 @@ class MainMenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         preference = PreferenceManager.getDefaultSharedPreferences(this)
-        experiencia = preference.getString("experiencia","") ?: "Chef"
+        experiencia = preference.getString("experiencia", "") ?: "Chef"
 
 
         iniciarCategoriaMenuRecyclerView()
         iniciarRecetaMenuRecyclerView()
-
 
 
         //Entrar en otras pantallas de la barra de abajo
@@ -53,7 +52,7 @@ class MainMenuActivity : AppCompatActivity() {
             intent = Intent(context, FiltradorActivity::class.java)
             startActivity(intent)
         }
-        binding.buttonAgregar.setOnClickListener{
+        binding.buttonAgregar.setOnClickListener {
             intent = Intent(context, AgregacionRecetas::class.java)
             intent.putExtra(CLAVE_PANTALLA_MAIN_MENU, 1)
             startActivity(intent)
@@ -179,14 +178,14 @@ class MainMenuActivity : AppCompatActivity() {
             val dificultad = receta.dificultad
 
             if (funexperiencia(experiencia) >= dificultad) {
-            val tituloReceta = receta.titulo
-            val descripcion = receta.descripcion
-            val imagenCategoria = receta.imagen
-            val tiempo = receta.tiempoDePreparacion
-            val meGusta = receta.meGusta
-            val listaIngredientes = receta.listIngrediente
-            val listaPasos = receta.listPasos
-            val recetaMenu =
+                val tituloReceta = receta.titulo
+                val descripcion = receta.descripcion
+                val imagenCategoria = receta.imagen
+                val tiempo = receta.tiempoDePreparacion
+                val meGusta = receta.meGusta
+                val listaIngredientes = receta.listIngrediente
+                val listaPasos = receta.listPasos
+                val recetaMenu =
                     TipoDePlato(
                         tituloReceta,
                         descripcion,
@@ -197,7 +196,7 @@ class MainMenuActivity : AppCompatActivity() {
                         listaIngredientes,
                         listaPasos
                     )
-            recetaMenus.add(recetaMenu)
+                recetaMenus.add(recetaMenu)
             }
         }
 
@@ -218,7 +217,6 @@ class MainMenuActivity : AppCompatActivity() {
             adapter = tipoDePlatoAdapter
         }
     }
-
     //KEYS PARA SHARED PREFERENCES E INTENTS
     companion object {
         val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"

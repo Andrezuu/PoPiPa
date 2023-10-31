@@ -81,16 +81,33 @@
                 android:maxLines="5"
                 app:layout_constraintTop_toBottomOf="@id/crearCuenta"/>
 
-            <EditText
-                android:id="@+id/edit_password"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:weightSum="5"
+                app:layout_constraintTop_toBottomOf="@id/edit_gmail"
                 android:layout_margin="40dp"
-                android:hint="@string/contrase_a"
-                android:inputType="textPassword"
-                android:maxLength="40"
-                android:maxLines="5"
-                app:layout_constraintTop_toBottomOf="@id/edit_gmail" />
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/contrase_a"
+                    android:inputType="textPassword"
+                    android:maxLength="40"
+                    android:maxLines="5"
+                    android:layout_weight="4"/>
+
+                <ImageButton
+                    android:id="@+id/eyeContrasenaLogIn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/eye"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
 
             <Button
                 android:id="@+id/iniciar_sesion"
