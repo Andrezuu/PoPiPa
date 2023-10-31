@@ -50,9 +50,11 @@ class TipoDePlatoAdapter : RecyclerView.Adapter<TipoDePlatoAdapter.TipoDePlatoAd
                 else -> R.color.red
             }
 
+            val imagen = data.imagen as Int
+
             binding.textViewRecetaMenuNombre.text = data.titulo
             binding.textViewRecetaMenuDescripcion.text = data.descripcion
-            binding.imageViewRecetaMenu.setImageResource(data.imagen)
+            binding.imageViewRecetaMenu.setImageResource(imagen)
             binding.textViewRecetaTiempoMenu.text = data.tiempoDePreparacion
             context?.let {
                 binding.dificultad.setBackgroundColor(
