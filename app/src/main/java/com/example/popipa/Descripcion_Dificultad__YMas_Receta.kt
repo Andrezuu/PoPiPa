@@ -4,7 +4,9 @@ import android.R
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.util.Base64
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -17,13 +19,13 @@ import com.example.popipa.MainMenuActivity.Companion.INGREDIENTES_CREACION_KEY
 import com.example.popipa.MainMenuActivity.Companion.JSON_RECETAS_USUARIO
 import com.example.popipa.MainMenuActivity.Companion.NOMBRE_CREACION_KEY
 import com.example.popipa.MainMenuActivity.Companion.PASOS_CREACION_KEY
-import com.example.popipa.R.drawable
 import com.example.popipa.dataClases.Ingrediente
 import com.example.popipa.dataClases.PasoDePreparacion
 import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityDescripcionDificultadYmasRecetaBinding
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.io.ByteArrayOutputStream
 
 class Descripcion_Dificultad__YMas_Receta : AppCompatActivity() {
 
@@ -93,13 +95,16 @@ class Descripcion_Dificultad__YMas_Receta : AppCompatActivity() {
         val pasoArray = intent.getSerializableExtra(PASOS_CREACION_KEY) as Array<PasoDePreparacion>
 
         val imagenBitmap = binding.fotoPlato.drawable.toBitmap()
+
+
         val ingredientesNuevos = ingredienteArray.toList()
         val pasosNuevos = pasoArray.toList()
+
 
         val newReceta = TipoDePlato(
             nombreNuevo,
             descripcionNuevo,
-            drawable.add_imagen,
+            bitmapToString(imagenBitmap),
             tiempoNuevo,
             dificultadNuevo,
             false,
@@ -162,4 +167,17 @@ class Descripcion_Dificultad__YMas_Receta : AppCompatActivity() {
             editor.apply()
         }
     }
+
+    fun bitmapToString(bitmap: Bitmap): String {
+
+        val byteArrayOutputStream = ByteArrayOutputStream()
+
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+
+        val byteArray = byteArrayOutputStream.toByteArray()
+
+        return Base64.encodeToString(byteArray, Base64.DEFAULT)
+    }
+
+
 }
