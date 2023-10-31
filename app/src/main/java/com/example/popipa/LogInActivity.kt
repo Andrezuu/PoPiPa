@@ -39,6 +39,7 @@ class LogInActivity : AppCompatActivity() {
                 passwordEditText.inputType=InputType.TYPE_TEXT_VARIATION_PASSWORD
                 eyeButton.setImageResource(R.drawable.eye)
             }
+            passwordEditText.setSelection(passwordEditText.text.length)
         }
     }
 

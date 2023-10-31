@@ -61,7 +61,7 @@ class SignUpActivity : AppCompatActivity() {
                 eyeButton.setImageResource(com.example.popipa.R.drawable.eye)
             } else {
                 passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-                eyeButton.setImageResource(com.example.popipa.R.drawable.eye_slash)
+                eyeButton.setImageResource(com.example.popipa.R.drawable.eye)
             }
             passwordEditText.setSelection(passwordEditText.text.length)
         }
