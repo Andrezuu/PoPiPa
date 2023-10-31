@@ -10,17 +10,19 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.popipa.MainMenuActivity.Companion.CATEGORIA_CREACION_KEY
+import com.example.popipa.MainMenuActivity.Companion.INGREDIENTES_CREACION_KEY
+import com.example.popipa.MainMenuActivity.Companion.NOMBRE_CREACION_KEY
+import com.example.popipa.MainMenuActivity.Companion.PASOS_CREACION_KEY
 import com.example.popipa.adapter.CreacionIngredienteAdapter
 import com.example.popipa.adapter.CreacionPasoAdapter
 import com.example.popipa.dataClases.Ingrediente
 import com.example.popipa.dataClases.PasoDePreparacion
 import com.example.popipa.databinding.ActivityAgregacionRecetasBinding
-import com.example.popipa.databinding.ItemCreacionPasoBinding
 
 class AgregacionRecetas : AppCompatActivity() {
 
     private lateinit var binding: ActivityAgregacionRecetasBinding
-    private lateinit var itemCreacionPasoBinding: ItemCreacionPasoBinding
 
     private val context: Context = this
     private val listaDeIngredientes = mutableListOf<Ingrediente>()
@@ -136,6 +138,10 @@ class AgregacionRecetas : AppCompatActivity() {
                 Toast.makeText(context, "Completa los datos!", Toast.LENGTH_SHORT).show()
             } else {
                 val intent = Intent(context, Descripcion_Dificultad__YMas_Receta::class.java)
+                intent.putExtra(NOMBRE_CREACION_KEY, binding.tituloReceta.text.toString())
+                intent.putExtra(CATEGORIA_CREACION_KEY, binding.tituloCategoria.text.toString())
+                intent.putExtra(INGREDIENTES_CREACION_KEY, listaDeIngredientes.toTypedArray())
+                intent.putExtra(PASOS_CREACION_KEY, listaDePasos.toTypedArray())
                 startActivity(intent)
             }
 

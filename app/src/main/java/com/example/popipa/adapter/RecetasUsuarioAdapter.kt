@@ -1,6 +1,9 @@
 package com.example.popipa.adapter
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +14,7 @@ class RecetasUsuarioAdapter :
     RecyclerView.Adapter<RecetasUsuarioAdapter.RecetasUsuarioAdapterViewHolder>() {
 
     var onDeleteClick: ((Int) -> Unit)? = null
+    var onRecetaClick: ((TipoDePlato) -> Unit)? = null
     private var context: Context? = null
     private var listaRecetasUsuario = mutableListOf<TipoDePlato>()
 
@@ -34,6 +38,9 @@ class RecetasUsuarioAdapter :
         position: Int
     ) {
         holder.binding(listaRecetasUsuario[position])
+        holder.itemView.setOnClickListener {
+            onRecetaClick?.invoke(listaRecetasUsuario[position])
+        }
 
     }
 
@@ -43,9 +50,11 @@ class RecetasUsuarioAdapter :
     inner class RecetasUsuarioAdapterViewHolder(val binding: ItemRecetaUsuarioBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun binding(data: TipoDePlato) {
+            val imagen = stringToBitmap(data.imagen as String)
+
             binding.recetaTitulo.text = data.titulo
             binding.recetaDescripcion.text = data.descripcion
-            binding.imagenPlato.setImageResource(data.imagen)
+            binding.imagenPlato.setImageBitmap(imagen)
             binding.buttonDelete.setOnClickListener {
                 onDeleteClick?.invoke(position)
             }
@@ -55,6 +64,13 @@ class RecetasUsuarioAdapter :
     fun addRecetaUsuarioMenu(newRecetaUsuarios: List<TipoDePlato>) {
         listaRecetasUsuario.clear()
         listaRecetasUsuario.addAll(newRecetaUsuarios)
+    }
+
+    fun stringToBitmap(encodedString: String): Bitmap? {
+
+        val decodedBytes = Base64.decode(encodedString, Base64.DEFAULT)
+
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
     }
 
 }

@@ -110,20 +110,6 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     //Entrar en otras pantallas de la barra de abajo
-    fun onPerfilButtonClicked(view: View) {
-        val intent: Intent = Intent(this, PerfilUsuarioActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun onRecetasUsuarioClicked(view: View) {
-        val intent: Intent = Intent(this, RecetasUsuario::class.java)
-        startActivity(intent)
-    }
-
-    fun onAgregacionRecetasClicked(view: View) {
-        val intent: Intent = Intent(this, AgregacionRecetas::class.java)
-        startActivity(intent)
-    }
 
     fun iniciarCategoriaMenuRecyclerView() {
 
@@ -223,16 +209,19 @@ class MainMenuActivity : AppCompatActivity() {
         val CLAVE_RECETA = "CLAVE_RECETA"
         val CLAVE_TITULO_CATEGORIA = "CLAVE_TITULO_CATEGORIA"
         val IMAGE_STRING_KEY = "IMAGE_STRING_KEY"
+
         val NOMBRE_KEY = "NOMBRE_KEY"
         val APELLIDO_KEY = "APELLIDO_KEY"
         val EMAIL_KEY = "EMAIL_KEY"
         val EXPERIENCIA_KEY = "EXPERIENCIA_KEY"
         val DIFICULTAD_KEY = "DIFICULTAD_KEY"
+
         val INGREDIENTES_CREACION_KEY = "INGREDIENTES_CREACION_KEY"
         val PASOS_CREACION_KEY = "PASOS_CREACION_KEY"
         val CATEGORIA_CREACION_KEY = "CATEGORIA_CREACION_KEY"
         val NOMBRE_CREACION_KEY = "NOMBRE_CREACION_KEY"
-        val RECETAS_USUARIO_KEY = "RECETAS_USUARIO_KEY"
+        val JSON_RECETAS_USUARIO = "JSON_RECETAS_USUARIO"
+
         val CLAVE_PANTALLA_MAIN_MENU = "CLAVE_PANTALLA_MAIN_MENU"
     }
 }
