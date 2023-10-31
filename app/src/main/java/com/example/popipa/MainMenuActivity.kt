@@ -54,7 +54,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
         binding.buttonAgregar.setOnClickListener {
             intent = Intent(context, AgregacionRecetas::class.java)
-            intent.putExtra(CLAVE_PANTALLA_MAIN_MENU, 1)
+            intent.putExtra(AgregacionRecetas.CLAVE_PANTALLA_ANTERIOR, 1)
             startActivity(intent)
         }
 
@@ -223,6 +223,8 @@ class MainMenuActivity : AppCompatActivity() {
         val JSON_RECETAS_USUARIO = "JSON_RECETAS_USUARIO"
 
         val CLAVE_PANTALLA_MAIN_MENU = "CLAVE_PANTALLA_MAIN_MENU"
+        val RECETAS_USUARIO_KEY = "RECETAS_USUARIO_KEY"
     }
+
 }
 

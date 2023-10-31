@@ -68,7 +68,7 @@ class RecetasUsuario : AppCompatActivity() {
 
     fun onCrearRecetaButtonClicked3(view: View) {
         val intent = Intent(context, AgregacionRecetas::class.java)
-        intent.putExtra(CLAVE_PANTALLA_RECETA_USUARIO, 2)
+        intent.putExtra(AgregacionRecetas.CLAVE_PANTALLA_ANTERIOR, 2)
         startActivity(intent)
     }
 
@@ -127,8 +127,5 @@ class RecetasUsuario : AppCompatActivity() {
             adapter = recetaMenuAdapter
 
         }
-    }
-    companion object{
-        val CLAVE_PANTALLA_RECETA_USUARIO = "CLAVE_PANTALLA_RECETA_USUARIO"
     }
 }
