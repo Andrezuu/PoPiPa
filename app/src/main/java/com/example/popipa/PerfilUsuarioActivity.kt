@@ -1,7 +1,6 @@
 package com.example.popipa
 
 import android.R
-
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -22,7 +21,11 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.core.content.edit
 import androidx.core.graphics.drawable.toBitmap
+import com.example.popipa.MainMenuActivity.Companion.APELLIDO_KEY
+import com.example.popipa.MainMenuActivity.Companion.EMAIL_KEY
+import com.example.popipa.MainMenuActivity.Companion.EXPERIENCIA_KEY
 import com.example.popipa.MainMenuActivity.Companion.IMAGE_STRING_KEY
+import com.example.popipa.MainMenuActivity.Companion.NOMBRE_KEY
 import com.example.popipa.databinding.ActivityPerfilUsuarioBinding
 import java.io.ByteArrayOutputStream
 import kotlin.properties.Delegates
@@ -41,7 +44,6 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         binding.fotoPerfil.setImageURI(image)
     }
 
-    private lateinit var preference: SharedPreferences
     var spinnerSelected = "opciones"
 
 
@@ -50,7 +52,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityPerfilUsuarioBinding.inflate(layoutInflater)
-        
+
         setContentView(binding.root)
         sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
         cargarSharedPreferences()
@@ -70,12 +72,11 @@ class PerfilUsuarioActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         val sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
-        val nombreUsuario = sharedPreferences.getString("nombre", "")
-        val apellidoUsuario = sharedPreferences.getString("apellido", "")
-        val emailUsuario = sharedPreferences.getString("email", "")
-        val experiencia = sharedPreferences.getString("experiencia","")
+        val nombreUsuario = sharedPreferences.getString(NOMBRE_KEY, "")
+        val apellidoUsuario = sharedPreferences.getString(APELLIDO_KEY, "")
+        val emailUsuario = sharedPreferences.getString(EMAIL_KEY, "")
+        val experiencia = sharedPreferences.getString(EXPERIENCIA_KEY,"")
 
         //TODO poner los datos del usuario actual en la pantalla de usuario
         binding.usuarioApellidos.text = apellidoUsuario
@@ -83,25 +84,8 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         binding.usuarioNombres.text = nombreUsuario
         binding.textoExperiencia.text = experiencia
 
-
-
         initSpinner()
-        managePreferences()
-
-
-        // Antes de configurar el tema, lee el valor de preferencias compartidas
-//        var isNightMode = preference.getBoolean("nightMode", false)
-//        AppCompatDelegate.setDefaultNightMode(if (isNightMode) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO)
-//
-//        binding.temaOscuro.isChecked = isNightMode
-//
-//        binding.temaOscuro.setOnCheckedChangeListener { _, isChecked ->
-//            isNightMode = isChecked
-//        }
-
-        enableDarkMode()
-        disableDarkMode()
-
+        manageSpinner()
     }
 
     fun enableDarkMode(){
@@ -109,6 +93,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         delegate.applyDayNight()
 
     }
+
     fun disableDarkMode(){
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
         delegate.applyDayNight()
@@ -128,25 +113,6 @@ class PerfilUsuarioActivity : AppCompatActivity() {
 
         binding.fotoPerfil.setImageBitmap(imageSelected)
         Toast.makeText(context, "Foto guardada!", Toast.LENGTH_SHORT).show()
-
-    }
-
-    fun saveData() {
-
-
-        val imageSelected = binding.fotoPerfil.drawable.toBitmap()
-        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-
-
-        val imageString: String = bitmapToString(imageSelected)
-
-        editor.putString(IMAGE_STRING_KEY, imageString)
-        editor.apply()
-
-        binding.fotoPerfil.setImageBitmap(imageSelected)
-        Toast.makeText(context, "Foto guardada!", Toast.LENGTH_SHORT).show()
-
 
     }
 
@@ -212,14 +178,13 @@ class PerfilUsuarioActivity : AppCompatActivity() {
     }
 
 
-    fun managePreferences() {
-        preference = PreferenceManager.getDefaultSharedPreferences(this)
+    fun manageSpinner() {
         binding.guardarexp.setOnClickListener {
-            val editor = preference.edit()
-            var savedData = spinnerSelected
+            val editor = sharedPreferences.edit()
+            val savedData = spinnerSelected
             editor.putString("experiencia",savedData)
             editor.apply()
-            val experiencia = preference.getString("experiencia","")
+            val experiencia = sharedPreferences.getString("experiencia","")
             binding.textoExperiencia.text = experiencia
             editor.apply()
         }

@@ -1,12 +1,10 @@
 package com.example.popipa
 
 import android.R
-import android.app.Instrumentation.ActivityResult
 import android.content.Context
-import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
 import android.view.View
@@ -14,13 +12,15 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.graphics.drawable.toBitmap
+import androidx.appcompat.app.AppCompatActivity
+import com.example.popipa.MainMenuActivity.Companion.DIFICULTAD_KEY
 import com.example.popipa.databinding.ActivityDescripcionDificultadYmasRecetaBinding
 import java.io.ByteArrayOutputStream
 
 class Descripcion_Dificultad__YMas_Receta : AppCompatActivity() {
 
-    lateinit var binding: ActivityDescripcionDificultadYmasRecetaBinding
+    private lateinit var binding: ActivityDescripcionDificultadYmasRecetaBinding
+    private lateinit var sharedPreferences: SharedPreferences
     var spinnerSelected = ""
     val context: Context = this
 
@@ -34,19 +34,28 @@ class Descripcion_Dificultad__YMas_Receta : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDescripcionDificultadYmasRecetaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
         initSpiner()
+        manageSpinner()
 
         binding.fotoPlato.setOnClickListener {
             galeriaLauncher.launch("image/*")
 
         }
+
+        binding.buttonFinalizar.setOnClickListener {
+            val isIncomplete = spinnerSelected.isEmpty() || (binding.fotoPlato.drawable == null)
+                    || binding.duracionEdit.text.isEmpty() || binding.descripcionEdit.text.isEmpty()
+            if (isIncomplete) {
+                Toast.makeText(context, "Completa los datos!", Toast.LENGTH_SHORT).show()
+            } else {
+                guardarSharedPreferences()
+            }
+        }
     }
 
-    //Funcion para cambiar de pantalla
-    fun onFinalizarButtonClicked(view: View) {
-        val intent = Intent(this, MainMenuActivity::class.java)
-        startActivity(intent)
-        finish()
+    fun guardarSharedPreferences() {
+
     }
 
     fun initSpiner() {
@@ -78,13 +87,6 @@ class Descripcion_Dificultad__YMas_Receta : AppCompatActivity() {
         }
     }
 
-    fun savePaso() {
-        val imageSelected = binding.fotoPlato.drawable.toBitmap()
-        val imageString: String = bitmapToString(imageSelected)
-        //falta colocar el resto del codigo para guardar la imagen y el resto de datos
-
-    }
-
     fun bitmapToString(bitmap: Bitmap): String {
         val byteArrayOutputStream = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
@@ -95,5 +97,17 @@ class Descripcion_Dificultad__YMas_Receta : AppCompatActivity() {
     fun stringToBitmap(encodedString: String): Bitmap? {
         val decodedBytes = Base64.decode(encodedString, Base64.DEFAULT)
         return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+    }
+
+    fun manageSpinner() {
+        binding.guardarDificultad.setOnClickListener {
+            val editor = sharedPreferences.edit()
+            val savedData = spinnerSelected
+            editor.putString(DIFICULTAD_KEY, savedData)
+            editor.apply()
+            val experiencia = sharedPreferences.getString(DIFICULTAD_KEY, "")
+            binding.textViewSelectedSpinner.text = experiencia
+            editor.apply()
+        }
     }
 }

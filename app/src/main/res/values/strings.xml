@@ -49,7 +49,7 @@
     <string name="ingresarDescripcionPaso">Ingrese la descripción del paso por favor</string>
     <string name="dificultad">Dificultad</string>
     <string name="tiempoPreparacion">Tiempo de preparación</string>
-    <string name="ingreseTiempoPreparacion">Ingrese el tiempo de preparación por favor</string>
+    <string name="duracion">Duracion</string>
     <string name="guardar">Guardar</string>
 
 </resources>
