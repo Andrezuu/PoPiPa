@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.popipa.R
 import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ItemRecetaUsuarioBinding
 
@@ -11,6 +12,7 @@ class RecetasUsuarioAdapter :
     RecyclerView.Adapter<RecetasUsuarioAdapter.RecetasUsuarioAdapterViewHolder>() {
 
     var onDeleteClick: ((Int) -> Unit)? = null
+    var onRecetaClick: ((TipoDePlato) -> Unit)? = null
     private var context: Context? = null
     private var listaRecetasUsuario = mutableListOf<TipoDePlato>()
 
@@ -34,6 +36,9 @@ class RecetasUsuarioAdapter :
         position: Int
     ) {
         holder.binding(listaRecetasUsuario[position])
+        holder.itemView.setOnClickListener {
+            onRecetaClick?.invoke(listaRecetasUsuario[position])
+        }
 
     }
 
@@ -43,9 +48,11 @@ class RecetasUsuarioAdapter :
     inner class RecetasUsuarioAdapterViewHolder(val binding: ItemRecetaUsuarioBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun binding(data: TipoDePlato) {
+
+
             binding.recetaTitulo.text = data.titulo
             binding.recetaDescripcion.text = data.descripcion
-            binding.imagenPlato.setImageResource(data.imagen)
+            binding.imagenPlato.setImageResource(R.drawable.add_imagen)
             binding.buttonDelete.setOnClickListener {
                 onDeleteClick?.invoke(position)
             }
