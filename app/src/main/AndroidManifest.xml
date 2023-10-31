@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/pocket_chef_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Popipa"
+        android:theme="@style/Base.Theme.Popipa"
         tools:targetApi="31">
         <activity
             android:name=".Descripcion_Dificultad__YMas_Receta"

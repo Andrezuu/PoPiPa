@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
+    style="@style/Fondo"
     tools:context=".PerfilUsuarioActivity">
 
     <ImageButton
@@ -13,9 +14,9 @@
         android:layout_height="32dp"
         android:layout_margin="10dp"
         android:background="@drawable/deshacer"
-        android:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
     </ImageButton>
 
@@ -51,9 +52,10 @@
             android:id="@+id/fondodelogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:backgroundTint="@color/gray"
             android:background="@drawable/background_esquinas_redondeadas"
-            android:backgroundTint="@color/gray">
 
+            >
         </View>
 
         <TextView
@@ -68,20 +70,23 @@
             android:maxLines="5"
             android:text="@string/nombres"
             android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
 
 
         <Button
             android:id="@+id/guardar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
             android:text="@string/guardar_imagen"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="@+id/fondodelogin"
             android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+
+            >
 
         </Button>
 
@@ -96,7 +101,9 @@
             android:maxLength="40"
             android:maxLines="5"
             android:text="@string/nombres"
-            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_nombres" />
+            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_nombres"
+
+            />
 
         <TextView
             android:textColor="@color/black"
@@ -110,7 +117,9 @@
             android:maxLines="5"
             android:text="@string/apellidos"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/usuario_nombres" />
+            app:layout_constraintTop_toBottomOf="@id/usuario_nombres"
+
+            />
 
         <TextView
             android:textColor="@color/black"
@@ -123,7 +132,9 @@
             android:maxLength="40"
             android:maxLines="5"
             android:text="@string/apellidos"
-            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_apellidos" />
+            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_apellidos"
+
+            />
 
         <TextView
             android:id="@+id/usuario_titulo_email"
@@ -137,7 +148,9 @@
             android:maxLines="5"
             android:text="@string/email"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/usuario_apellidos" />
+            app:layout_constraintTop_toBottomOf="@id/usuario_apellidos"
+
+            />
 
         <TextView
             android:textColor="@color/black"
@@ -150,7 +163,9 @@
             android:maxLength="40"
             android:maxLines="5"
             android:text="@string/email"
-            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_email" />
+            app:layout_constraintTop_toBottomOf="@id/usuario_titulo_email"
+
+            />
 
         <TextView
             android:textColor="@color/black"
@@ -164,27 +179,27 @@
             android:maxLines="5"
             android:textSize="16sp"
             android:text="@string/titulo_experiencia"
-            app:layout_constraintTop_toBottomOf="@id/usuario_email"/>
+            app:layout_constraintTop_toBottomOf="@id/usuario_email"
+            />
 
         <Spinner
             android:id="@+id/spiner"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="40dp"
             app:layout_constraintTop_toBottomOf="@id/titulo_experiencia"
             app:layout_constraintLeft_toLeftOf="@id/fondodelogin"
-            app:layout_constraintRight_toLeftOf="@id/guardarexp"
             ></Spinner>
 
         <Button
             android:id="@+id/guardarexp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/titulo_experiencia"
-            app:layout_constraintLeft_toRightOf="@id/spiner"
+            android:layout_marginLeft="40dp"
             android:text="@string/save"
-
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spiner"
             ></Button>
 
         <TextView
@@ -194,20 +209,9 @@
             android:layout_margin="15dp"
             android:text="@string/su_experiencia"
             app:layout_constraintLeft_toRightOf="@id/guardarexp"
-            app:layout_constraintTop_toBottomOf="@id/titulo_experiencia"
+            app:layout_constraintTop_toBottomOf="@id/spiner"
             ></TextView>
 
-        <Switch
-            android:id="@+id/temaOscuro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/guardarexp"
-            app:layout_constraintLeft_toLeftOf="@id/fondodelogin"
-            app:layout_constraintRight_toRightOf="@id/fondodelogin"
-            android:text="@string/Cambiar_tema"
-            android:textSize="20dp"
-            android:layout_margin="20dp"
-            ></Switch>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

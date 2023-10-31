@@ -1,6 +1,7 @@
 package com.example.popipa
 
 import android.R
+
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -15,10 +16,16 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import androidx.core.content.edit
 import androidx.core.graphics.drawable.toBitmap
 import com.example.popipa.MainMenuActivity.Companion.IMAGE_STRING_KEY
 import com.example.popipa.databinding.ActivityPerfilUsuarioBinding
 import java.io.ByteArrayOutputStream
+import kotlin.properties.Delegates
 
 
 class PerfilUsuarioActivity : AppCompatActivity() {
@@ -35,12 +42,15 @@ class PerfilUsuarioActivity : AppCompatActivity() {
     }
 
     private lateinit var preference: SharedPreferences
-    var spinnerSelected = ""
+    var spinnerSelected = "opciones"
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityPerfilUsuarioBinding.inflate(layoutInflater)
+        
         setContentView(binding.root)
         sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
         cargarSharedPreferences()
@@ -60,11 +70,11 @@ class PerfilUsuarioActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         val sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
         val nombreUsuario = sharedPreferences.getString("nombre", "")
         val apellidoUsuario = sharedPreferences.getString("apellido", "")
         val emailUsuario = sharedPreferences.getString("email", "")
-        val contrasena = sharedPreferences.getString("contraseña", "")
         val experiencia = sharedPreferences.getString("experiencia","")
 
         //TODO poner los datos del usuario actual en la pantalla de usuario
@@ -77,7 +87,33 @@ class PerfilUsuarioActivity : AppCompatActivity() {
 
         initSpinner()
         managePreferences()
+
+
+        // Antes de configurar el tema, lee el valor de preferencias compartidas
+//        var isNightMode = preference.getBoolean("nightMode", false)
+//        AppCompatDelegate.setDefaultNightMode(if (isNightMode) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO)
+//
+//        binding.temaOscuro.isChecked = isNightMode
+//
+//        binding.temaOscuro.setOnCheckedChangeListener { _, isChecked ->
+//            isNightMode = isChecked
+//        }
+
+        enableDarkMode()
+        disableDarkMode()
+
     }
+
+    fun enableDarkMode(){
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
+        delegate.applyDayNight()
+
+    }
+    fun disableDarkMode(){
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
+        delegate.applyDayNight()
+    }
+
 
     fun guardarSharedPreferences() {
 

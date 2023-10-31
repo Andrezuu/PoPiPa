@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="colorPrimary">@color/orange</color>
+    <color name="colorPrimaryVariant">@color/blue</color>
+    <color name="colorAccent">@color/salmon</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
@@ -18,5 +23,4 @@
     <color name="darkPink">#820026</color>
     <color name="darkPurple">#4B004D</color>
     <color name="darkSalmon">#8B0000</color>
-
 </resources>

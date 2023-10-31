@@ -1,7 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Popipa" parent="Theme.AppCompat.DayNight.DarkActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/darkOrange</item>
+        <item name="colorPrimaryVariant">@color/darkSalmon</item>
+        <item name="colorOnPrimary">@color/darkBlue</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/darkBlue</item>
+        <item name="colorSecondaryVariant">@color/darkPink</item>
+        <item name="colorOnSecondary">@color/darkPurple</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
+
 </resources>

@@ -89,7 +89,7 @@ class MainMenuActivity : AppCompatActivity() {
             )
 
             val intent = Intent(context, CategoriaActivity::class.java)
-            intent.putExtra(MainMenuActivity.CLAVE_CATEGORIA, resultadoFiltrado)
+            intent.putExtra(CLAVE_CATEGORIA, resultadoFiltrado)
             startActivity(intent)
         }
 
