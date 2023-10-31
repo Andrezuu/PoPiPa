@@ -32,7 +32,7 @@ class ListaAlmuerzos {
                 R.drawable.pollo_a_la_parrilla,
                 "30 min",
                 1,
-                false,
+                true,
                 IngredientesPolloALaParrilla.listaPolloParrilla,
                 PasosPolloALaParrilla.pasosDePreparacionPolloParrilla
             ),
@@ -52,7 +52,7 @@ class ListaAlmuerzos {
                 R.drawable.sandwich_de_pavo,
                 "15 min",
                 1,
-                false,
+                true,
                 IngredientesSandwichDePavo.listaSandwichPavo,
                 PasosSandwichDePavo.pasosDePreparacionSandwichPavo
             ),
@@ -82,7 +82,7 @@ class ListaAlmuerzos {
                 R.drawable.burritos_de_pollo,
                 "20 min",
                 2,
-                false,
+                true,
                 IngredientesBurritosDePollo.listaBurritosDePollo,
                 PasosBurritosDePollo.pasosDePreparacionBurritosDePollo
             ),
@@ -101,7 +101,7 @@ class ListaAlmuerzos {
                 "Hamburguesa vegetariana a base de garbanzos, espinacas y condimentos. Ideal para un almuerzo sin carne pero lleno de sabor.",
                 R.drawable.hamburguesa_vegetariana,
                 "25 min",
-                2,
+                1,
                 false,
                 IngredientesHamburguesaVegetariana.listaHamburguesaVegetariana,
                 PasosHamburguesaVegetariana.pasosDePreparacionHamburguesaVegetariana
@@ -112,7 +112,7 @@ class ListaAlmuerzos {
                 R.drawable.pollo_al_curry,
                 "30 min",
                 2,
-                false,
+                true,
                 IngredientesPolloAlCurry.listaPolloAlCurry,
                 PasosPolloAlCurry.pasosDePreparacionPolloAlCurry
             ),
@@ -121,8 +121,8 @@ class ListaAlmuerzos {
                 "Tacos de carne asada con tortillas de maíz y guarniciones. Una opción sabrosa para disfrutar del almuerzo al estilo mexicano.",
                 R.drawable.tacos_de_carne,
                 "25 min",
-                2,
-                false,
+                1,
+                true,
                 IngredientesTacosDeCarne.listaTacosCarne,
                 PasosTacosDeCarne.pasosDePreparacionTacosCarne
             )

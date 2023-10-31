@@ -1,12 +1,17 @@
 package com.example.popipa
 
+import android.R
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Base64
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +34,9 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         binding.fotoPerfil.setImageURI(image)
     }
 
+    private lateinit var preference: SharedPreferences
+    var spinnerSelected = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +48,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         //abrir la galeria para cambiar la foto de perfil
         binding.fotoPerfil.setOnClickListener {
             galeriaLauncher.launch("image/*")
+
         }
 
         binding.guardar.setOnClickListener {
@@ -51,17 +60,23 @@ class PerfilUsuarioActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        val nombreUsuario = sharedPreferences.getString("NOMBRE_KEY", "")
-        val apellidoUsuario = sharedPreferences.getString("APELLIDO_KEY", "")
-        val emailUsuario = sharedPreferences.getString("EMAIL_KEY", "")
+        val sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
+        val nombreUsuario = sharedPreferences.getString("nombre", "")
+        val apellidoUsuario = sharedPreferences.getString("apellido", "")
+        val emailUsuario = sharedPreferences.getString("email", "")
+        val contrasena = sharedPreferences.getString("contraseña", "")
+        val experiencia = sharedPreferences.getString("experiencia","")
 
         //TODO poner los datos del usuario actual en la pantalla de usuario
         binding.usuarioApellidos.text = apellidoUsuario
         binding.usuarioEmail.text = emailUsuario
         binding.usuarioNombres.text = nombreUsuario
+        binding.textoExperiencia.text = experiencia
 
 
+
+        initSpinner()
+        managePreferences()
     }
 
     fun guardarSharedPreferences() {
@@ -69,6 +84,24 @@ class PerfilUsuarioActivity : AppCompatActivity() {
 
         val imageSelected = binding.fotoPerfil.drawable.toBitmap()
         val editor = sharedPreferences.edit()
+
+        val imageString: String = bitmapToString(imageSelected)
+
+        editor.putString(IMAGE_STRING_KEY, imageString)
+        editor.apply()
+
+        binding.fotoPerfil.setImageBitmap(imageSelected)
+        Toast.makeText(context, "Foto guardada!", Toast.LENGTH_SHORT).show()
+
+    }
+
+    fun saveData() {
+
+
+        val imageSelected = binding.fotoPerfil.drawable.toBitmap()
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
 
         val imageString: String = bitmapToString(imageSelected)
 
@@ -117,4 +150,42 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
     }
 
+    fun initSpinner() {
+        val dataList = mutableListOf<String>()
+        dataList.add("Basico")
+        dataList.add("Junnior Chef")
+        dataList.add("Chef")
+
+        val adapter = ArrayAdapter(
+            this,
+            R.layout.simple_spinner_item,
+            dataList
+        )
+        binding.spiner.adapter = adapter
+        binding.spiner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                //binding.guardarExperiencia.text = dataList[position]
+                spinnerSelected = dataList[position]
+                Toast.makeText(this@PerfilUsuarioActivity, "Mi Chef...", Toast.LENGTH_SHORT).show()
+            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+
+        }
+    }
+
+
+    fun managePreferences() {
+        preference = PreferenceManager.getDefaultSharedPreferences(this)
+        binding.guardarexp.setOnClickListener {
+            val editor = preference.edit()
+            var savedData = spinnerSelected
+            editor.putString("experiencia",savedData)
+            editor.apply()
+            val experiencia = preference.getString("experiencia","")
+            binding.textoExperiencia.text = experiencia
+            editor.apply()
+        }
+    }
 }

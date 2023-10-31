@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Popipa</string>
+    <string name="app_name">Pocket Chef</string>
     <string name="menu_titulo_categorias">Categorias</string>
     <string name="menu_bienvenido">Bienvenido</string>
-    <string name="menu_para_ti">Para Ti</string>
+    <string name="menu_para_ti">Tus Retos</string>
     <string name="contrase_a">Contraseña</string>
     <string name="email">Email</string>
     <string name="ingresar">Ingresar</string>
@@ -28,7 +28,11 @@
     <string name="navidad">Navidad</string>
     <string name="pan">Pan</string>
     <string name="pasteles">Pasteles</string>
-    <string name="su_experiencia">Su experiencia</string>
+    <string name="su_experiencia">Chef?</string>
+    <string name="save">Guardar</string>
+    <string name="experiencia_guia">Configurar su experiencia en su Perfil de Usuario</string>
+    <string name="Cambiar_tema">Tema Oscuro</string>
+    <string name="tu_me_gusta">Tus Gustos Mi Chef</string>
     <string name="guardar_imagen">Guardar Imagen</string>
     <string name="tituloCategoria">Título de Categoria</string>
     <string name="tituloReceta">Título de Receta</string>
