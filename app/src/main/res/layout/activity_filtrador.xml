@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    style="@style/ViewEstilo.Dark"
     tools:context=".FiltradorActivity">
 
     <ImageButton
@@ -25,8 +25,7 @@
         android:layout_height="70dp"
         android:layout_margin="10dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/background_esquinas_redondeadas"
-        android:backgroundTint="@color/purple"
+        style="@style/BotonEstiloMorado.Dark"
         android:orientation="horizontal"
         android:weightSum="5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +67,8 @@
         app:layout_constraintBottom_toTopOf="@id/go_filtrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titulo_filtrar">
+        app:layout_constraintTop_toBottomOf="@id/titulo_filtrar"
+        >
 
     </View>
 
@@ -241,15 +241,15 @@
         android:layout_width="210dp"
         android:layout_height="65dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/purple"
         android:fontFamily="@font/lilita"
         android:text="@string/filtrar"
-        android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/opciones">
+        app:layout_constraintTop_toBottomOf="@id/opciones"
+        style="@style/BotonEstiloMorado.Dark"
+        >
 
     </Button>
 

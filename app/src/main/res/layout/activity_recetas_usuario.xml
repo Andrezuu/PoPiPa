@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    style="@style/ViewEstilo.Dark"
     tools:context=".RecetasUsuario">
 
     <ImageButton
@@ -31,13 +31,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/purple"
             android:fontFamily="@font/lilita"
             android:gravity="center"
             android:padding="15dp"
             android:text="@string/tus_recetas"
-            android:textColor="@color/white"
-            android:textSize="30dp">
+            android:textSize="30dp"
+            style="@style/BotonEstiloMorado.Dark"
+            >
 
         </TextView>
     </androidx.cardview.widget.CardView>
@@ -56,12 +56,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/orange"
             android:fontFamily="@font/lilita"
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/ojo"
-            android:textColor="@color/white"
+            style="@style/BotonEstilo.Dark"
             android:textSize="25dp">
 
         </TextView>

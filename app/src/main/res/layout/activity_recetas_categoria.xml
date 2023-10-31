@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
-    tools:context=".RecetasCategoriaActivity">
+    tools:context=".RecetasCategoriaActivity"
+    style="@style/ViewEstilo.Dark"
+    >
 
     <ImageButton
         android:id="@+id/boton_volver"
@@ -40,7 +41,8 @@
             android:fontFamily="@font/lilita"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="22sp">
+            android:textSize="22sp"
+            >
 
         </TextView>
 
@@ -55,7 +57,9 @@
             android:fontFamily="@font/lilita"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="22sp">
+            android:textSize="22sp"
+
+            >
 
         </TextView>
 

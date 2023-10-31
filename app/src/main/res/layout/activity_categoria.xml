@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    style="@style/ViewEstilo.Dark"
     tools:context=".CategoriaActivity">
 
     <ImageButton
@@ -25,15 +25,15 @@
         android:layout_width="370dp"
         android:layout_height="45dp"
         android:layout_marginVertical="24dp"
-        android:background="@drawable/background_esquinas_redondeadas"
-        android:backgroundTint="@color/purple"
         android:fontFamily="@font/lilita"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/boton_volver">
+        app:layout_constraintTop_toBottomOf="@id/boton_volver"
+        style="@style/BotonEstiloMorado.Dark"
+        >
 
     </TextView>
 
