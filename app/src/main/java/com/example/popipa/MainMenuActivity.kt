@@ -218,7 +218,6 @@ class MainMenuActivity : AppCompatActivity() {
             adapter = tipoDePlatoAdapter
         }
     }
-
     //KEYS PARA SHARED PREFERENCES E INTENTS
     companion object {
         val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"
