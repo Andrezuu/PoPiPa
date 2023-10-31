@@ -1,18 +1,18 @@
 package com.example.popipa.adapter
 
-import android.view.ViewGroup
 import android.content.Context
-import android.text.Editable
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.popipa.dataClases.Ingrediente
+import com.example.popipa.R
 import com.example.popipa.dataClases.PasoDePreparacion
 import com.example.popipa.databinding.ItemCreacionPasoBinding
 
-class CreacionPasoAdapter (private val listaPasosPlato:List<PasoDePreparacion>): RecyclerView.Adapter<CreacionPasoAdapter.CreacionPasoAdapterViewHolder>() {
+class CreacionPasoAdapter :
+    RecyclerView.Adapter<CreacionPasoAdapter.CreacionPasoAdapterViewHolder>() {
 
-    private var context:Context?  =null
-    //private var listaPasosPlato = mutableListOf<PasoDePreparacion>()
+    private var context: Context? = null
+    private val listaPasosPlato = mutableListOf<PasoDePreparacion>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -34,18 +34,24 @@ class CreacionPasoAdapter (private val listaPasosPlato:List<PasoDePreparacion>):
     ) {
         holder.binding(listaPasosPlato[position])
     }
+
     override fun getItemCount(): Int = listaPasosPlato.size
 
 
     inner class CreacionPasoAdapterViewHolder(private val binding: ItemCreacionPasoBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val nombreEditText = binding.descripcionPaso
-        val cantidadEditText = binding.numeroPaso
+        val descripcionEditText = binding.descripcionPaso
 
-        fun binding(data:PasoDePreparacion) {
-            nombreEditText.setText(data.descripcion)
-            cantidadEditText.setText("Paso ${data.numero.toString()}")
+        fun binding(data: PasoDePreparacion) {
+            descripcionEditText.setText(data.descripcion)
+            binding.numeroPaso.text = ("Paso ${data.numero}")
+            binding.imagenPaso.setImageResource(R.drawable.add_imagen)
         }
 
+    }
+
+    fun addPasos(newListaPasos: List<PasoDePreparacion>) {
+        listaPasosPlato.clear()
+        listaPasosPlato.addAll(newListaPasos)
     }
 }

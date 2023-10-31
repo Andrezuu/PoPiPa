@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="305dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <EditText
+        android:id="@+id/nombreIngrediente"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/lilita"
+        android:gravity="center"
+        android:hint="@string/nombreIngrediente"
+        android:maxLength="30"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/cantidadRequerida">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/cantidadRequerida"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/lilita"
+        android:gravity="center"
+        android:hint="@string/cantidadRequerida"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/nombreIngrediente"
+        app:layout_constraintStart_toEndOf="@id/nombreIngrediente"
+        app:layout_constraintTop_toTopOf="@id/nombreIngrediente">
+
+    </EditText>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
