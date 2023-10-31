@@ -39,7 +39,7 @@
     <string name="agregarIngredientes">Agregar Ingredientes</string>
     <string name="agregarPasos">Agregar Pasos</string>
     <string name="finalizar">Finalizar</string>
-    <string name="aumentar">+</string>
+    <string name="agregar">Agregar</string>
     <string name="nombreIngrediente">Nombre Ingrediente</string>
     <string name="cantidadRequerida">Cantidad Requerida</string>
     <string name="ingresarDescripcionPlato">Ingrese la descripción del plato por favor</string>
@@ -50,5 +50,6 @@
     <string name="dificultad">Dificultad</string>
     <string name="tiempoPreparacion">Tiempo de preparación</string>
     <string name="ingreseTiempoPreparacion">Ingrese el tiempo de preparación por favor</string>
+    <string name="guardar">Guardar</string>
 
 </resources>

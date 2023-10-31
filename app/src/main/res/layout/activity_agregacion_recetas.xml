@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgregacionRecetas"
-    android:background="@color/blue">
+    android:background="@color/blue"
+    tools:context=".AgregacionRecetas">
 
     <ImageButton
         android:id="@+id/boton_volver3"
@@ -14,211 +14,214 @@
         android:layout_margin="10dp"
         android:background="@drawable/deshacer"
         android:backgroundTint="@color/black"
-        android:onClick="onVolverButtonClickedFromAgregarRe"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
     </ImageButton>
+
     <Button
+        android:id="@+id/boton_hecho"
         android:layout_width="120dp"
         android:layout_height="32dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/lilita"
         android:text="@string/hecho"
         android:textColor="@color/black"
-        android:textSize="13dp"
-        android:fontFamily="@font/lilita"
-        android:layout_margin="10dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="13sp"
         app:layout_constraintRight_toRightOf="parent"
-        android:backgroundTint="@color/gray"
-        android:onClick="onHechoButtonClickedFromAgregarRe">
+        app:layout_constraintTop_toTopOf="parent">
+
     </Button>
-    <androidx.cardview.widget.CardView
+
+
+    <EditText
         android:id="@+id/titulo_categoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/boton_volver3"
-        app:cardCornerRadius="30dp"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="10dp">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/tituloCategoria"
-            android:background="@color/purple"
-            android:gravity="center"
-            android:textSize="35dp"
-            android:padding="15dp"
-            android:fontFamily="@font/lilita"
-            android:textColor="@color/white">
-        </EditText>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/purple"
+        android:fontFamily="@font/lilita"
+        android:gravity="center"
+        android:hint="@string/tituloCategoria"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintTop_toBottomOf="@id/boton_volver3">
+
+    </EditText>
+
+
+    <EditText
         android:id="@+id/titulo_receta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/titulo_categoria"
-        app:cardCornerRadius="30dp"
         android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="10dp">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/tituloReceta"
-            android:background="@color/orange"
-            android:gravity="center"
-            android:textSize="30dp"
-            android:padding="15dp"
-            android:fontFamily="@font/lilita"
-            android:textColor="@color/white">
-        </EditText>
-    </androidx.cardview.widget.CardView>
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/lilita"
+        android:gravity="center"
+        android:hint="@string/tituloReceta"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/titulo_categoria">
 
-    <androidx.cardview.widget.CardView
+    </EditText>
+
+
+    <TextView
         android:id="@+id/add_ingredientes"
-        android:layout_width="180dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/titulo_receta"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="80dp"
-        app:cardCornerRadius="30dp"
-        android:layout_marginTop="40dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/agregarIngredientes"
-            android:background="@color/gray"
-            android:gravity="center"
-            android:textSize="15dp"
-            android:padding="10dp"
-            android:fontFamily="@font/lilita"
-            android:textColor="@color/black">
-        </TextView>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/lilita"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/agregarIngredientes"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/titulo_categoria"
+        app:layout_constraintTop_toBottomOf="@id/titulo_receta">
+
+    </TextView>
+
+
+    <TextView
         android:id="@+id/add_pasos"
-        android:layout_width="180dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ingrediente_y_cantidad"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="80dp"
-        app:cardCornerRadius="30dp"
-        android:layout_marginTop="25dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/agregarPasos"
-            android:background="@color/gray"
-            android:gravity="center"
-            android:textSize="15dp"
-            android:padding="10dp"
-            android:fontFamily="@font/lilita"
-            android:textColor="@color/black">
-        </TextView>
-    </androidx.cardview.widget.CardView>
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_esquinas_redondeadas"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/lilita"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/agregarPasos"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@id/boton_add_pasos"
+        app:layout_constraintStart_toStartOf="@id/titulo_categoria"
+        app:layout_constraintTop_toBottomOf="@id/scroll_ingredientes">
+
+    </TextView>
 
     <Button
         android:id="@+id/boton_add_ingredientes"
-        android:layout_width="60dp"
-        android:layout_height="58dp"
-        android:text="@string/aumentar"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        android:fontFamily="@font/lilita"
-        app:layout_constraintLeft_toRightOf="@id/add_ingredientes"
-        app:layout_constraintTop_toBottomOf="@id/titulo_receta"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:padding="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
         android:backgroundTint="@color/gray"
-        android:onClick="onAgregarIngrediente">
+        android:fontFamily="@font/lilita"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text="@string/agregar"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/add_ingredientes"
+        app:layout_constraintLeft_toRightOf="@id/add_ingredientes"
+        app:layout_constraintTop_toTopOf="@id/add_ingredientes">
+
+    </Button>
+
+    <Button
+        android:id="@+id/boton_guardar_ingredientes"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/lilita"
+        android:text="@string/guardar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/boton_add_ingredientes"
+        app:layout_constraintStart_toEndOf="@id/boton_add_ingredientes"
+        app:layout_constraintTop_toTopOf="@id/add_ingredientes">
+
     </Button>
 
     <Button
         android:id="@+id/boton_add_pasos"
-        android:layout_width="60dp"
-        android:layout_height="58dp"
-        android:text="@string/aumentar"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        android:fontFamily="@font/lilita"
-        app:layout_constraintLeft_toRightOf="@id/add_pasos"
-        app:layout_constraintTop_toBottomOf="@id/ingrediente_y_cantidad"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:padding="0dp"
-        android:backgroundTint="@color/gray">
-    </Button>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/ingrediente_y_cantidad"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="40dp"
-        app:layout_constraintTop_toBottomOf="@id/boton_add_ingredientes"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="30dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="3"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/nombreIngrediente"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:hint="@string/nombreIngrediente"
-                android:fontFamily="@font/lilita"
-                android:textColor="@color/gray2"
-                android:gravity="center"
-                android:textSize="22dp"
-                android:background="@color/gray"
-                android:maxLength="30">
-            </EditText>
-            <EditText
-                android:id="@+id/cantidadRequerida"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:hint="@string/cantidadRequerida"
-                android:fontFamily="@font/roboto"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:textSize="15dp"
-                android:background="@color/gray">
-            </EditText>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/lilita"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text="@string/agregar"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/add_pasos"
+        app:layout_constraintEnd_toStartOf="@id/boton_guardar_pasos"
+        app:layout_constraintStart_toEndOf="@id/add_pasos"
+        app:layout_constraintTop_toBottomOf="@id/scroll_ingredientes">
 
-    <LinearLayout
-        android:id="@+id/probar"
+    </Button>
+
+    <Button
+        android:id="@+id/boton_guardar_pasos"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/lilita"
+        android:text="@string/guardar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/add_pasos"
+        app:layout_constraintEnd_toEndOf="@id/boton_guardar_ingredientes"
+        app:layout_constraintStart_toEndOf="@id/boton_add_pasos"
+        app:layout_constraintTop_toBottomOf="@id/scroll_ingredientes">
+
+    </Button>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@id/scroll_ingredientes"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginVertical="8dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/add_pasos"
+        app:layout_constraintEnd_toEndOf="@id/boton_guardar_ingredientes"
+        app:layout_constraintStart_toStartOf="@id/add_ingredientes"
+        app:layout_constraintTop_toBottomOf="@id/add_ingredientes">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_ingredientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_ingrediente_creacion">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_pasos"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/boton_add_pasos"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:weightSum="1">
+        app:layout_constraintTop_toBottomOf="@id/boton_add_pasos">
 
-        <androidx.core.widget.NestedScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_paso_creacion"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:fillViewport="true"
-            android:layout_weight="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_creacion_paso">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_paso_creacion"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                tools:listitem="@layout/item_creacion_paso">
-
-            </androidx.recyclerview.widget.RecyclerView>
-        </androidx.core.widget.NestedScrollView>
-    </LinearLayout>
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

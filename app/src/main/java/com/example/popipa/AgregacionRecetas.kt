@@ -1,24 +1,19 @@
 package com.example.popipa
 
 
+import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Rect
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageButton
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.popipa.adapter.CreacionIngredienteAdapter
 import com.example.popipa.adapter.CreacionPasoAdapter
 import com.example.popipa.dataClases.Ingrediente
 import com.example.popipa.dataClases.PasoDePreparacion
-import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityAgregacionRecetasBinding
 import com.example.popipa.databinding.ItemCreacionPasoBinding
 
@@ -27,124 +22,178 @@ class AgregacionRecetas : AppCompatActivity() {
     private lateinit var binding: ActivityAgregacionRecetasBinding
     private lateinit var itemCreacionPasoBinding: ItemCreacionPasoBinding
 
-    private val listaDeRecetas = mutableListOf<TipoDePlato>()
+    private val context: Context = this
+    private val listaDeIngredientes = mutableListOf<Ingrediente>()
     private val listaDePasos = mutableListOf<PasoDePreparacion>()
-    private val contenidoEditText = mutableListOf<String>()
-    //private val pasoPlatoAdapter by lazy { CreacionPasoAdapter(listaDePasos) }
-    private val ingredientesDisponibles = mutableListOf<Ingrediente>()
 
-    private val galeriaLauncher = registerForActivityResult(
-        ActivityResultContracts.GetContent()
-    ) { image ->
-        itemCreacionPasoBinding.imagenPaso.setImageURI(image)
-    }
-
+    private val creacionPasoAdapter by lazy { CreacionPasoAdapter() }
+    private val creacionIngredienteAdapter by lazy { CreacionIngredienteAdapter() }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAgregacionRecetasBinding.inflate(layoutInflater)
-        itemCreacionPasoBinding = ItemCreacionPasoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val ingredienteVacio = Ingrediente("", "")
+        var numeroPaso = 1
 
+        listaDePasos.add(PasoDePreparacion(numeroPaso, "", 0))
+        listaDeIngredientes.add(ingredienteVacio)
 
-        itemCreacionPasoBinding.imagenPaso.setOnClickListener {
-            galeriaLauncher.launch("image/*")
-        }
+        iniciarIngredientesRecyclerView()
+        iniciarPasosRecyclerView()
 
-        binding.botonAddPasos.setOnClickListener{
-            val descripcionPaso = itemCreacionPasoBinding.descripcionPaso.text.toString()
-            val numeroPaso=listaDePasos.size+1
-            if(descripcionPaso.isEmpty()){
-                val nuevoPaso = PasoDePreparacion(numeroPaso,descripcionPaso, R.drawable.asado)
-                listaDePasos.add(nuevoPaso)
-                contenidoEditText.add(descripcionPaso)
-                iniciarPasosRecyclerView()
-                itemCreacionPasoBinding.descripcionPaso.text.clear()
-                itemCreacionPasoBinding.imagenPaso.setImageResource(R.drawable.asado)
-                itemCreacionPasoBinding.imagenPaso.requestLayout()
-                //pasoPlatoAdapter.notifyDataSetChanged()
-                //pasoPlatoAdapter.notifyItemInserted(listaDePasos.size-1)
-            }else{
-                Toast.makeText(this, "Ingrese la descripción del paso.", Toast.LENGTH_SHORT).show()
+        var lastIngrediente = listaDeIngredientes.last()
+        var lastPaso = listaDePasos.last()
+
+        binding.botonVolver3.setOnClickListener {
+            val pantallaOrigen = intent.getIntExtra(CLAVE_PANTALLA_ANTERIOR, 0)
+            when (pantallaOrigen) {
+                1 -> {
+                    val intent = Intent(this, MainMenuActivity::class.java)
+                    startActivity(intent)
+                }
+
+                2 -> {
+                    val intent = Intent(this, RecetasUsuario::class.java)
+                    startActivity(intent)
+                }
             }
-
         }
-        /*binding.agregarIngrediente.setOnClickListener {
 
+        binding.botonHecho.setOnClickListener {
+            val intent = Intent(this, Descripcion_Dificultad__YMas_Receta::class.java)
+            startActivity(intent)
+        }
+
+        binding.botonAddIngredientes.setOnClickListener {
             if (lastIngrediente.nombre.isEmpty() || lastIngrediente.cantidad.isEmpty()) {
                 Toast.makeText(context, "Completa el ingrediente anterior!", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                listaIngredientesUsuario.add(ingredienteVacio)
+                listaDeIngredientes.add(ingredienteVacio)
                 iniciarIngredientesRecyclerView()
-                lastIngrediente = listaIngredientesUsuario.last()
+                lastIngrediente = listaDeIngredientes.last()
             }
-
         }
 
-        binding.guardarIngrediente.setOnClickListener {
-            val viewHolder = binding.recyclerIngredientes.findViewHolderForAdapterPosition(
-                listaIngredientesUsuario.size - 1
-            ) as? IngredienteCreacionAdapter.IngredienteAdapterViewHolder
+        binding.botonGuardarIngredientes.setOnClickListener {
+            val ingredienteActual = binding.recyclerIngredientes.findViewHolderForAdapterPosition(
+                listaDeIngredientes.size - 1
+            ) as? CreacionIngredienteAdapter.CreacionIngredienteAdapterViewHolder
 
-            if (viewHolder?.nombreEditText?.text?.isEmpty() == true || viewHolder?.cantidadEditText?.text?.isEmpty() == true) {
+            if (ingredienteActual?.nombreEditText?.text?.isEmpty() == true || ingredienteActual?.cantidadEditText?.text?.isEmpty() == true) {
                 Toast.makeText(context, "Completa los datos!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Ingrediente guardado!", Toast.LENGTH_SHORT).show()
+                val newIngrediente = Ingrediente(
+                    ingredienteActual?.nombreEditText?.text.toString(),
+                    ingredienteActual?.cantidadEditText?.text.toString()
+                )
+                listaDeIngredientes[listaDeIngredientes.size - 1] = newIngrediente
+
+                lastIngrediente = listaDeIngredientes.last()
             }
 
-            val newIngrediente = Ingrediente(
-                viewHolder?.nombreEditText?.text.toString(),
-                viewHolder?.cantidadEditText?.text.toString()
-            )
-            listaIngredientesUsuario[listaIngredientesUsuario.size - 1] = newIngrediente
-            iniciarIngredientesRecyclerView()
-            lastIngrediente = listaIngredientesUsuario.last()
-        }*/
-    }
 
-    // Funciones para cambiar de pantallas
-    fun onVolverButtonClickedFromAgregarRe(view: View) {
-        val pantallaOrigen = intent.getIntExtra(CLAVE_PANTALLA_ANTERIOR,0)
-        when (pantallaOrigen){
-            1 -> {
-                val intent = Intent(this, MainMenuActivity::class.java)
-                startActivity(intent)
-            }
-            2 -> {
-                val intent = Intent(this, RecetasUsuario::class.java)
-                startActivity(intent)
+        }
+
+        binding.botonAddPasos.setOnClickListener {
+            if (lastPaso.descripcion.isEmpty()) {
+                Toast.makeText(context, "Completa el paso anterior!", Toast.LENGTH_SHORT).show()
+            } else {
+                listaDePasos.add(PasoDePreparacion(numeroPaso, "", 0))
+
+                iniciarPasosRecyclerView()
+
+                lastPaso = listaDePasos.last()
             }
         }
-        finish()
-    }
-    fun onHechoButtonClickedFromAgregarRe(view: View){
-        val intent = Intent(this, Descripcion_Dificultad__YMas_Receta::class.java)
-        startActivity(intent)
-    }
 
-    fun onAgregarIngrediente(view: View) {
-        val nombreIngredientePlato = binding.nombreIngrediente.text.toString()
-        val cantidadRequeridaPlato = binding.cantidadRequerida.text.toString()
-        if (nombreIngredientePlato.isNotEmpty() && cantidadRequeridaPlato.isNotEmpty()) {
-            val nuevoIngrediente = Ingrediente(nombreIngredientePlato, cantidadRequeridaPlato)
-            ingredientesDisponibles.add(nuevoIngrediente)
+        binding.botonGuardarPasos.setOnClickListener {
+            val pasoActual = binding.recyclerPasoCreacion.findViewHolderForAdapterPosition(
+                listaDePasos.size - 1
+            ) as? CreacionPasoAdapter.CreacionPasoAdapterViewHolder
 
-            binding.nombreIngrediente.text.clear()
-            binding.cantidadRequerida.text.clear()
-        } else {
-            Toast.makeText(this, "Ingrese nombre y cantidad por favor", Toast.LENGTH_SHORT).show()
+            if (pasoActual?.descripcionEditText?.text?.isEmpty() == true) {
+                Toast.makeText(context, "Completa los datos!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Paso guardado!", Toast.LENGTH_SHORT).show()
+
+                val newPaso = PasoDePreparacion(
+                    numeroPaso,
+                    pasoActual?.descripcionEditText?.text.toString(),
+                    R.drawable.add_imagen
+
+                )
+                listaDePasos[listaDePasos.size - 1] = newPaso
+                iniciarPasosRecyclerView()
+
+                lastPaso = listaDePasos.last()
+                numeroPaso++
+            }
+
+
         }
     }
 
-    private fun iniciarPasosRecyclerView() {
-        // Configura el RecyclerView para mostrar la lista de pasos
-        val layoutManager = LinearLayoutManager(this)
-        binding.recyclerPasoCreacion.layoutManager = layoutManager
 
-        val pasoAdapter = CreacionPasoAdapter(listaDePasos)
-        binding.recyclerPasoCreacion.adapter = pasoAdapter
+    fun iniciarIngredientesRecyclerView() {
+        val ingredientes = mutableListOf<Ingrediente>()
+        for (ingrediente in listaDeIngredientes) {
+            val nombreIngrediente = ingrediente.nombre
+            val cantidadIngrediente = ingrediente.cantidad
+
+            val newIngrediente = Ingrediente(nombreIngrediente, cantidadIngrediente)
+            ingredientes.add(newIngrediente)
+        }
+
+        creacionIngredienteAdapter.addIngredientes(ingredientes)
+
+        binding.recyclerIngredientes.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            addItemDecoration(object : RecyclerView.ItemDecoration() {
+                override fun getItemOffsets(
+                    outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State
+                ) {
+                    outRect.bottom = 25
+                }
+            })
+
+            adapter = creacionIngredienteAdapter
+        }
+    }
+
+    fun iniciarPasosRecyclerView() {
+        val pasos = mutableListOf<PasoDePreparacion>()
+
+        for (paso in listaDePasos) {
+            val numeroPaso = paso.numero
+            val descripcionPaso = paso.descripcion
+            val imagenPaso = paso.viewpaso
+
+            val newPaso = PasoDePreparacion(numeroPaso, descripcionPaso, imagenPaso)
+
+            pasos.add(newPaso)
+        }
+
+        creacionPasoAdapter.addPasos(pasos)
+        binding.recyclerPasoCreacion.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+            addItemDecoration(object : RecyclerView.ItemDecoration() {
+                override fun getItemOffsets(
+                    outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State
+                ) {
+                    outRect.bottom = 40
+                }
+            })
+
+            adapter = creacionPasoAdapter
+        }
     }
 
     companion object {
         val CLAVE_PANTALLA_ANTERIOR = "CLAVE_PANTALLA_ANTERIOR"
     }
 }
+
