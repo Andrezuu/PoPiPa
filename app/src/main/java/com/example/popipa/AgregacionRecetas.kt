@@ -60,11 +60,6 @@ class AgregacionRecetas : AppCompatActivity() {
             }
         }
 
-        binding.botonHecho.setOnClickListener {
-            val intent = Intent(this, Descripcion_Dificultad__YMas_Receta::class.java)
-            startActivity(intent)
-        }
-
         binding.botonAddIngredientes.setOnClickListener {
             if (lastIngrediente.nombre.isEmpty() || lastIngrediente.cantidad.isEmpty()) {
                 Toast.makeText(context, "Completa el ingrediente anterior!", Toast.LENGTH_SHORT)
@@ -132,6 +127,17 @@ class AgregacionRecetas : AppCompatActivity() {
                 numeroPaso++
             }
 
+
+        }
+
+        binding.botonHecho.setOnClickListener {
+            val isIncomplete = listaDeIngredientes.isEmpty() || listaDePasos.isEmpty() || binding.tituloReceta.text.isEmpty() || binding.tituloCategoria.text.isEmpty()
+            if(isIncomplete) {
+                Toast.makeText(context, "Completa los datos!", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(context, Descripcion_Dificultad__YMas_Receta::class.java)
+                startActivity(intent)
+            }
 
         }
     }
