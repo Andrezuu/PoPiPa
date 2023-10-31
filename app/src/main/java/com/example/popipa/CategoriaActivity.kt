@@ -29,7 +29,8 @@ class CategoriaActivity : AppCompatActivity() {
         iniciarRecetaMenuRecyclerView(categoriaActual.listPlato)
 
         binding.botonVolver.setOnClickListener {
-            onVolverButtonClicked(binding.botonVolver)
+            val intent = Intent(context, MainMenuActivity::class.java)
+            startActivity(intent)
         }
 
         tipoDePlatoAdapter.onRecetaClick = { recetaPressed ->
@@ -94,8 +95,5 @@ class CategoriaActivity : AppCompatActivity() {
 
     }
 
-    fun onVolverButtonClicked(view: View) {
-        val intent = Intent(context, MainMenuActivity::class.java)
-        startActivity(intent)
-    }
+
 }
