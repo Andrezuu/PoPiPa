@@ -66,7 +66,30 @@ class MainMenuActivity : AppCompatActivity() {
 
 
         binding.buttonMeGusta.setOnClickListener {
-            intent = Intent(context, ActivityTuMeGusta::class.java)
+            val tiposDePlatoConMeGusta = ListaCategoriasMenu.listCategory
+                .flatMap { it.listPlato }
+                .filter { it.meGusta }
+
+            val recetaMenus = tiposDePlatoConMeGusta.map { receta ->
+                TipoDePlato(
+                    receta.titulo,
+                    receta.descripcion,
+                    receta.imagen,
+                    receta.tiempoDePreparacion,
+                    receta.dificultad,
+                    receta.meGusta,
+                    receta.listIngrediente,
+                    receta.listPasos
+                )
+            }
+            val resultadoFiltrado = CategoriaTipoDePlato(
+                "Tus Gustos Mi Chef",
+                R.drawable.medialunas,
+                recetaMenus
+            )
+
+            val intent = Intent(context, CategoriaActivity::class.java)
+            intent.putExtra(MainMenuActivity.CLAVE_CATEGORIA, resultadoFiltrado)
             startActivity(intent)
         }
 

@@ -70,14 +70,12 @@ class ActivityTuMeGusta : AppCompatActivity() {
             adapter = tipoDePlatoAdapter
         }
 
-        // Crear una nueva categoría "Resultados" con los tipos de plato filtrados
         val resultadoFiltrado = CategoriaTipoDePlato(
-            "Resultados",
-            R.drawable.medialunas, // Cambia esta imagen según tus necesidades
+            "Tus Gustos Mi Chef",
+            R.drawable.medialunas,
             recetaMenus
         )
 
-        // Iniciar la nueva actividad con la categoría "Resultados"
         val intent = Intent(context, CategoriaActivity::class.java)
         intent.putExtra(MainMenuActivity.CLAVE_CATEGORIA, resultadoFiltrado)
         startActivity(intent)
