@@ -24,6 +24,8 @@ import androidx.core.content.edit
 import androidx.core.graphics.drawable.toBitmap
 import com.example.popipa.MainMenuActivity.Companion.IMAGE_STRING_KEY
 import com.example.popipa.databinding.ActivityPerfilUsuarioBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
 import java.io.ByteArrayOutputStream
 import kotlin.properties.Delegates
 
@@ -68,6 +70,12 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         binding.botonVolver.setOnClickListener {
             val intent = Intent(context, MainMenuActivity::class.java)
             startActivity(intent)
+        }
+        binding.botonSignOut.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
 

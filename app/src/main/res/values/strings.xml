@@ -51,5 +51,6 @@
     <string name="tiempoPreparacion">Tiempo de preparación</string>
     <string name="ingreseTiempoPreparacion">Ingrese el tiempo de preparación por favor</string>
     <string name="guardar">Guardar</string>
+    <string name="cerrarSesion">Cerrar sesión</string>
 
 </resources>

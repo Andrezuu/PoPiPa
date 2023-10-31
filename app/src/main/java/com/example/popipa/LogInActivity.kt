@@ -30,13 +30,13 @@ class LogInActivity : AppCompatActivity() {
         val passwordEditText = binding.editPassword
         val eyeButton = binding.eyeContrasenaLogIn
         var isPasswordVisible=false
-        binding.eyeContrasenaLogIn.setOnClickListener{
+        eyeButton.setOnClickListener{
             isPasswordVisible = !isPasswordVisible
             if(isPasswordVisible){
                 passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
                 eyeButton.setImageResource(R.drawable.eye)
             }else{
-                passwordEditText.inputType=InputType.TYPE_TEXT_VARIATION_PASSWORD
+                passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
                 eyeButton.setImageResource(R.drawable.eye)
             }
             passwordEditText.setSelection(passwordEditText.text.length)
