@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
 
     <style name="Base.Theme.Popipa" parent="Theme.AppCompat.DayNight.DarkActionBar">
-         Primary brand color.
+        Primary brand color.
         <item name="colorPrimary">@color/darkOrange</item>
         <item name="colorPrimaryVariant">@color/darkSalmon</item>
         <item name="colorOnPrimary">@color/darkBlue</item>
@@ -41,8 +41,6 @@
     </style>
 
 
-
-
     <style name="ViewEstilo.Dark" parent="Widget.AppCompat.Button">
         <item name="android:background">@color/darkBlue</item>
     </style>
@@ -54,7 +52,11 @@
     <style name="ViewEstiloBarra.Dark" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/backround_barra2</item>
     </style>
-
+    <!-- Base application theme. -->
+    <style name="Base.Base.Theme.Popipa" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
 
 
 </resources>

@@ -17,6 +17,11 @@
         android:theme="@style/Base.Theme.Popipa"
         tools:targetApi="31">
         <activity
+            android:name=".activity_tu_me_gusta"
+            android:exported="false"
+            android:label="@string/title_activity_tu_me_gusta"
+            android:theme="@style/Base.Theme.Popipa" />
+        <activity
             android:name=".Descripcion_Dificultad__YMas_Receta"
             android:exported="false" />
         <activity
