@@ -28,7 +28,6 @@ class MainMenuActivity : AppCompatActivity() {
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
     private val tipoDePlatoAdapter by lazy { TipoDePlatoAdapter() }
     private lateinit var binding: ActivityMainMenuBinding
-
     private lateinit var sharedPreferences: SharedPreferences
     lateinit var experiencia: String
 
@@ -170,7 +169,7 @@ class MainMenuActivity : AppCompatActivity() {
                     TipoDePlato(
                         tituloReceta,
                         descripcion,
-                        imagenCategoria,
+                        imagenCategoria as Int,
                         tiempo,
                         dificultad,
                         meGusta,
@@ -198,13 +197,15 @@ class MainMenuActivity : AppCompatActivity() {
             adapter = tipoDePlatoAdapter
         }
     }
-    private fun manageGson(){
+
+    private fun manageGson() {
         val gson = Gson()
         val platosJson = gson.toJson(listatMeGusta)
         val editor = sharedPreferences.edit()
         editor.putString(JSON_RECETAS_ME_GUSTA, platosJson)
         editor.apply()
     }
+
     private fun getMeGustaPlatos(): MutableList<TipoDePlato> {
         val platosJson = sharedPreferences.getString(JSON_RECETAS_ME_GUSTA, "")
         if (platosJson != "") {
@@ -215,6 +216,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
     }
+
     //KEYS PARA SHARED PREFERENCES E INTENTS
     companion object {
         val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"

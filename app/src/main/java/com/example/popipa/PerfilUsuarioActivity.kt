@@ -7,7 +7,6 @@ import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.util.Base64
 import android.view.View
 import android.widget.AdapterView
@@ -17,9 +16,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
-import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
-import androidx.core.content.edit
 import androidx.core.graphics.drawable.toBitmap
 import com.example.popipa.MainMenuActivity.Companion.APELLIDO_KEY
 import com.example.popipa.MainMenuActivity.Companion.EMAIL_KEY
@@ -27,10 +23,8 @@ import com.example.popipa.MainMenuActivity.Companion.EXPERIENCIA_KEY
 import com.example.popipa.MainMenuActivity.Companion.IMAGE_STRING_KEY
 import com.example.popipa.MainMenuActivity.Companion.NOMBRE_KEY
 import com.example.popipa.databinding.ActivityPerfilUsuarioBinding
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import java.io.ByteArrayOutputStream
-import kotlin.properties.Delegates
 
 
 class PerfilUsuarioActivity : AppCompatActivity() {
@@ -47,7 +41,6 @@ class PerfilUsuarioActivity : AppCompatActivity() {
     }
 
     var spinnerSelected = "opciones"
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +77,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         val nombreUsuario = sharedPreferences.getString(NOMBRE_KEY, "")
         val apellidoUsuario = sharedPreferences.getString(APELLIDO_KEY, "")
         val emailUsuario = sharedPreferences.getString(EMAIL_KEY, "")
-        val experiencia = sharedPreferences.getString(EXPERIENCIA_KEY,"")
+        val experiencia = sharedPreferences.getString(EXPERIENCIA_KEY, "")
 
         //TODO poner los datos del usuario actual en la pantalla de usuario
         binding.usuarioApellidos.text = apellidoUsuario
@@ -96,13 +89,13 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         manageSpinner()
     }
 
-    fun enableDarkMode(){
+    fun enableDarkMode() {
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
         delegate.applyDayNight()
 
     }
 
-    fun disableDarkMode(){
+    fun disableDarkMode() {
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
         delegate.applyDayNight()
     }
@@ -179,6 +172,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
                 spinnerSelected = dataList[position]
                 Toast.makeText(this@PerfilUsuarioActivity, "Mi Chef...", Toast.LENGTH_SHORT).show()
             }
+
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
 
@@ -190,9 +184,9 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         binding.guardarexp.setOnClickListener {
             val editor = sharedPreferences.edit()
             val savedData = spinnerSelected
-            editor.putString("experiencia",savedData)
+            editor.putString("experiencia", savedData)
             editor.apply()
-            val experiencia = sharedPreferences.getString("experiencia","")
+            val experiencia = sharedPreferences.getString("experiencia", "")
             binding.textoExperiencia.text = experiencia
             editor.apply()
         }

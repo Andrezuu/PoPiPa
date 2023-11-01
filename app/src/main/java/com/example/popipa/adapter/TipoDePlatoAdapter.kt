@@ -1,6 +1,9 @@
 package com.example.popipa.adapter
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -50,11 +53,22 @@ class TipoDePlatoAdapter : RecyclerView.Adapter<TipoDePlatoAdapter.TipoDePlatoAd
                 else -> R.color.red
             }
 
-            val imagen = data.imagen as Int
-
+            val imagen = data.imagen
+            val isImageNotBitMap = data.imagen.toString().length < 100
             binding.textViewRecetaMenuNombre.text = data.titulo
             binding.textViewRecetaMenuDescripcion.text = data.descripcion
-            binding.imageViewRecetaMenu.setImageResource(imagen)
+
+            if (imagen is Int) {
+                binding.imageViewRecetaMenu.setImageResource(imagen)
+            } else {
+                if (isImageNotBitMap) {
+                    binding.imageViewRecetaMenu.setImageResource(R.drawable.add_imagen)
+                } else {
+                    binding.imageViewRecetaMenu.setImageBitmap(stringToBitmap(imagen.toString()))
+                }
+
+            }
+
             binding.textViewRecetaTiempoMenu.text = data.tiempoDePreparacion
             context?.let {
                 binding.dificultad.setBackgroundColor(
@@ -65,6 +79,15 @@ class TipoDePlatoAdapter : RecyclerView.Adapter<TipoDePlatoAdapter.TipoDePlatoAd
                 )
             }
         }
+    }
+
+    fun stringToBitmap(encodedString: String): Bitmap? {
+
+        //Convierte un String base 64 a un byteArray
+        val decodedBytes = Base64.decode(encodedString, Base64.DEFAULT)
+
+        //Convierte el byteArray a un bitmap
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
     }
 
     fun addRecetaMenus(newListaDePlatos: List<TipoDePlato>) {
