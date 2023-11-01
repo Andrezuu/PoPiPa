@@ -198,14 +198,6 @@ class MainMenuActivity : AppCompatActivity() {
         }
     }
 
-    private fun manageGson() {
-        val gson = Gson()
-        val platosJson = gson.toJson(listatMeGusta)
-        val editor = sharedPreferences.edit()
-        editor.putString(JSON_RECETAS_ME_GUSTA, platosJson)
-        editor.apply()
-    }
-
     private fun getMeGustaPlatos(): MutableList<TipoDePlato> {
         val platosJson = sharedPreferences.getString(JSON_RECETAS_ME_GUSTA, "")
         if (platosJson != "") {
