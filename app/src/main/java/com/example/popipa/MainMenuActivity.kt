@@ -5,8 +5,8 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Rect
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,13 +23,13 @@ import com.google.gson.reflect.TypeToken
 class MainMenuActivity : AppCompatActivity() {
 
     private val context: Context = this
-    private lateinit var sharedPreferences: SharedPreferences
+
     private var listatMeGusta = mutableListOf<TipoDePlato>()
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
     private val tipoDePlatoAdapter by lazy { TipoDePlatoAdapter() }
     private lateinit var binding: ActivityMainMenuBinding
 
-    private lateinit var preference: SharedPreferences
+    private lateinit var sharedPreferences: SharedPreferences
     lateinit var experiencia: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,9 +38,9 @@ class MainMenuActivity : AppCompatActivity() {
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        preference = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
-        experiencia = preference.getString("experiencia", "") ?: "Chef"
-        listatMeGusta = getMeGustaPlatos()
+        sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
+        experiencia = sharedPreferences.getString("experiencia", "") ?: "Chef"
+        listatMeGusta.addAll(getMeGustaPlatos())
 
         iniciarCategoriaMenuRecyclerView()
         iniciarRecetaMenuRecyclerView()
@@ -74,8 +74,12 @@ class MainMenuActivity : AppCompatActivity() {
                 R.drawable.medialunas,
                 listatMeGusta
             )
+            if (listatMeGusta.isEmpty()) {
+                Toast.makeText(context, "Ve a dar like a alguna receta!", Toast.LENGTH_SHORT).show()
+            }
             val intent = Intent(context, CategoriaActivity::class.java)
             intent.putExtra(CLAVE_CATEGORIA, recetasMeGusta)
+            intent.putExtra(CLAVE_TITULO_CATEGORIA, recetasMeGusta.titulo)
             startActivity(intent)
         }
 
@@ -94,6 +98,12 @@ class MainMenuActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val newMeGusta = getMeGustaPlatos().toSet().toMutableList()
+        listatMeGusta = newMeGusta
     }
 
     fun iniciarCategoriaMenuRecyclerView() {
@@ -196,11 +206,11 @@ class MainMenuActivity : AppCompatActivity() {
         editor.apply()
     }
     private fun getMeGustaPlatos(): MutableList<TipoDePlato> {
-        val platosJson = sharedPreferences.getString(MainMenuActivity.JSON_RECETAS_ME_GUSTA, "")
-        if (platosJson != null) {
+        val platosJson = sharedPreferences.getString(JSON_RECETAS_ME_GUSTA, "")
+        if (platosJson != "") {
             val gson = Gson()
             return gson.fromJson(platosJson, object : TypeToken<List<TipoDePlato>>() {}.type)
-        }else{
+        } else {
             return mutableListOf<TipoDePlato>()
         }
 

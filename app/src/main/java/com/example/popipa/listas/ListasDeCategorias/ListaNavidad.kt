@@ -113,7 +113,7 @@ class ListaNavidad {
                 R.drawable.trufas_de_chocolate,
                 "60 min",
                 2,
-                true,
+                false,
                 IngredientesTrufasDeChocolate.listaTrufasDeChocolate,
                 PasosTrufasDeChocolate.pasosDePreparacionTrufasDeChocolate
             ),

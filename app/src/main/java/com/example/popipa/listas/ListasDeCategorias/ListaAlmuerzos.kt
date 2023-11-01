@@ -1,7 +1,7 @@
 package com.example.popipa.listas.ListasDeCategorias
 
-import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.R
+import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesBurritosDePollo
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesEnsaladaCesar
 import com.example.popipa.listas.ListasdeIngredientesPorCategoria.Almuerzos.IngredientesHamburguesaVegetariana
@@ -32,7 +32,7 @@ class ListaAlmuerzos {
                 R.drawable.pollo_a_la_parrilla,
                 "30 min",
                 1,
-                true,
+                false,
                 IngredientesPolloALaParrilla.listaPolloParrilla,
                 PasosPolloALaParrilla.pasosDePreparacionPolloParrilla
             ),
@@ -52,7 +52,7 @@ class ListaAlmuerzos {
                 R.drawable.sandwich_de_pavo,
                 "15 min",
                 1,
-                true,
+                false,
                 IngredientesSandwichDePavo.listaSandwichPavo,
                 PasosSandwichDePavo.pasosDePreparacionSandwichPavo
             ),
@@ -82,7 +82,7 @@ class ListaAlmuerzos {
                 R.drawable.burritos_de_pollo,
                 "20 min",
                 2,
-                true,
+                false,
                 IngredientesBurritosDePollo.listaBurritosDePollo,
                 PasosBurritosDePollo.pasosDePreparacionBurritosDePollo
             ),
@@ -112,7 +112,7 @@ class ListaAlmuerzos {
                 R.drawable.pollo_al_curry,
                 "30 min",
                 2,
-                true,
+                false,
                 IngredientesPolloAlCurry.listaPolloAlCurry,
                 PasosPolloAlCurry.pasosDePreparacionPolloAlCurry
             ),
@@ -122,7 +122,7 @@ class ListaAlmuerzos {
                 R.drawable.tacos_de_carne,
                 "25 min",
                 1,
-                true,
+                false,
                 IngredientesTacosDeCarne.listaTacosCarne,
                 PasosTacosDeCarne.pasosDePreparacionTacosCarne
             )

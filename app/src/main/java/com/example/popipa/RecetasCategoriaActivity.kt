@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +40,9 @@ class RecetasCategoriaActivity : AppCompatActivity() {
         binding.nombreCategoria.text = nombreCategoria
         binding.nombreReceta.text = recetaActual.titulo
 
+        val actMegusta = getMeGustaPlatos()
+        listatMeGusta.addAll(actMegusta)
+
         iniciarIngredientesRecyclerView(recetaActual.listIngrediente)
         iniciarPasosRecyclerView(recetaActual.listPasos)
 
@@ -46,17 +50,19 @@ class RecetasCategoriaActivity : AppCompatActivity() {
             val intent = Intent(context, MainMenuActivity::class.java)
             startActivity(intent)
         }
-        binding.botonLike.setOnClickListener {
 
+        binding.botonLike.setOnClickListener {
             if (recetaActual.meGusta) {
-                manageGson()
-                binding.botonLike.setBackgroundResource(R.drawable.corazon_me_gusta_gris)
+                recetaActual.meGusta = false
+                deleteElemento(recetaActual.titulo)
+                Toast.makeText(context, "Borrada de me gusta", Toast.LENGTH_SHORT).show()
 
             } else {
-                deleteElemento(recetaActual.titulo)
-                binding.botonLike.setBackgroundResource(R.drawable.corazon_me_gusta)
+                recetaActual.meGusta = true
+                listatMeGusta.add(recetaActual)
+                manageGson()
+                Toast.makeText(context, "Agregada a me gusta", Toast.LENGTH_SHORT).show()
             }
-            recetaActual.meGusta = !recetaActual.meGusta
         }
     }
 
@@ -114,30 +120,33 @@ class RecetasCategoriaActivity : AppCompatActivity() {
             adapter = pasoAdapter
         }
     }
-    private fun manageGson(){
+
+
+    private fun manageGson() {
         val gson = Gson()
         val platosJson = gson.toJson(listatMeGusta)
         val editor = sharedPreferences.edit()
         editor.putString(MainMenuActivity.JSON_RECETAS_ME_GUSTA, platosJson)
         editor.apply()
     }
-    private fun getMeGustaPlatos():MutableList<TipoDePlato>{
+
+    private fun getMeGustaPlatos(): MutableList<TipoDePlato> {
         val platosJson = sharedPreferences.getString(MainMenuActivity.JSON_RECETAS_ME_GUSTA, "")
 
-        if (platosJson != null) {
+        if (platosJson != "") {
             val gson = Gson()
             return gson.fromJson(platosJson, object : TypeToken<List<TipoDePlato>>() {}.type)
-        }else{
+        } else {
             return mutableListOf<TipoDePlato>()
         }
     }
-    private fun deleteElemento(nombreReceta:String){
-        val editor = sharedPreferences.edit()
-        val savePlatosMeGusta = getMeGustaPlatos()
-        val toRemove = savePlatosMeGusta.indexOfFirst {
-            nombreReceta==it.titulo
+
+    private fun deleteElemento(nombreReceta: String) {
+        val toRemove = listatMeGusta.indexOfFirst {
+            nombreReceta == it.titulo
         }
-        savePlatosMeGusta.removeAt(toRemove)
+        listatMeGusta.removeAt(toRemove)
+        manageGson()
     }
 
 
