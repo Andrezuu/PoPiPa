@@ -1,18 +1,10 @@
 package com.example.popipa
 
-import android.R
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.text.InputType
-import android.view.View
-import android.view.ViewParent
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import com.example.popipa.MainMenuActivity.Companion.APELLIDO_KEY
 import com.example.popipa.MainMenuActivity.Companion.EMAIL_KEY
@@ -34,7 +26,7 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-
+        preference = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
 
         binding.crearCuenta.setOnClickListener {
             clickCrearCuenta(
@@ -58,10 +50,10 @@ class SignUpActivity : AppCompatActivity() {
             isPasswordVisible = !isPasswordVisible
             if (isPasswordVisible) {
                 passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-                eyeButton.setImageResource(com.example.popipa.R.drawable.eye)
+                eyeButton.setImageResource(R.drawable.eye)
             } else {
                 passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-                eyeButton.setImageResource(com.example.popipa.R.drawable.eye)
+                eyeButton.setImageResource(R.drawable.eye)
             }
             passwordEditText.setSelection(passwordEditText.text.length)
         }

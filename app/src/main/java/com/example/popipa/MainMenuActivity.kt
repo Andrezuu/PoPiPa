@@ -63,6 +63,7 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding.buttonPerfil.setOnClickListener {
             intent = Intent(context, PerfilUsuarioActivity::class.java)
+
             startActivity(intent)
         }
 

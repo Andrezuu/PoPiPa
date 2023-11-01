@@ -19,7 +19,6 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
 import androidx.core.graphics.drawable.toBitmap
 import com.example.popipa.MainMenuActivity.Companion.APELLIDO_KEY
 import com.example.popipa.MainMenuActivity.Companion.EMAIL_KEY
-import com.example.popipa.MainMenuActivity.Companion.EXPERIENCIA_KEY
 import com.example.popipa.MainMenuActivity.Companion.IMAGE_STRING_KEY
 import com.example.popipa.MainMenuActivity.Companion.NOMBRE_KEY
 import com.example.popipa.databinding.ActivityPerfilUsuarioBinding
@@ -52,6 +51,7 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
         cargarSharedPreferences()
 
+
         //abrir la galeria para cambiar la foto de perfil
         binding.fotoPerfil.setOnClickListener {
             galeriaLauncher.launch("image/*")
@@ -73,20 +73,11 @@ class PerfilUsuarioActivity : AppCompatActivity() {
             finish()
         }
 
-        val sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
-        val nombreUsuario = sharedPreferences.getString(NOMBRE_KEY, "")
-        val apellidoUsuario = sharedPreferences.getString(APELLIDO_KEY, "")
-        val emailUsuario = sharedPreferences.getString(EMAIL_KEY, "")
-        val experiencia = sharedPreferences.getString(EXPERIENCIA_KEY, "")
 
-        //TODO poner los datos del usuario actual en la pantalla de usuario
-        binding.usuarioApellidos.text = apellidoUsuario
-        binding.usuarioEmail.text = emailUsuario
-        binding.usuarioNombres.text = nombreUsuario
-        binding.textoExperiencia.text = experiencia
 
         initSpinner()
         manageSpinner()
+        cargarSharedPreferences()
     }
 
     fun enableDarkMode() {
@@ -123,6 +114,15 @@ class PerfilUsuarioActivity : AppCompatActivity() {
 
         //se lo pone con let porque  ImagenGuardadaString podria estar null
         val imagenGuardada = imagenGuardadaString?.let { stringToBitmap(it) }
+
+        val nombreUsuario = sharedPreferences.getString(NOMBRE_KEY, "")
+        val apellidoUsuario = sharedPreferences.getString(APELLIDO_KEY, "")
+        val emailUsuario = sharedPreferences.getString(EMAIL_KEY, "")
+
+        //TODO poner los datos del usuario actual en la pantalla de usuario
+        binding.usuarioNombres.text = nombreUsuario
+        binding.usuarioEmail.text = emailUsuario
+        binding.usuarioApellidos.text = apellidoUsuario
 
         binding.fotoPerfil.setImageBitmap(imagenGuardada)
     }

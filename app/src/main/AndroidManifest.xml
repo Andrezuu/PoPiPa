@@ -41,7 +41,7 @@
             android:name=".PerfilUsuarioActivity"
             android:exported="false" />
         <activity
-            android:name=".InicioActivity"
+            android:name=".MainMenuActivity"
             android:exported="false" />
         <activity
             android:name=".LogInActivity"
@@ -53,7 +53,7 @@
             android:name=".RecetasUsuario"
             android:exported="false" />
         <activity
-            android:name=".MainMenuActivity"
+            android:name=".InicioActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
