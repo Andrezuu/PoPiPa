@@ -2,6 +2,7 @@ package com.example.popipa
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
@@ -15,10 +16,13 @@ import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityTuMeGustaBinding
 import com.example.popipa.listas.ListaCategoriasMenu
 import com.example.popipa.listas.ListaDeRecomendacion
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class ActivityTuMeGusta : AppCompatActivity() {
 
     private val context: Context = this
+    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var binding: ActivityTuMeGustaBinding
     private val tipoDePlatoAdapter by lazy { TipoDePlatoAdapter()
     }
@@ -29,55 +33,23 @@ class ActivityTuMeGusta : AppCompatActivity() {
 
         binding = ActivityTuMeGustaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        getMeGustaPlatos()
         binding.botonVolver.setOnClickListener {
             val intent = Intent(context, MainMenuActivity::class.java)
             startActivity(intent)
         }
+    }
 
-        iniciarRecetaMenuRecyclerView()
+    private fun getMeGustaPlatos():List<TipoDePlato>{
+        val platosJson = sharedPreferences.getString(MainMenuActivity.JSON_RECETAS_ME_GUSTA, "")
+
+        if (platosJson != null) {
+            val gson = Gson()
+            return gson.fromJson(platosJson, object : TypeToken<List<TipoDePlato>>() {}.type)
+        }
+
+        return emptyList()
     }
 
 
-    fun iniciarRecetaMenuRecyclerView() {
-
-        val tiposDePlatoConMeGusta = ListaCategoriasMenu.listCategory
-            .flatMap { it.listPlato }
-            .filter { it.meGusta }
-
-        val recetaMenus = tiposDePlatoConMeGusta.map { receta ->
-            TipoDePlato(
-                receta.titulo,
-                receta.descripcion,
-                receta.imagen,
-                receta.tiempoDePreparacion,
-                receta.dificultad,
-                receta.meGusta,
-                receta.listIngrediente,
-                receta.listPasos
-            )
-        }
-
-        tipoDePlatoAdapter.addRecetaMenus(recetaMenus)
-        binding.recyclerReceta.apply {
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            addItemDecoration(object : RecyclerView.ItemDecoration() {
-                override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-                    outRect.bottom = 50
-                }
-            })
-
-            adapter = tipoDePlatoAdapter
-        }
-
-        val resultadoFiltrado = CategoriaTipoDePlato(
-            "Tus Gustos Mi Chef",
-            R.drawable.medialunas,
-            recetaMenus
-        )
-
-        val intent = Intent(context, CategoriaActivity::class.java)
-        intent.putExtra(MainMenuActivity.CLAVE_CATEGORIA, resultadoFiltrado)
-        startActivity(intent)
-    }
 }

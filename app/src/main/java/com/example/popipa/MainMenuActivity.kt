@@ -17,10 +17,14 @@ import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityMainMenuBinding
 import com.example.popipa.listas.ListaCategoriasMenu
 import com.example.popipa.listas.ListaDeRecomendacion
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class MainMenuActivity : AppCompatActivity() {
 
     private val context: Context = this
+    private lateinit var sharedPreferences: SharedPreferences
+    private var listatMeGusta = mutableListOf<TipoDePlato>()
     private val categoriaMenuAdapter by lazy { CategoriaMenuAdapter() }
     private val tipoDePlatoAdapter by lazy { TipoDePlatoAdapter() }
     private lateinit var binding: ActivityMainMenuBinding
@@ -34,9 +38,9 @@ class MainMenuActivity : AppCompatActivity() {
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        preference = PreferenceManager.getDefaultSharedPreferences(this)
+        preference = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
         experiencia = preference.getString("experiencia", "") ?: "Chef"
-
+        listatMeGusta = getMeGustaPlatos()
 
         iniciarCategoriaMenuRecyclerView()
         iniciarRecetaMenuRecyclerView()
@@ -65,30 +69,13 @@ class MainMenuActivity : AppCompatActivity() {
 
 
         binding.buttonMeGusta.setOnClickListener {
-            val tiposDePlatoConMeGusta = ListaCategoriasMenu.listCategory
-                .flatMap { it.listPlato }
-                .filter { it.meGusta }
-
-            val recetaMenus = tiposDePlatoConMeGusta.map { receta ->
-                TipoDePlato(
-                    receta.titulo,
-                    receta.descripcion,
-                    receta.imagen,
-                    receta.tiempoDePreparacion,
-                    receta.dificultad,
-                    receta.meGusta,
-                    receta.listIngrediente,
-                    receta.listPasos
-                )
-            }
-            val resultadoFiltrado = CategoriaTipoDePlato(
+            val recetasMeGusta = CategoriaTipoDePlato(
                 "Tus Gustos Mi Chef",
                 R.drawable.medialunas,
-                recetaMenus
+                listatMeGusta
             )
-
             val intent = Intent(context, CategoriaActivity::class.java)
-            intent.putExtra(CLAVE_CATEGORIA, resultadoFiltrado)
+            intent.putExtra(CLAVE_CATEGORIA, recetasMeGusta)
             startActivity(intent)
         }
 
@@ -108,8 +95,6 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
     }
-
-    //Entrar en otras pantallas de la barra de abajo
 
     fun iniciarCategoriaMenuRecyclerView() {
 
@@ -203,24 +188,40 @@ class MainMenuActivity : AppCompatActivity() {
             adapter = tipoDePlatoAdapter
         }
     }
+    private fun manageGson(){
+        val gson = Gson()
+        val platosJson = gson.toJson(listatMeGusta)
+        val editor = sharedPreferences.edit()
+        editor.putString(JSON_RECETAS_ME_GUSTA, platosJson)
+        editor.apply()
+    }
+    private fun getMeGustaPlatos(): MutableList<TipoDePlato> {
+        val platosJson = sharedPreferences.getString(MainMenuActivity.JSON_RECETAS_ME_GUSTA, "")
+        if (platosJson != null) {
+            val gson = Gson()
+            return gson.fromJson(platosJson, object : TypeToken<List<TipoDePlato>>() {}.type)
+        }else{
+            return mutableListOf<TipoDePlato>()
+        }
+
+    }
     //KEYS PARA SHARED PREFERENCES E INTENTS
     companion object {
         val CLAVE_CATEGORIA = "CLAVE_CATEGORIA"
         val CLAVE_RECETA = "CLAVE_RECETA"
         val CLAVE_TITULO_CATEGORIA = "CLAVE_TITULO_CATEGORIA"
         val IMAGE_STRING_KEY = "IMAGE_STRING_KEY"
-
         val NOMBRE_KEY = "NOMBRE_KEY"
         val APELLIDO_KEY = "APELLIDO_KEY"
         val EMAIL_KEY = "EMAIL_KEY"
         val EXPERIENCIA_KEY = "EXPERIENCIA_KEY"
         val DIFICULTAD_KEY = "DIFICULTAD_KEY"
-
         val INGREDIENTES_CREACION_KEY = "INGREDIENTES_CREACION_KEY"
         val PASOS_CREACION_KEY = "PASOS_CREACION_KEY"
         val CATEGORIA_CREACION_KEY = "CATEGORIA_CREACION_KEY"
         val NOMBRE_CREACION_KEY = "NOMBRE_CREACION_KEY"
         val JSON_RECETAS_USUARIO = "JSON_RECETAS_USUARIO"
+        val JSON_RECETAS_ME_GUSTA = "JSON_RECETAS_ME_GUSTA"
 
         val CLAVE_PANTALLA_MAIN_MENU = "CLAVE_PANTALLA_MAIN_MENU"
         val RECETAS_USUARIO_KEY = "RECETAS_USUARIO_KEY"

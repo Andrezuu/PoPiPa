@@ -2,6 +2,7 @@ package com.example.popipa
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
@@ -16,10 +17,14 @@ import com.example.popipa.dataClases.Ingrediente
 import com.example.popipa.dataClases.PasoDePreparacion
 import com.example.popipa.dataClases.TipoDePlato
 import com.example.popipa.databinding.ActivityRecetasCategoriaBinding
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 
 class RecetasCategoriaActivity : AppCompatActivity() {
     private val context: Context = this
+    private lateinit var sharedPreferences: SharedPreferences
+    private val listatMeGusta = mutableListOf<TipoDePlato>()
     private val ingredienteAdapter by lazy { IngredienteAdapter() }
     private val pasoAdapter by lazy { PasoAdapter() }
     private lateinit var binding: ActivityRecetasCategoriaBinding
@@ -27,6 +32,7 @@ class RecetasCategoriaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRecetasCategoriaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        sharedPreferences = getSharedPreferences("MiAppPrefs", Context.MODE_PRIVATE)
         val recetaActual = intent.getSerializableExtra(CLAVE_RECETA) as TipoDePlato
         val nombreCategoria = intent.getSerializableExtra(CLAVE_TITULO_CATEGORIA) as String
 
@@ -40,13 +46,14 @@ class RecetasCategoriaActivity : AppCompatActivity() {
             val intent = Intent(context, MainMenuActivity::class.java)
             startActivity(intent)
         }
-        var isColor = false
         binding.botonLike.setOnClickListener {
 
             if (recetaActual.meGusta) {
+                manageGson()
                 binding.botonLike.setBackgroundResource(R.drawable.corazon_me_gusta_gris)
 
             } else {
+                deleteElemento(recetaActual.titulo)
                 binding.botonLike.setBackgroundResource(R.drawable.corazon_me_gusta)
             }
             recetaActual.meGusta = !recetaActual.meGusta
@@ -106,6 +113,31 @@ class RecetasCategoriaActivity : AppCompatActivity() {
 
             adapter = pasoAdapter
         }
+    }
+    private fun manageGson(){
+        val gson = Gson()
+        val platosJson = gson.toJson(listatMeGusta)
+        val editor = sharedPreferences.edit()
+        editor.putString(MainMenuActivity.JSON_RECETAS_ME_GUSTA, platosJson)
+        editor.apply()
+    }
+    private fun getMeGustaPlatos():MutableList<TipoDePlato>{
+        val platosJson = sharedPreferences.getString(MainMenuActivity.JSON_RECETAS_ME_GUSTA, "")
+
+        if (platosJson != null) {
+            val gson = Gson()
+            return gson.fromJson(platosJson, object : TypeToken<List<TipoDePlato>>() {}.type)
+        }else{
+            return mutableListOf<TipoDePlato>()
+        }
+    }
+    private fun deleteElemento(nombreReceta:String){
+        val editor = sharedPreferences.edit()
+        val savePlatosMeGusta = getMeGustaPlatos()
+        val toRemove = savePlatosMeGusta.indexOfFirst {
+            nombreReceta==it.titulo
+        }
+        savePlatosMeGusta.removeAt(toRemove)
     }
 
 
